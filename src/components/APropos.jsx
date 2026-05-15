@@ -11,18 +11,20 @@ function APropos() {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            {/* Colonne gauche — Photo / identité visuelle */}
+            {/* Colonne gauche — Photo réelle */}
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/30 to-accent/20 rounded-2xl flex items-center justify-center border-2 border-primary/30 overflow-hidden">
-                <div className="text-center px-8">
-                  <div className="text-9xl mb-6">🥊</div>
-                  <p className="text-white font-bold text-2xl">{coach.nom}</p>
-                  <p className="text-accent text-sm mt-1">Citadel Coaching</p>
-                </div>
+              <div className="rounded-2xl overflow-hidden border-2 border-primary/30 shadow-2xl shadow-primary/10">
+                <img
+                  src="/photos/coach-gi.jpg"
+                  alt="Bechir Majri — Purple Belt Gracie Barra"
+                  className="w-full h-auto object-cover"
+                  style={{ maxHeight: '560px', objectPosition: 'top center' }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent"></div>
               </div>
               {/* Badge flottant */}
               <div className="absolute -bottom-5 -right-5 bg-primary text-white font-bold px-6 py-3 rounded-xl shadow-xl">
-                <p className="text-sm">20 ans d'expérience</p>
+                <p className="text-sm">Purple Belt Gracie Barra</p>
               </div>
             </div>
 

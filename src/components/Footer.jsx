@@ -57,8 +57,12 @@ function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-primary/20 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-primary/20 pt-8 text-center text-gray-400 text-sm space-y-1">
           <p>© 2025 Citadel Coaching — {coach.nom}. Tous droits réservés.</p>
+          <p>
+            Développé par{' '}
+            <span className="text-primary font-semibold">Citadel-Tech</span>
+          </p>
         </div>
       </div>
     </footer>
