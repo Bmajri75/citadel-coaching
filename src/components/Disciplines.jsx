@@ -4,7 +4,7 @@ import { disciplines } from '../data/creneaux';
 const photos = {
   1: '/photos/fight-mma.jpg',
   2: '/photos/fight-kick.jpg',
-  3: '/photos/fight-ground.jpg',
+  3: '/photos/coach-gi.jpg',
 };
 
 function Disciplines() {
