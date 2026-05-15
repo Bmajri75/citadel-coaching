@@ -1,6 +1,7 @@
 // src/components/Programmes.jsx
 import { Link } from 'react-router-dom';
 import { programmes } from '../data/programmes';
+import SEO from './SEO';
 
 const sportsCombat = programmes.filter((p) =>
   ['mma-debutant', 'muay-thai-debutant', 'grappling-debutant'].includes(p.id)
@@ -65,6 +66,11 @@ function ProgrammeCard({ prog }) {
 function Programmes() {
   return (
     <div className="min-h-screen bg-secondary">
+      <SEO
+        title="Programmes PDF MMA, Muay Thai, Grappling — Téléchargement immédiat"
+        description="6 programmes d'entraînement PDF par Bechir Majri — MMA débutant, Muay Thai, Grappling, Musculation, Minceur. Techniques de base à faire seul à la maison. Dès 29€, accès à vie."
+        canonical="/programmes"
+      />
 
       {/* Hero */}
       <div className="bg-gradient-to-b from-black to-secondary pt-28 pb-16 px-6 text-center">

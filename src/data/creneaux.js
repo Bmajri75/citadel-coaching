@@ -60,10 +60,10 @@ export const coach = {
   nom: 'Bechir Majri',
   titre: 'Coach sportif diplômé BPJEPS • Purple Belt Gracie Barra',
   diplomes: [
-    'BPJEPS Activités de la Forme',
+    'BPJEPS Sports de Contact',
     'BF2 FMMAF',
     'Purple Belt Gracie Barra',
-    'Ancien combattant pro de MMA',
+    'Professionnel MMA',
   ],
   bio: `Passionné de sports de combat depuis plus de 20 ans, j'ai forgé mon expérience comme combattant professionnel de MMA avant de me consacrer entièrement au coaching. Diplômé BPJEPS et Purple Belt Gracie Barra, je coache aujourd'hui des athlètes de tous niveaux — du grand débutant au compétiteur.\n\nMon approche est simple : des bases solides, une technique irréprochable, et une progression adaptée à chaque personne. Que votre objectif soit la forme, la confiance en vous ou la compétition, je construis un programme sur mesure pour vous.`,
   specialites: [

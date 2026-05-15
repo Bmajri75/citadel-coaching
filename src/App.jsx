@@ -1,31 +1,39 @@
 // src/App.jsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Disciplines from "./components/Disciplines";
-import APropos from "./components/APropos";
-import Tarif from "./components/Tarif";
-import ProgrammesTeaser from "./components/ProgrammesTeaser";
-import Reservation from "./components/Reservation";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import RetourPaiement from "./components/RetourPaiement";
-import Succes from "./components/Succes";
-import Programmes from "./components/Programmes";
-import ProgrammeDetail from "./components/ProgrammeDetail";
-import SuccesProgramme from "./components/SuccesProgramme";
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Disciplines from './components/Disciplines';
+import APropos from './components/APropos';
+import Tarif from './components/Tarif';
+import ProgrammesTeaser from './components/ProgrammesTeaser';
+import Temoignages from './components/Temoignages';
+import Reservation from './components/Reservation';
+import FAQ from './components/FAQ';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import RetourPaiement from './components/RetourPaiement';
+import Succes from './components/Succes';
+import Programmes from './components/Programmes';
+import ProgrammeDetail from './components/ProgrammeDetail';
+import SuccesProgramme from './components/SuccesProgramme';
+import SEO from './components/SEO';
 
 function HomePage() {
   return (
     <div className="min-h-screen bg-secondary">
+      <SEO />
       <Header />
-      <Hero />
-      <Disciplines />
-      <APropos />
-      <Tarif />
-      <ProgrammesTeaser />
-      <Reservation />
-      <Contact />
+      <main>
+        <Hero />
+        <Disciplines />
+        <APropos />
+        <Tarif />
+        <Temoignages />
+        <ProgrammesTeaser />
+        <Reservation />
+        <FAQ />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
