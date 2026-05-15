@@ -1,11 +1,8 @@
 // src/utils/stripe.js
-import { loadStripe } from '@stripe/stripe-js';
+// Payment Link Stripe — aucun backend nécessaire
+// Le Payment Link est défini dans .env : VITE_STRIPE_PAYMENT_LINK=https://buy.stripe.com/VOTRE_LIEN
 
-// Utilise la variable d'environnement
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
-
-export default stripePromise;
-export const PRIX_SEANCE = 7000;
+export const PRIX_SEANCE = 9000; // 90€ en centimes (pour référence)
 export const PAYMENT_INFO = {
   currency: 'eur',
   description: 'Séance de coaching privé Citadel Coaching',

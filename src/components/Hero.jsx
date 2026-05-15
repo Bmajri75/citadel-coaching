@@ -42,11 +42,9 @@ function Hero() {
 
         {/* Prix */}
         <div className="inline-block mb-8 px-8 py-4 bg-secondary/80 border border-primary/30 rounded-xl">
-          <p className="text-accent text-sm font-semibold mb-1">
-            Séance privée
-          </p>
+          <p className="text-accent text-sm font-semibold mb-1">Séance privée</p>
           <p className="text-4xl font-bold text-white">
-            70€ <span className="text-lg text-gray-400">/ heure</span>
+            90€ <span className="text-lg text-gray-400">/ heure</span>
           </p>
         </div>
 
@@ -85,22 +83,9 @@ function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a
-          href="#disciplines"
-          className="text-white/50 hover:text-white transition-colors"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
+        <a href="#disciplines" className="text-white/50 hover:text-white transition-colors">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </a>
       </div>
