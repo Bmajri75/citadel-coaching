@@ -15,8 +15,8 @@ function APropos() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden border-2 border-primary/30 shadow-2xl shadow-primary/10">
                 <img
-                  src="/photos/coach-gi.jpg"
-                  alt="Bechir Majri — Purple Belt Gracie Barra"
+                  src="/photos/walkout.jpg"
+                  alt="Bechir Majri — Coach MMA Paris 17"
                   className="w-full h-auto object-cover"
                   style={{ maxHeight: '560px', objectPosition: 'top center' }}
                 />
@@ -24,7 +24,7 @@ function APropos() {
               </div>
               {/* Badge flottant */}
               <div className="absolute -bottom-5 -right-5 bg-primary text-white font-bold px-6 py-3 rounded-xl shadow-xl">
-                <p className="text-sm">Purple Belt Gracie Barra</p>
+                <p className="text-sm">Professionnel MMA</p>
               </div>
             </div>
 
