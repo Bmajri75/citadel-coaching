@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const highlights = [
   { emoji: '🥊', titre: 'MMA Débutant', sous: 'À faire seul à la maison', prix: '29€' },
   { emoji: '🇹🇭', titre: 'Muay Thai Débutant', sous: 'Techniques de base', prix: '29€' },
-  { emoji: '🤼', titre: 'Grappling Débutant', sous: 'Combat au sol', prix: '29€' },
+  { emoji: '🥋', titre: 'BJJ Débutant', sous: 'Jiu-Jitsu Brésilien Gi & NoGi', prix: '29€' },
   { emoji: '💪', titre: 'Musculation Débutant', sous: 'Prise de force', prix: '29€' },
   { emoji: '🏋️', titre: 'Muscu & Sport de Combat', sous: 'Puissance et explosivité', prix: '39€' },
   { emoji: '🔥', titre: 'Programme Minceur', sous: 'Par les sports de combat', prix: '29€' },

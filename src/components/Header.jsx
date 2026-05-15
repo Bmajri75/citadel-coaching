@@ -21,7 +21,7 @@ function Header() {
             <div className="text-3xl">🥊</div>
             <div>
               <h1 className="text-2xl font-bold text-white">Citadel Coaching</h1>
-              <p className="text-xs text-accent">MMA • Muay Thai • Grappling</p>
+              <p className="text-xs text-accent">MMA • Muay Thai • BJJ</p>
             </div>
           </Link>
 

@@ -8,7 +8,7 @@ import Footer from './Footer';
 const categoriesCouleurs = {
   MMA: 'bg-red-900/40 text-red-300 border-red-500/30',
   'Muay Thai': 'bg-orange-900/40 text-orange-300 border-orange-500/30',
-  Grappling: 'bg-blue-900/40 text-blue-300 border-blue-500/30',
+  BJJ: 'bg-blue-900/40 text-blue-300 border-blue-500/30',
   Coaching: 'bg-accent/20 text-accent border-accent/30',
 };
 
@@ -16,7 +16,7 @@ function Blog() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'Blog Citadel Coaching — MMA, Muay Thai, Grappling',
+    name: 'Blog Citadel Coaching — MMA, Muay Thai, BJJ',
     description: 'Conseils, guides et actualités sur les sports de combat par Bechir Majri, coach MMA Paris 17.',
     url: 'https://citadel-coaching.vercel.app/blog',
     author: {
@@ -29,7 +29,7 @@ function Blog() {
     <div className="min-h-screen bg-secondary">
       <SEO
         title="Blog MMA Paris — Conseils, Guides & Actualités Sports de Combat"
-        description="Conseils techniques, guides pour débutants et actualités sports de combat par Bechir Majri, coach certifié BPJEPS, professionnel MMA à Paris 17ème. MMA, Muay Thai, Grappling — tout ce qu'il faut savoir pour progresser."
+        description="Conseils techniques, guides pour débutants et actualités sports de combat par Bechir Majri, coach certifié BPJEPS, professionnel MMA à Paris 17ème. MMA, Muay Thai, BJJ — tout ce qu'il faut savoir pour progresser."
         canonical="/blog"
         structuredData={schema}
       />

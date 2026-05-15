@@ -31,7 +31,7 @@ function Hero() {
               </span>
             </h1>
 
-            <p className="text-xl text-gray-300 mb-3">MMA • Muay Thai • Grappling</p>
+            <p className="text-xl text-gray-300 mb-3">MMA • Muay Thai • BJJ</p>
             <p className="text-gray-400 mb-8 leading-relaxed">
               20 ans d'expérience au service de votre progression. Coaching personnalisé, tous niveaux, 7j/7 à Paris 17ème.
             </p>

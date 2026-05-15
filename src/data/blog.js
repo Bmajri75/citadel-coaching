@@ -117,16 +117,16 @@ export const articles = [
   },
   {
     slug: 'grappling-combat-sol-debutant',
-    titre: 'Grappling : comprendre le combat au sol pour les débutants',
-    sousTitre: 'Positions, soumissions, transitions — les bases expliquées simplement',
-    categorie: 'Grappling',
-    emoji: '🤼',
+    titre: 'BJJ : comprendre le Jiu-Jitsu Brésilien pour les débutants',
+    sousTitre: 'Positions, soumissions, transitions Gi & NoGi — les bases expliquées simplement',
+    categorie: 'BJJ',
+    emoji: '🥋',
     date: '28 avril 2025',
     dateISO: '2025-04-28',
     auteur: 'Bechir Majri',
     temps: '5 min de lecture',
     image: '/photos/fight-ground.jpg',
-    extrait: 'Le combat au sol est la composante la plus technique du MMA. Maîtriser les positions de base, les sorties et quelques soumissions simples peut changer radicalement votre niveau — même en débutant.',
+    extrait: 'Le Jiu-Jitsu Brésilien (BJJ) est la composante la plus technique du MMA. Maîtriser les positions de base en Gi et NoGi, les sorties et quelques soumissions simples peut changer radicalement votre niveau — même en débutant.',
     contenu: [
       {
         type: 'intro',
@@ -169,8 +169,8 @@ export const articles = [
         texte: 'Le grappling s\'apprend avec de la patience et de la répétition. Deux séances par semaine suffisent pour progresser significativement en 3 mois. Si vous êtes à Paris et souhaitez construire des bases solides au sol, réservez une séance — je vous guide étape par étape.',
       },
     ],
-    tags: ['Grappling', 'JJB', 'Combat au sol', 'Débutant'],
-    metaDescription: 'Grappling et combat au sol pour débutants — positions, soumissions, transitions. Guide complet par Bechir Majri, Purple Belt Gracie Barra, coach MMA Paris 17.',
+    tags: ['BJJ', 'JJB', 'Gi', 'NoGi', 'Combat au sol', 'Débutant'],
+    metaDescription: 'BJJ (Jiu-Jitsu Brésilien) pour débutants — positions, soumissions, Gi et NoGi. Guide complet par Bechir Majri, Purple Belt Gracie Barra, coach MMA Paris 17.',
   },
   {
     slug: 'coaching-prive-mma-paris-pourquoi',

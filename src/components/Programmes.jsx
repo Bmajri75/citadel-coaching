@@ -67,8 +67,8 @@ function Programmes() {
   return (
     <div className="min-h-screen bg-secondary">
       <SEO
-        title="Programmes PDF MMA, Muay Thai, Grappling — Téléchargement immédiat"
-        description="6 programmes d'entraînement PDF par Bechir Majri — MMA débutant, Muay Thai, Grappling, Musculation, Minceur. Techniques de base à faire seul à la maison. Dès 29€, accès à vie."
+        title="Programmes PDF MMA, Muay Thai, BJJ — Téléchargement immédiat"
+        description="6 programmes d'entraînement PDF par Bechir Majri — MMA débutant, Muay Thai, BJJ (Gi & NoGi), Musculation, Minceur. Techniques de base à faire seul à la maison. Dès 29€, accès à vie."
         canonical="/programmes"
       />
 

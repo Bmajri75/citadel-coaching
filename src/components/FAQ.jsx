@@ -4,7 +4,7 @@ import { useState } from 'react';
 const questions = [
   {
     q: 'Quel est le tarif d\'un cours de MMA à Paris avec Bechir Majri ?',
-    r: 'Le coaching privé est à 90€ de l\'heure, tous disciplines confondues — MMA, Muay Thai ou Grappling. Un seul tarif, transparent et sans surprise. Le paiement se fait en ligne par carte via Stripe.',
+    r: 'Le coaching privé est à 90€ de l\'heure, toutes disciplines confondues — MMA, Muay Thai ou BJJ (Jiu-Jitsu Brésilien). Un seul tarif, transparent et sans surprise. Le paiement se fait en ligne par carte via Stripe.',
   },
   {
     q: 'Peut-on débuter le MMA sans aucune expérience ?',
@@ -15,8 +15,8 @@ const questions = [
     r: 'Les séances se tiennent au 15 boulevard Gouvion-Saint-Cyr, Paris 17ème, à proximité immédiate de la station Porte Maillot (Ligne 1) et Porte de Champerret (Ligne 3 et T3b).',
   },
   {
-    q: 'Quelle est la différence entre MMA, Muay Thai et Grappling ?',
-    r: 'Le MMA (Mixed Martial Arts) combine toutes les disciplines — frappe debout et combat au sol. Le Muay Thai est la boxe thaïlandaise, art des 8 membres (poings, pieds, genoux, coudes). Le Grappling regroupe le combat au sol, les projections et les soumissions — proche du Jiu-Jitsu Brésilien. Vous pouvez vous spécialiser dans l\'une ou combiner plusieurs disciplines.',
+    q: 'Quelle est la différence entre MMA, Muay Thai et BJJ ?',
+    r: 'Le MMA (Mixed Martial Arts) combine toutes les disciplines — frappe debout et combat au sol. Le Muay Thai est la boxe thaïlandaise, art des 8 membres (poings, pieds, genoux, coudes). Le BJJ (Jiu-Jitsu Brésilien) est la discipline du combat au sol : projections, contrôles de position et soumissions, pratiqué en Gi (kimono) et NoGi. Vous pouvez vous spécialiser dans l\'une ou combiner plusieurs disciplines.',
   },
   {
     q: 'Y a-t-il un engagement ou un abonnement minimum ?',
@@ -32,7 +32,7 @@ const questions = [
   },
   {
     q: 'Proposez-vous des cours en ligne ou uniquement en présentiel ?',
-    r: 'Les séances de coaching se font en présentiel à Paris 17ème. Pour progresser à distance, je propose des programmes PDF d\'entraînement complets — MMA, Muay Thai, Grappling et Musculation — en téléchargement immédiat à partir de 29€.',
+    r: 'Les séances de coaching se font en présentiel à Paris 17ème. Pour progresser à distance, je propose des programmes PDF d\'entraînement complets — MMA, Muay Thai, BJJ et Musculation — en téléchargement immédiat à partir de 29€.',
   },
 ];
 

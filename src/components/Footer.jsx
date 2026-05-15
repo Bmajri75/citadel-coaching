@@ -14,7 +14,7 @@ function Footer() {
               <div className="text-3xl">🥊</div>
               <div>
                 <h3 className="text-xl font-bold text-white">CITADEL COACHING</h3>
-                <p className="text-xs text-accent">MMA • Muay Thai • Grappling</p>
+                <p className="text-xs text-accent">MMA • Muay Thai • BJJ</p>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">

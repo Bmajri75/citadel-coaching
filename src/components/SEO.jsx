@@ -7,7 +7,7 @@ const DEFAULT_IMAGE = `${SITE_URL}/photos/hero.jpg`;
 function SEO({ title, description, canonical, image, type = 'website', structuredData }) {
   const fullTitle = title
     ? `${title} | Citadel Coaching — Coach MMA Paris`
-    : 'Coach MMA Paris 17 — Bechir Majri | Muay Thai, Grappling | Citadel Coaching';
+    : 'Coach MMA Paris 17 — Bechir Majri | Muay Thai, BJJ | Citadel Coaching';
 
   const fullDescription = description ||
     'Coach MMA Paris 17ème certifié BPJEPS Sports de Contact, Purple Belt Gracie Barra, ancien professionnel MMA. Coaching privé 90€/h, 7j/7 Porte Maillot.';

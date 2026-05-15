@@ -39,15 +39,15 @@ export const disciplines = [
   },
   {
     id: 3,
-    nom: 'Grappling',
-    titre: 'Jiu-Jitsu Brésilien',
-    description: 'Combat au sol et soumissions. Maîtrisez les projections, contrôles et soumissions avec la méthode Gracie Barra — la référence mondiale.',
+    nom: 'BJJ',
+    titre: 'Jiu-Jitsu Brésilien — Gi & NoGi',
+    description: 'Combat au sol et soumissions en Gi et NoGi. Maîtrisez les projections, contrôles et soumissions avec la méthode Gracie Barra — la référence mondiale.',
     descriptionComplete: [
-      'Le Grappling regroupe toutes les techniques de combat au sol sans frappes : projections, contrôles de position, étranglements et clés articulaires. Dispensé dans la tradition Gracie Barra par un Purple Belt certifié, le grappling Paris 17 en coaching privé vous donne des bases solides et durables, sans les lacunes qu\'un cours collectif laisse souvent s\'installer.',
-      'En Jiu-Jitsu Brésilien Paris privé, vous apprenez les 4 positions clés — garde, demi-garde, monture et contrôle du dos — ainsi que les soumissions fondamentales : rear naked choke, triangle et armbar. Les statistiques MMA professionnelles sont claires : environ 70% des combats se terminent au sol. Maîtriser le grappling Paris 17 est donc indispensable pour tout pratiquant de sport de combat sérieux.',
-      'Le grappling est également pratiqué en No-Gi (sans kimono), format privilégié en MMA. Que vous prépariez une compétition de BJJ, que vous souhaitiez compléter votre MMA ou simplement découvrir l\'art subtil du combat au sol, ce coaching Jiu-Jitsu Brésilien Paris privé basé sur la méthode Gracie Barra — la référence mondiale — vous fournira des outils techniques immédiatement applicables.',
+      'Le Jiu-Jitsu Brésilien (BJJ) regroupe toutes les techniques de combat au sol sans frappes : projections, contrôles de position, étranglements et clés articulaires. Pratiqué en Gi (kimono) et en NoGi (sans kimono), le cours BJJ Paris 17 en coaching privé est dispensé dans la tradition Gracie Barra par un Purple Belt certifié. Vous progressez sans les lacunes qu\'un cours collectif laisse souvent s\'installer.',
+      'En Jiu-Jitsu Brésilien Paris privé, vous apprenez les 4 positions clés — garde, demi-garde, monture et contrôle du dos — ainsi que les soumissions fondamentales : rear naked choke, triangle et armbar. Les statistiques MMA sont claires : environ 70% des combats professionnels se terminent au sol. Maîtriser le BJJ Paris 17 est indispensable pour tout pratiquant de sport de combat sérieux.',
+      'Le format NoGi (short + rashguard, sans kimono) est particulièrement adapté au MMA et au submission wrestling. Que vous prépariez une compétition de BJJ Gi ou NoGi, que vous souhaitiez compléter votre MMA, ou simplement découvrir l\'art subtil du combat au sol, ce coaching Jiu-Jitsu Brésilien Paris 17 basé sur la méthode Gracie Barra vous fournira des outils techniques immédiatement applicables.',
     ],
-    emoji: '🤼',
+    emoji: '🥋',
   },
 ];
 
@@ -81,7 +81,7 @@ export const coach = {
   specialites: [
     'MMA — Combat complet',
     'Muay Thai — Boxe Thaïlandaise',
-    'Grappling & Jiu-Jitsu Brésilien',
+    'BJJ — Jiu-Jitsu Brésilien (Gi & NoGi)',
     'Préparation physique combat',
   ],
   tel: '+33 7 53 61 14 77',
