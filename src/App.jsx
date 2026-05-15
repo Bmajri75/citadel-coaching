@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Reservation from "./components/Reservation";
 import RetourPaiement from "./components/RetourPaiement";
+import Succes from "./components/Succes";
 
 function HomePage() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/confirmation" element={<RetourPaiement />} />
+        <Route path="/succes" element={<Succes />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,28 +1,33 @@
 // src/components/StripeCheckout.jsx
-import { useCallback, useState } from 'react';
-import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js';
-import { stripePromise } from '../utils/stripe';
+import { useState } from 'react';
 
 function StripeCheckout({ formData, onBack }) {
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchClientSecret = useCallback(async () => {
+  const handlePay = async () => {
+    setLoading(true);
     setError(null);
-    const res = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
 
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
       const data = await res.json();
-      setError(data.error || 'Erreur lors de la création du paiement.');
-      throw new Error(data.error);
-    }
 
-    const { clientSecret } = await res.json();
-    return clientSecret;
-  }, [formData]);
+      if (!res.ok) {
+        throw new Error(data.error || 'Impossible de créer la session de paiement.');
+      }
+
+      window.location.href = data.url;
+    } catch (err) {
+      setError(err.message);
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
@@ -30,8 +35,8 @@ function StripeCheckout({ formData, onBack }) {
 
       {/* Récapitulatif */}
       <div className="bg-primary/10 border border-primary/30 rounded-xl p-6 mb-6">
-        <h4 className="text-white font-bold mb-3">Récapitulatif :</h4>
-        <div className="space-y-1 text-gray-300 text-sm mb-4">
+        <h4 className="text-white font-bold mb-3">Récapitulatif de votre commande :</h4>
+        <div className="space-y-2 text-gray-300 text-sm mb-4">
           <p>🥋 <strong>Discipline :</strong> {formData.discipline}</p>
           <p>
             📅 <strong>Date :</strong>{' '}
@@ -41,12 +46,20 @@ function StripeCheckout({ formData, onBack }) {
           </p>
           <p>🕐 <strong>Heure :</strong> {formData.heure}</p>
           <p>👤 <strong>Nom :</strong> {formData.nom}</p>
+          <p>📧 <strong>Email :</strong> {formData.email}</p>
           <p>📍 <strong>Lieu :</strong> 15 bd Gouvion-Saint-Cyr, 75017 Paris</p>
         </div>
         <div className="border-t border-primary/30 pt-4 flex justify-between text-white text-xl font-bold">
-          <span>Total :</span>
+          <span>Total à payer :</span>
           <span>90,00 €</span>
         </div>
+      </div>
+
+      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mb-6">
+        <p className="text-green-400 text-sm">
+          <strong>🔒 Paiement sécurisé</strong> — Vous allez être redirigé vers la page
+          de paiement Stripe. Vos données bancaires sont protégées par chiffrement SSL.
+        </p>
       </div>
 
       {error && (
@@ -55,20 +68,34 @@ function StripeCheckout({ formData, onBack }) {
         </div>
       )}
 
-      {/* Checkout Stripe intégré */}
-      <div className="rounded-xl overflow-hidden mb-6">
-        <EmbeddedCheckoutProvider stripe={stripePromise} options={{ fetchClientSecret }}>
-          <EmbeddedCheckout />
-        </EmbeddedCheckoutProvider>
+      <div className="flex gap-4">
+        <button
+          type="button"
+          onClick={onBack}
+          disabled={loading}
+          className="px-6 py-3 bg-black/50 hover:bg-black text-white font-semibold rounded-lg border-2 border-primary/30 transition-all disabled:opacity-50"
+        >
+          ← Retour
+        </button>
+        <button
+          type="button"
+          onClick={handlePay}
+          disabled={loading}
+          className="flex-1 px-6 py-3 bg-primary hover:bg-red-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
+          {loading ? (
+            <>
+              <span className="animate-spin inline-block">⏳</span>
+              <span>Redirection en cours...</span>
+            </>
+          ) : (
+            <>
+              <span>🔒</span>
+              <span>Payer 90€ en ligne</span>
+            </>
+          )}
+        </button>
       </div>
-
-      <button
-        type="button"
-        onClick={onBack}
-        className="px-6 py-3 bg-black/50 hover:bg-black text-white font-semibold rounded-lg border-2 border-primary/30 transition-all"
-      >
-        ← Retour
-      </button>
 
       <div className="mt-6 text-center text-gray-400 text-xs">
         <p>🔒 Paiement sécurisé par Stripe • SSL/TLS</p>
