@@ -16,6 +16,9 @@ import Succes from './components/Succes';
 import Programmes from './components/Programmes';
 import ProgrammeDetail from './components/ProgrammeDetail';
 import SuccesProgramme from './components/SuccesProgramme';
+import Blog from './components/Blog';
+import BlogArticle from './components/BlogArticle';
+import Highlights from './components/Highlights';
 import SEO from './components/SEO';
 
 function HomePage() {
@@ -28,6 +31,7 @@ function HomePage() {
         <Disciplines />
         <APropos />
         <Tarif />
+        <Highlights />
         <Temoignages />
         <ProgrammesTeaser />
         <Reservation />
@@ -49,6 +53,8 @@ function App() {
         <Route path="/programmes" element={<Programmes />} />
         <Route path="/programmes/:id" element={<ProgrammeDetail />} />
         <Route path="/succes-programme" element={<SuccesProgramme />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogArticle />} />
       </Routes>
     </BrowserRouter>
   );

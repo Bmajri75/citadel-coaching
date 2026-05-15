@@ -41,6 +41,16 @@ function Header() {
             >
               📚 Programmes
             </Link>
+            <Link
+              to="/blog"
+              className={`transition-colors font-semibold ${
+                location.pathname.startsWith('/blog')
+                  ? 'text-primary'
+                  : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              ✍️ Blog
+            </Link>
             {navLink('#contact', 'Contact')}
             <a
               href="/#reservation"
@@ -52,6 +62,9 @@ function Header() {
 
           {/* Mobile */}
           <div className="md:hidden flex items-center gap-3">
+            <Link to="/blog" className="text-gray-300 font-semibold text-sm">
+              ✍️ Blog
+            </Link>
             <Link to="/programmes" className="text-accent font-semibold text-sm">
               📚 PDF
             </Link>
