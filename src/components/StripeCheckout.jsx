@@ -1,8 +1,8 @@
 // src/components/StripeCheckout.jsx
-import { useState } from "react";
-import { envoyerEmailConfirmation } from "../utils/emailjs";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import { sauvegarderReservation } from "../utils/firebase";
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { useState } from 'react';
+import { envoyerEmailConfirmation } from '../utils/emailjs';
+import { sauvegarderReservation } from '../utils/firebase';
 
 function StripeCheckout({ formData, onSuccess, onBack }) {
   const stripe = useStripe();
@@ -14,6 +14,7 @@ function StripeCheckout({ formData, onSuccess, onBack }) {
     e.preventDefault();
 
     if (!stripe || !elements) {
+      setError("Stripe n'a pas pu se charger. Veuillez rafraîchir la page.");
       return;
     }
 
@@ -21,51 +22,81 @@ function StripeCheckout({ formData, onSuccess, onBack }) {
     setError(null);
 
     try {
-      // Crée un Payment Intent (en production, ça se fait côté serveur)
-      // Pour le MVP, on simule juste le paiement
-
       const cardElement = elements.getElement(CardElement);
 
-      // Crée le paiement
-      const { error: stripeError, paymentMethod } =
-        await stripe.createPaymentMethod({
-          type: "card",
-          card: cardElement,
-          billing_details: {
-            name: formData.nom,
+      // Étape 1 : Créer le Payment Intent côté serveur
+      // NOTE: En production, cela doit être fait par votre backend pour la sécurité
+      const response = await fetch('/api/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: 7000, // 70€ en centimes
+          currency: 'eur',
+          metadata: {
+            nom: formData.nom,
             email: formData.email,
-            phone: formData.tel,
+            tel: formData.tel,
+            discipline: formData.discipline,
+            date: formData.date,
+            heure: formData.heure,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Impossible de créer le Payment Intent');
+      }
+
+      const { clientSecret } = await response.json();
+
+      // Étape 2 : Confirmer le paiement avec Stripe
+      const { error: confirmError, paymentIntent } =
+        await stripe.confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: cardElement,
+            billing_details: {
+              name: formData.nom,
+              email: formData.email,
+              phone: formData.tel,
+            },
           },
         });
 
-      if (stripeError) {
-        setError(stripeError.message);
+      if (confirmError) {
+        setError(confirmError.message);
         setLoading(false);
         return;
       }
 
-      // Paiement réussi !
-      console.log("Paiement réussi !", paymentMethod);
+      if (paymentIntent.status === 'succeeded') {
+        // Paiement réussi !
+        console.log('✅ Paiement réussi !', paymentIntent);
 
-      // Sauvegarde dans Firebase
-      await sauvegarderReservation({
-        ...formData,
-        paymentId: paymentMethod.id,
-        amount: 70,
-      });
+        // Sauvegarde dans Firebase
+        await sauvegarderReservation({
+          ...formData,
+          paymentId: paymentIntent.id,
+          amount: 70,
+          status: 'paid',
+          paymentDate: new Date().toISOString(),
+        });
 
-      // Envoie l'email de confirmation
-      await envoyerEmailConfirmation(formData);
+        // Envoie l'email de confirmation
+        await envoyerEmailConfirmation(formData);
 
-      // Callback de succès
-      onSuccess({
-        ...formData,
-        paymentId: paymentMethod.id,
-        amount: 70,
-      });
+        // Callback de succès
+        onSuccess({
+          ...formData,
+          paymentId: paymentIntent.id,
+          amount: 70,
+          status: 'paid',
+        });
+      } else {
+        setError(`Statut du paiement : ${paymentIntent.status}`);
+      }
     } catch (err) {
-      setError("Une erreur est survenue. Veuillez réessayer.");
-      console.error(err);
+      setError(err.message || 'Une erreur est survenue. Veuillez réessayer.');
+      console.error('Erreur paiement :', err);
     } finally {
       setLoading(false);
     }
@@ -85,12 +116,12 @@ function StripeCheckout({ formData, onSuccess, onBack }) {
             🥋 <strong>Discipline :</strong> {formData.discipline}
           </p>
           <p>
-            📅 <strong>Date :</strong>{" "}
-            {new Date(formData.date).toLocaleDateString("fr-FR", {
-              weekday: "long",
-              day: "numeric",
-              month: "long",
-              year: "numeric",
+            📅 <strong>Date :</strong>{' '}
+            {new Date(formData.date).toLocaleDateString('fr-FR', {
+              weekday: 'long',
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
             })}
           </p>
           <p>
@@ -118,14 +149,14 @@ function StripeCheckout({ formData, onSuccess, onBack }) {
             options={{
               style: {
                 base: {
-                  fontSize: "16px",
-                  color: "#ffffff",
-                  "::placeholder": {
-                    color: "#9CA3AF",
+                  fontSize: '16px',
+                  color: '#ffffff',
+                  '::placeholder': {
+                    color: '#9CA3AF',
                   },
                 },
                 invalid: {
-                  color: "#DC2626",
+                  color: '#DC2626',
                 },
               },
             }}
@@ -140,7 +171,7 @@ function StripeCheckout({ formData, onSuccess, onBack }) {
         )}
 
         {/* Info test - Affiché uniquement en mode test */}
-        {import.meta.env.VITE_STRIPE_PUBLIC_KEY?.startsWith("pk_test_") && (
+        {import.meta.env.VITE_STRIPE_PUBLIC_KEY?.startsWith('pk_test_') && (
           <div className="bg-accent/10 border border-accent/30 rounded-lg p-4 mb-6">
             <p className="text-accent text-sm mb-2">
               <strong>🧪 Mode Test :</strong> Utilisez ces cartes de test
@@ -155,7 +186,7 @@ function StripeCheckout({ formData, onSuccess, onBack }) {
         )}
 
         {/* Info production - Affiché uniquement en mode live */}
-        {import.meta.env.VITE_STRIPE_PUBLIC_KEY?.startsWith("pk_live_") && (
+        {import.meta.env.VITE_STRIPE_PUBLIC_KEY?.startsWith('pk_live_') && (
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mb-6">
             <p className="text-green-400 text-sm">
               <strong>🔒 Paiement sécurisé</strong> - Vos données bancaires sont

@@ -1,5 +1,5 @@
 // src/components/Footer.jsx
-import { coach } from "../data/creneaux";
+import { coach } from '../data/creneaux';
 
 function Footer() {
   return (
@@ -11,7 +11,9 @@ function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <div className="text-3xl">🥊</div>
               <div>
-                <h3 className="text-xl font-bold text-white">MB COACHING</h3>
+                <h3 className="text-xl font-bold text-white">
+                  CITADEL COACHING
+                </h3>
                 <p className="text-xs text-accent">
                   MMA • Muay Thai • Grappling
                 </p>
@@ -77,9 +79,9 @@ function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-primary/20 pt-8 text-center text-gray-400 text-sm">
-          <p>© 2025 MB Coaching - {coach.nom}. Tous droits réservés.</p>
+          <p>© 2025 Citadel Coaching - {coach.nom}. Tous droits réservés.</p>
           <p className="mt-2">
-            Développé par{" "}
+            Développé par{' '}
             <a
               href="https://portfolio-mbtech.vercel.app"
               target="_blank"
