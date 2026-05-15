@@ -10,6 +10,9 @@ import Footer from "./components/Footer";
 import Reservation from "./components/Reservation";
 import RetourPaiement from "./components/RetourPaiement";
 import Succes from "./components/Succes";
+import Programmes from "./components/Programmes";
+import ProgrammeDetail from "./components/ProgrammeDetail";
+import SuccesProgramme from "./components/SuccesProgramme";
 
 function HomePage() {
   return (
@@ -33,6 +36,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/confirmation" element={<RetourPaiement />} />
         <Route path="/succes" element={<Succes />} />
+        <Route path="/programmes" element={<Programmes />} />
+        <Route path="/programmes/:id" element={<ProgrammeDetail />} />
+        <Route path="/succes-programme" element={<SuccesProgramme />} />
       </Routes>
     </BrowserRouter>
   );
