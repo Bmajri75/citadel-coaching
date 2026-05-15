@@ -52,7 +52,11 @@ function Disciplines() {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-1">{discipline.nom}</h3>
                 <p className="text-accent font-semibold text-sm mb-4">{discipline.titre}</p>
-                <p className="text-gray-300 leading-relaxed mb-6">{discipline.description}</p>
+                <div className="text-gray-300 leading-relaxed mb-6 space-y-3 text-sm">
+                  {(discipline.descriptionComplete || [discipline.description]).map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
 
                 <div className="bg-primary/10 border border-primary/30 rounded-lg p-3 text-center">
                   <p className="text-sm text-accent font-semibold">✅ Inclus dans le tarif unique</p>

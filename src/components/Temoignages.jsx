@@ -47,7 +47,8 @@ function Temoignages() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '38',
+      reviewCount: String(avis.length),
+      bestRating: '5',
     },
     review: avis.map((a) => ({
       '@type': 'Review',
@@ -73,7 +74,7 @@ function Temoignages() {
           <div className="flex items-center justify-center gap-3 mb-2">
             <span className="text-accent text-2xl">★★★★★</span>
             <span className="text-white font-bold text-xl">5.0 / 5</span>
-            <span className="text-gray-400">— 38 avis vérifiés</span>
+            <span className="text-gray-400">— Avis de nos élèves</span>
           </div>
           <p className="text-gray-400 text-lg">Paris 17ème • Porte Maillot</p>
         </div>

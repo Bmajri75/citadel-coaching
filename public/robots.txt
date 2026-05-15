@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://citadel-coaching.vercel.app/sitemap.xml
+Sitemap: https://mb-coaching.vercel.app/sitemap.xml

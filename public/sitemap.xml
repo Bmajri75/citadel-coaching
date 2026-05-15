@@ -1,50 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://citadel-coaching.vercel.app/</loc>
-    <lastmod>2025-05-15</lastmod>
+    <loc>https://mb-coaching.vercel.app/</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://citadel-coaching.vercel.app/programmes</loc>
-    <lastmod>2025-05-15</lastmod>
+    <loc>https://mb-coaching.vercel.app/programmes</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://citadel-coaching.vercel.app/programmes/mma-debutant</loc>
-    <lastmod>2025-05-15</lastmod>
+    <loc>https://mb-coaching.vercel.app/blog</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mb-coaching.vercel.app/blog/debuter-mma-guide-complet</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://citadel-coaching.vercel.app/programmes/muay-thai-debutant</loc>
-    <lastmod>2025-05-15</lastmod>
+    <loc>https://mb-coaching.vercel.app/blog/muay-thai-vs-boxe-anglaise</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://citadel-coaching.vercel.app/programmes/grappling-debutant</loc>
-    <lastmod>2025-05-15</lastmod>
+    <loc>https://mb-coaching.vercel.app/blog/grappling-combat-sol-debutant</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://citadel-coaching.vercel.app/programmes/musculation-debutant</loc>
-    <lastmod>2025-05-15</lastmod>
+    <loc>https://mb-coaching.vercel.app/blog/coaching-prive-mma-paris-pourquoi</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mb-coaching.vercel.app/programmes/mma-debutant</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mb-coaching.vercel.app/programmes/muay-thai-debutant</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mb-coaching.vercel.app/programmes/grappling-debutant</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mb-coaching.vercel.app/programmes/musculation-debutant</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://citadel-coaching.vercel.app/programmes/musculation-sport-combat</loc>
-    <lastmod>2025-05-15</lastmod>
+    <loc>https://mb-coaching.vercel.app/programmes/musculation-sport-combat</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://citadel-coaching.vercel.app/programmes/programme-minceur</loc>
-    <lastmod>2025-05-15</lastmod>
+    <loc>https://mb-coaching.vercel.app/programmes/programme-minceur</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -1,7 +1,7 @@
 // src/components/SEO.jsx
 import { Helmet } from 'react-helmet-async';
 
-const SITE_URL = 'https://citadel-coaching.vercel.app';
+const SITE_URL = 'https://mb-coaching.vercel.app';
 const DEFAULT_IMAGE = `${SITE_URL}/photos/hero.jpg`;
 
 function SEO({ title, description, canonical, image, type = 'website', structuredData }) {
@@ -27,6 +27,7 @@ function SEO({ title, description, canonical, image, type = 'website', structure
       <meta property="og:type" content={type} />
       <meta property="og:image" content={fullImage} />
 
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={fullDescription} />
       <meta name="twitter:image" content={fullImage} />

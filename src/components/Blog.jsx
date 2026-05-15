@@ -29,7 +29,7 @@ function Blog() {
     <div className="min-h-screen bg-secondary">
       <SEO
         title="Blog MMA Paris — Conseils, Guides & Actualités Sports de Combat"
-        description="Conseils techniques, guides pour débutants et actualités sports de combat par Bechir Majri, coach MMA Paris 17. MMA, Muay Thai, Grappling — tout ce qu'il faut savoir."
+        description="Conseils techniques, guides pour débutants et actualités sports de combat par Bechir Majri, coach certifié BPJEPS, professionnel MMA à Paris 17ème. MMA, Muay Thai, Grappling — tout ce qu'il faut savoir pour progresser."
         canonical="/blog"
         structuredData={schema}
       />

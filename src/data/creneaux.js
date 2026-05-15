@@ -17,24 +17,36 @@ export const disciplines = [
     id: 1,
     nom: 'MMA',
     titre: 'Mixed Martial Arts',
-    description:
-      'Combat complet alliant pieds-poings et grappling. Développez votre explosivité, votre technique de combat global et votre condition physique.',
+    description: 'Combat complet alliant pieds-poings et grappling. Développez votre explosivité, votre technique de combat global et votre condition physique.',
+    descriptionComplete: [
+      'Le MMA (Mixed Martial Arts) est la discipline de combat la plus complète qui soit, alliant frappe debout, clinch et combat au sol dans un seul et même art. Le coaching privé MMA Paris 17 s\'adresse à tous les niveaux — du grand débutant cherchant à découvrir la discipline, jusqu\'au compétiteur souhaitant affiner sa stratégie de combat.',
+      'Lors de chaque séance de coaching privé MMA à Paris, vous travaillez les fondamentaux dans le bon ordre : garde et déplacements, jab-cross, coups de pied et genoux, entrées en lutte et transitions debout-sol. Chaque erreur est corrigée immédiatement, avant qu\'elle ne devienne un réflexe ancré. C\'est l\'avantage décisif du coaching individuel sur les cours collectifs.',
+      'Débuter le MMA à Paris sans expérience est non seulement possible, c\'est même recommandé. En 8 à 12 semaines de séances régulières, les progrès sont visibles : explosivité, coordination, gestion de l\'espace et confiance en soi évoluent rapidement. Le coaching MMA Paris 17 est disponible 7j/7, de 08h à 10h et de 14h à 17h, à Porte Maillot.',
+    ],
     emoji: '🥊',
   },
   {
     id: 2,
     nom: 'Muay Thai',
     titre: 'Boxe Thaïlandaise',
-    description:
-      "L'art des 8 membres. Travaillez vos coups de poing, de pied, genoux et coudes dans un travail technique et cardio de haute intensité.",
+    description: "L'art des 8 membres. Travaillez vos coups de poing, de pied, genoux et coudes dans un travail technique et cardio de haute intensité.",
+    descriptionComplete: [
+      'Le Muay Thai, ou boxe thaïlandaise, est l\'art des 8 membres : poings, coudes, genoux et tibias. Discipline de référence pour les combattants MMA du monde entier, elle développe une frappe puissante, précise et coordonnée, tout en forgeant un cardio et une résistance physique hors du commun.',
+      'Les cours Muay Thai Paris 17 en format individuel vous permettent de progresser deux à trois fois plus vite qu\'en cours collectif. Chaque séance de boxe thaïlandaise Paris individuel est structurée : travail technique sur sac, pattes d\'ours, enchaînements poing-pied-genou, travail de clinch et défense. Votre garde, votre mobilité de hanches et vos réflexes évoluent séance après séance.',
+      'Une heure de cours Muay Thai Paris 17 brûle entre 700 et 900 kcal selon votre niveau d\'engagement — l\'une des disciplines les plus efficaces pour la perte de poids et la remise en forme. Idéal également pour la self-défense, le Muay Thai s\'adapte à tous les profils, du débutant complet à l\'athlète confirmé cherchant à perfectionner sa technique de frappe.',
+    ],
     emoji: '🇹🇭',
   },
   {
     id: 3,
     nom: 'Grappling',
     titre: 'Jiu-Jitsu Brésilien',
-    description:
-      'Combat au sol et soumissions. Maîtrisez les projections, contrôles et soumissions avec la méthode Gracie Barra — la référence mondiale.',
+    description: 'Combat au sol et soumissions. Maîtrisez les projections, contrôles et soumissions avec la méthode Gracie Barra — la référence mondiale.',
+    descriptionComplete: [
+      'Le Grappling regroupe toutes les techniques de combat au sol sans frappes : projections, contrôles de position, étranglements et clés articulaires. Dispensé dans la tradition Gracie Barra par un Purple Belt certifié, le grappling Paris 17 en coaching privé vous donne des bases solides et durables, sans les lacunes qu\'un cours collectif laisse souvent s\'installer.',
+      'En Jiu-Jitsu Brésilien Paris privé, vous apprenez les 4 positions clés — garde, demi-garde, monture et contrôle du dos — ainsi que les soumissions fondamentales : rear naked choke, triangle et armbar. Les statistiques MMA professionnelles sont claires : environ 70% des combats se terminent au sol. Maîtriser le grappling Paris 17 est donc indispensable pour tout pratiquant de sport de combat sérieux.',
+      'Le grappling est également pratiqué en No-Gi (sans kimono), format privilégié en MMA. Que vous prépariez une compétition de BJJ, que vous souhaitiez compléter votre MMA ou simplement découvrir l\'art subtil du combat au sol, ce coaching Jiu-Jitsu Brésilien Paris privé basé sur la méthode Gracie Barra — la référence mondiale — vous fournira des outils techniques immédiatement applicables.',
+    ],
     emoji: '🤼',
   },
 ];
