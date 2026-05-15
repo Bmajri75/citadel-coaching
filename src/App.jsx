@@ -1,4 +1,5 @@
 // src/App.jsx
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Disciplines from "./components/Disciplines";
@@ -7,8 +8,9 @@ import APropos from "./components/APropos";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Reservation from "./components/Reservation";
+import RetourPaiement from "./components/RetourPaiement";
 
-function App() {
+function HomePage() {
   return (
     <div className="min-h-screen bg-secondary">
       <Header />
@@ -20,6 +22,17 @@ function App() {
       <Contact />
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/confirmation" element={<RetourPaiement />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

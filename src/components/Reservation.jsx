@@ -35,11 +35,6 @@ function Reservation() {
     setEtape(4);
   };
 
-  const resetForm = () => {
-    setEtape(1);
-    setFormData({ discipline: '', date: '', heure: '', nom: '', email: '', tel: '', message: '' });
-  };
-
   return (
     <section
       id="reservation"
@@ -271,7 +266,7 @@ function Reservation() {
               </div>
             )}
 
-            {/* ÉTAPE 4 : Paiement via Payment Link */}
+            {/* ÉTAPE 4 : Paiement Stripe Embedded */}
             {etape === 4 && (
               <StripeCheckout
                 formData={formData}
@@ -281,11 +276,9 @@ function Reservation() {
 
           </div>
 
-          {etape < 4 && (
-            <div className="mt-6 text-center text-gray-400 text-sm">
-              <p>🔒 Paiement sécurisé par Stripe • Vos données sont protégées</p>
-            </div>
-          )}
+          <div className="mt-6 text-center text-gray-400 text-sm">
+            <p>🔒 Paiement sécurisé par Stripe • Vos données sont protégées</p>
+          </div>
         </div>
       </div>
     </section>

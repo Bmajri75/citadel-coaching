@@ -19,7 +19,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Sauvegarde d'une réservation (appelable après paiement Stripe webhook si besoin)
 export const sauvegarderReservation = async (reservationData) => {
   try {
     const docRef = await addDoc(collection(db, 'reservations'), {

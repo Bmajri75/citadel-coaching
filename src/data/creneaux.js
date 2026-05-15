@@ -1,6 +1,5 @@
 // src/data/creneaux.js
 
-// Créneaux disponibles tous les jours : 08:00 / 09:00 / 14:00 / 15:00 / 16:00
 const creneauxJournaliers = ['08:00', '09:00', '14:00', '15:00', '16:00'];
 
 export const creneaux = {
