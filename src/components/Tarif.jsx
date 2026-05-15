@@ -1,10 +1,11 @@
 // src/components/Tarif.jsx
-import { tarif } from "../data/creneaux";
+import { tarif } from '../data/creneaux';
 
 function Tarif() {
   return (
     <section id="tarifs" className="py-20 bg-black">
       <div className="container mx-auto px-6">
+
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -15,30 +16,25 @@ function Tarif() {
           </p>
         </div>
 
-        {/* Carte tarif centrale */}
+        {/* Carte tarif */}
         <div className="max-w-2xl mx-auto">
           <div className="relative bg-gradient-to-br from-secondary via-primary/20 to-secondary rounded-3xl border-2 border-primary p-8 md:p-12 shadow-2xl shadow-primary/20">
-            {/* Badge "Populaire" */}
+
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <span className="bg-accent text-secondary font-bold px-6 py-2 rounded-full text-sm shadow-lg">
                 ⭐ OFFRE UNIQUE
               </span>
             </div>
 
-            {/* Contenu */}
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-white mb-2">
-                {tarif.nom}
-              </h3>
+              <h3 className="text-3xl font-bold text-white mb-2">{tarif.nom}</h3>
               <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent my-6">
                 {tarif.prix}€
               </div>
-              <p className="text-gray-300 text-xl">
-                {tarif.duree} de coaching privé
-              </p>
+              <p className="text-gray-300 text-xl">{tarif.duree} de coaching privé</p>
             </div>
 
-            {/* Ce qui est inclus */}
+            {/* Inclus */}
             <div className="space-y-4 mb-8">
               {tarif.inclus.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -48,19 +44,22 @@ function Tarif() {
               ))}
             </div>
 
-            {/* Infos lieu */}
+            {/* Lieu */}
             <div className="border-t border-primary/30 pt-6 space-y-3">
-              <div className="flex items-center gap-3 text-gray-300">
+              <div className="flex items-start gap-3 text-gray-300">
                 <span className="text-2xl">📍</span>
                 <span>{tarif.lieu}</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-300">
+              <div className="flex items-start gap-3 text-gray-300">
                 <span className="text-2xl">🚇</span>
                 <span>{tarif.metro}</span>
               </div>
+              <div className="flex items-start gap-3 text-gray-300">
+                <span className="text-2xl">⏰</span>
+                <span>{tarif.horaires}</span>
+              </div>
             </div>
 
-            {/* CTA */}
             <div className="mt-8">
               <a
                 href="#reservation"
@@ -69,36 +68,28 @@ function Tarif() {
                 Réserver maintenant
               </a>
               <p className="text-gray-400 text-sm text-center mt-4">
-                🔒 Paiement sécurisé en ligne
+                🔒 Paiement sécurisé en ligne par Stripe
               </p>
             </div>
           </div>
         </div>
 
-        {/* Garanties */}
+        {/* Avantages */}
         <div className="grid md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto">
           <div className="bg-secondary/30 border border-primary/20 rounded-xl p-6 text-center">
             <div className="text-4xl mb-3">💳</div>
-            <h4 className="text-white font-bold mb-2">Paiement flexible</h4>
-            <p className="text-gray-400 text-sm">
-              CB, Carte ou Bitcoin acceptés
-            </p>
+            <h4 className="text-white font-bold mb-2">Paiement en ligne</h4>
+            <p className="text-gray-400 text-sm">Carte bancaire, paiement sécurisé Stripe</p>
           </div>
           <div className="bg-secondary/30 border border-primary/20 rounded-xl p-6 text-center">
             <div className="text-4xl mb-3">📅</div>
-            <h4 className="text-white font-bold mb-2">Horaires flexibles</h4>
-            <p className="text-gray-400 text-sm">
-              Du lundi au Dimanche, selon vos dispos
-            </p>
+            <h4 className="text-white font-bold mb-2">7j/7</h4>
+            <p className="text-gray-400 text-sm">Disponible tous les jours, matin et après-midi</p>
           </div>
           <div className="bg-secondary/30 border border-primary/20 rounded-xl p-6 text-center">
             <div className="text-4xl mb-3">🎯</div>
-            <h4 className="text-white font-bold mb-2">
-              Reservez votre premier cours
-            </h4>
-            <p className="text-gray-400 text-sm">
-              3 minutes pour remplir le formulaire
-            </p>
+            <h4 className="text-white font-bold mb-2">3 minutes pour réserver</h4>
+            <p className="text-gray-400 text-sm">Formulaire simple, confirmation immédiate</p>
           </div>
         </div>
       </div>

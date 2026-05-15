@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Disciplines from "./components/Disciplines";
-import Tarif from "./components/Tarif";
 import APropos from "./components/APropos";
+import Tarif from "./components/Tarif";
+import ProgrammesTeaser from "./components/ProgrammesTeaser";
+import Reservation from "./components/Reservation";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Reservation from "./components/Reservation";
 import RetourPaiement from "./components/RetourPaiement";
 import Succes from "./components/Succes";
 import Programmes from "./components/Programmes";
@@ -20,8 +21,9 @@ function HomePage() {
       <Header />
       <Hero />
       <Disciplines />
-      <Tarif />
       <APropos />
+      <Tarif />
+      <ProgrammesTeaser />
       <Reservation />
       <Contact />
       <Footer />

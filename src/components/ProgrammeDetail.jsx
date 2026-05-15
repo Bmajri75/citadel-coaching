@@ -137,15 +137,6 @@ function ProgrammeDetail() {
           </div>
         </div>
 
-        {/* Garantie */}
-        <div className="text-center bg-accent/10 border border-accent/30 rounded-2xl p-8">
-          <div className="text-4xl mb-3">🛡️</div>
-          <h3 className="text-xl font-bold text-white mb-2">Garantie satisfait ou remboursé — 7 jours</h3>
-          <p className="text-gray-400 text-sm max-w-md mx-auto">
-            Si le programme ne vous convient pas, contactez-nous dans les 7 jours pour un remboursement complet, sans question.
-          </p>
-        </div>
-
         {/* Formulaire d'achat */}
         <div id="achat" className="bg-secondary/80 border border-primary/30 rounded-2xl p-8 max-w-lg mx-auto">
           <h2 className="text-2xl font-bold text-white mb-2 text-center">

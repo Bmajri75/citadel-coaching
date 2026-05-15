@@ -18,7 +18,7 @@ export const disciplines = [
     nom: 'MMA',
     titre: 'Mixed Martial Arts',
     description:
-      "Combat complet alliant pieds-poings et grappling. Développez votre explosivité et votre technique de combat global.",
+      'Combat complet alliant pieds-poings et grappling. Développez votre explosivité, votre technique de combat global et votre condition physique.',
     emoji: '🥊',
   },
   {
@@ -26,7 +26,7 @@ export const disciplines = [
     nom: 'Muay Thai',
     titre: 'Boxe Thaïlandaise',
     description:
-      "L'art des 8 membres. Travaillez vos coups de poing, coups de pied, genoux et coudes. Cardio intense garanti.",
+      "L'art des 8 membres. Travaillez vos coups de poing, de pied, genoux et coudes dans un travail technique et cardio de haute intensité.",
     emoji: '🇹🇭',
   },
   {
@@ -34,7 +34,7 @@ export const disciplines = [
     nom: 'Grappling',
     titre: 'Jiu-Jitsu Brésilien',
     description:
-      "Combat au sol et soumissions. Maîtrisez les projections, contrôles et étranglements. Technique pure.",
+      'Combat au sol et soumissions. Maîtrisez les projections, contrôles et soumissions avec la méthode Gracie Barra — la référence mondiale.',
     emoji: '🤼',
   },
 ];
@@ -47,25 +47,31 @@ export const tarif = {
     'Programme personnalisé à vos objectifs',
     'Coaching technique individuel',
     'Correction posture et gestes',
-    'Tous niveaux (débutant à competiteur)',
-    'Feedback après séance',
-    'Disponible 7j/7 pour toutes questions',
+    'Tous niveaux — du débutant au compétiteur',
+    'Feedback détaillé après chaque séance',
+    'Disponible 7j/7 pour toutes vos questions',
   ],
   lieu: '15 bd Gouvion-Saint-Cyr, 75017 Paris',
-  metro: 'Porte Maillot (Ligne 1), Porte de Champerret (Ligne 3) T3b',
+  metro: 'Porte Maillot (Ligne 1) • Porte de Champerret (Ligne 3 / T3b)',
+  horaires: 'Tous les jours : 08h-10h et 14h-17h',
 };
 
 export const coach = {
   nom: 'Bechir Majri',
-  titre: 'Coach sportif diplômé',
+  titre: 'Coach sportif diplômé BPJEPS • Purple Belt Gracie Barra',
   diplomes: [
-    'BPJEPS',
-    'BF2 (FMMAF)',
+    'BPJEPS Activités de la Forme',
+    'BF2 FMMAF',
     'Purple Belt Gracie Barra',
     'Ancien combattant pro de MMA',
   ],
-  bio: `Passionné de sports de combat depuis plus de 20 ans et coach d'athlètes professionnels, je mets mon expérience de combattant et mes compétences de coach diplômé BPJEPS au service de votre progression.\n\nQue vous soyez débutant ou confirmé, mon approche personnalisée vous permettra d'atteindre vos objectifs : perte de poids, gain de confiance, perfectionnement technique.`,
-  specialites: ['MMA', 'Muay Thai', 'Grappling'],
+  bio: `Passionné de sports de combat depuis plus de 20 ans, j'ai forgé mon expérience comme combattant professionnel de MMA avant de me consacrer entièrement au coaching. Diplômé BPJEPS et Purple Belt Gracie Barra, je coache aujourd'hui des athlètes de tous niveaux — du grand débutant au compétiteur.\n\nMon approche est simple : des bases solides, une technique irréprochable, et une progression adaptée à chaque personne. Que votre objectif soit la forme, la confiance en vous ou la compétition, je construis un programme sur mesure pour vous.`,
+  specialites: [
+    'MMA — Combat complet',
+    'Muay Thai — Boxe Thaïlandaise',
+    'Grappling & Jiu-Jitsu Brésilien',
+    'Préparation physique combat',
+  ],
   tel: '+33 7 53 61 14 77',
   email: 'bmajri@gmail.com',
 };
