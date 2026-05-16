@@ -1,5 +1,6 @@
 // src/App.jsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useLanguageDetect } from './hooks/useLanguage';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Disciplines from './components/Disciplines';
@@ -44,6 +45,7 @@ function HomePage() {
 }
 
 function App() {
+  useLanguageDetect();
   return (
     <BrowserRouter>
       <Routes>

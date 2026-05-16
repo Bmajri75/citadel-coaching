@@ -1,32 +1,16 @@
 // src/components/FAQ.jsx
 import { useState } from 'react';
-
-const questions = [
-  {
-    q: 'Quel est le tarif ?',
-    r: '90€ / heure, toutes disciplines — MMA, Muay Thai ou BJJ. Un seul tarif, paiement sécurisé en ligne par Stripe.',
-  },
-  {
-    q: 'Peut-on débuter sans expérience ?',
-    r: 'Oui. La majorité de mes élèves arrivent sans aucune base. On reprend depuis zéro, à votre rythme.',
-  },
-  {
-    q: 'Où se situent les cours ?',
-    r: '15 bd Gouvion-Saint-Cyr, Paris 17ème — Porte Maillot (Ligne 1) ou Porte de Champerret (Ligne 3 / T3b).',
-  },
-  {
-    q: 'Y a-t-il un engagement ?',
-    r: 'Non. Chaque séance est indépendante. Vous réservez quand vous voulez, sans abonnement.',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 function FAQ() {
+  const { t } = useTranslation();
   const [ouvert, setOuvert] = useState(null);
+  const items = t('faq.items', { returnObjects: true });
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: questions.map((q) => ({
+    mainEntity: items.map((q) => ({
       '@type': 'Question',
       name: q.q,
       acceptedAnswer: { '@type': 'Answer', text: q.r },
@@ -43,16 +27,14 @@ function FAQ() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
 
-          {/* Header */}
           <div className="text-center mb-8 md:mb-14">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
-              Questions <span className="text-primary">fréquentes</span>
+              {t('faq.title')} <span className="text-primary">{t('faq.title_highlight')}</span>
             </h2>
           </div>
 
-          {/* Accordéon */}
           <div className="space-y-3">
-            {questions.map((item, i) => (
+            {items.map((item, i) => (
               <div
                 key={i}
                 className="bg-secondary/60 border border-primary/20 rounded-xl overflow-hidden hover:border-primary/40 transition-all"
@@ -75,13 +57,12 @@ function FAQ() {
             ))}
           </div>
 
-          {/* CTA */}
           <div className="mt-8 text-center">
             <a
               href="tel:+33753611477"
               className="inline-block bg-secondary border border-primary/40 hover:border-primary text-white font-semibold px-8 py-4 rounded-lg transition-all"
             >
-              📞 +33 7 53 61 14 77
+              {t('faq.phone_cta')}
             </a>
           </div>
         </div>

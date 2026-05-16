@@ -1,58 +1,50 @@
 // src/components/Contact.jsx
+import { useTranslation } from 'react-i18next';
 import { coach, tarif } from '../data/creneaux';
 
 function Contact() {
+  const { t } = useTranslation();
+
   return (
-    <section id="contact" className="py-20 bg-secondary">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-12 md:py-20 bg-secondary">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
 
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Prêt à <span className="text-primary">Commencer ?</span>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              {t('contact.title')} <span className="text-primary">{t('contact.title_highlight')}</span>
             </h2>
-            <p className="text-gray-400 text-lg">
-              Contactez-moi directement ou réservez en ligne en 3 minutes
-            </p>
+            <p className="text-gray-400 text-lg">{t('contact.subtitle')}</p>
           </div>
 
-          {/* Infos de contact */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="space-y-4">
               <div className="bg-black/50 border border-primary/20 rounded-xl p-6">
-                <h3 className="text-white font-bold mb-3">📍 Adresse</h3>
+                <h3 className="text-white font-bold mb-3">{t('contact.address_title')}</h3>
                 <p className="text-gray-300">{tarif.lieu}</p>
                 <p className="text-accent text-sm mt-1">{tarif.metro}</p>
               </div>
 
               <div className="bg-black/50 border border-primary/20 rounded-xl p-6">
-                <h3 className="text-white font-bold mb-3">📞 Téléphone</h3>
-                <a
-                  href={`tel:${coach.tel}`}
-                  className="text-gray-300 hover:text-primary transition-colors text-lg font-semibold"
-                >
+                <h3 className="text-white font-bold mb-3">{t('contact.phone_title')}</h3>
+                <a href={`tel:${coach.tel}`} className="text-gray-300 hover:text-primary transition-colors text-lg font-semibold">
                   {coach.tel}
                 </a>
               </div>
 
               <div className="bg-black/50 border border-primary/20 rounded-xl p-6">
-                <h3 className="text-white font-bold mb-3">📧 Email</h3>
-                <a
-                  href={`mailto:${coach.email}`}
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
+                <h3 className="text-white font-bold mb-3">{t('contact.email_title')}</h3>
+                <a href={`mailto:${coach.email}`} className="text-gray-300 hover:text-primary transition-colors">
                   {coach.email}
                 </a>
               </div>
 
               <div className="bg-black/50 border border-primary/20 rounded-xl p-6">
-                <h3 className="text-white font-bold mb-3">⏰ Disponibilités</h3>
-                <p className="text-gray-300">{tarif.horaires}</p>
+                <h3 className="text-white font-bold mb-3">{t('contact.hours_title')}</h3>
+                <p className="text-gray-300">{t('contact.hours_value')}</p>
               </div>
             </div>
 
-            {/* Carte Google Maps */}
             <div className="bg-black/50 border border-primary/20 rounded-xl overflow-hidden">
               <iframe
                 title="Citadel Coaching — Paris 17ème"
@@ -67,19 +59,14 @@ function Contact() {
             </div>
           </div>
 
-          {/* CTA final */}
           <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 md:p-12 text-center">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Réservez votre première séance
-            </h3>
-            <p className="text-white/90 mb-6">
-              1h pour travailler et définir vos objectifs avec Bechir
-            </p>
+            <h3 className="text-3xl font-bold text-white mb-4">{t('contact.cta_title')}</h3>
+            <p className="text-white/90 mb-6">{t('contact.cta_desc')}</p>
             <a
               href="#reservation"
               className="inline-block bg-secondary hover:bg-black text-white font-bold px-8 py-4 rounded-lg transition-all transform hover:scale-105"
             >
-              Réserver maintenant — 90€
+              {t('contact.cta_btn')}
             </a>
           </div>
         </div>

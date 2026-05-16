@@ -1,78 +1,69 @@
 // src/components/Hero.jsx
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Hero() {
+  const { t } = useTranslation();
+
   return (
-    <section
-      id="accueil"
-      className="min-h-screen flex items-center relative overflow-hidden"
-    >
-      {/* Background */}
+    <section id="accueil" className="min-h-screen flex items-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-secondary via-primary/20 to-black -z-10"></div>
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-secondary via-secondary/80 to-transparent -z-10"></div>
 
       <div className="container mx-auto px-4 sm:px-6 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
-          {/* Colonne gauche — Texte */}
+          {/* Colonne gauche */}
           <div>
-            {/* Badge */}
             <div className="inline-block mb-6 px-4 py-2 bg-primary/20 border border-primary/40 rounded-full">
-              <p className="text-accent text-sm font-semibold">
-                🥋 Coach diplômé BPJEPS • Purple Belt Gracie Barra • Ancien combattant pro MMA
-              </p>
+              <p className="text-accent text-sm font-semibold">🥋 {t('hero.badge')}</p>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
               BECHIR MAJRI
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                COACHING PRIVÉ
+                {t('hero.coaching')}
               </span>
             </h1>
 
-            <p className="text-xl text-gray-300 mb-3">MMA • Muay Thai • BJJ</p>
-            <p className="text-gray-400 mb-8 leading-relaxed">
-              Coaching personnalisé, tous niveaux, 7j/7 à Paris 17ème.
-            </p>
+            <p className="text-xl text-gray-300 mb-3">{t('hero.disciplines')}</p>
+            <p className="text-gray-400 mb-8 leading-relaxed">{t('hero.description')}</p>
 
-            {/* Prix */}
             <div className="inline-block mb-8 px-6 py-3 bg-secondary/80 border border-primary/30 rounded-xl">
-              <p className="text-accent text-sm font-semibold mb-1">Séance privée</p>
+              <p className="text-accent text-sm font-semibold mb-1">{t('hero.session_label')}</p>
               <p className="text-3xl font-bold text-white">
-                90€ <span className="text-base text-gray-400">/ heure</span>
+                90€ <span className="text-base text-gray-400">{t('hero.per_hour')}</span>
               </p>
             </div>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a
                 href="#reservation"
                 className="bg-primary hover:bg-red-700 text-white font-bold px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-primary/50 text-center"
               >
-                Réserver une séance
+                {t('hero.book_btn')}
               </a>
               <Link
                 to="/programmes"
                 className="bg-secondary/80 hover:bg-secondary text-white font-semibold px-8 py-4 rounded-lg border border-primary/30 hover:border-primary transition-all text-center"
               >
-                📚 Programmes PDF
+                {t('hero.programmes_btn')}
               </Link>
             </div>
 
-            {/* Infos */}
             <div className="flex flex-wrap gap-5 text-gray-400 text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-primary">📍</span>
-                <span>Paris 17ème • Porte Maillot</span>
+                <span>{t('hero.location')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-primary">⏰</span>
-                <span>7j/7 • 08h-10h et 14h-17h</span>
+                <span>{t('hero.hours')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-primary">✅</span>
-                <span>Tous niveaux acceptés</span>
+                <span>{t('hero.all_levels')}</span>
               </div>
             </div>
           </div>
@@ -86,18 +77,15 @@ function Hero() {
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: '620px', objectPosition: 'top center' }}
               />
-              {/* Overlay dégradé bas */}
               <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-secondary to-transparent"></div>
             </div>
-
             <div className="absolute top-4 right-4 bg-black/70 border border-primary/40 text-white font-semibold px-4 py-2 rounded-lg text-sm backdrop-blur-sm">
-              🥊 Combattant pro MMA
+              {t('hero.pro_badge')}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#disciplines" className="text-white/40 hover:text-white transition-colors">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
