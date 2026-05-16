@@ -3,12 +3,12 @@ import { tarif } from '../data/creneaux';
 
 function Tarif() {
   return (
-    <section id="tarifs" className="py-20 bg-black">
-      <div className="container mx-auto px-6">
+    <section id="tarifs" className="py-12 md:py-20 bg-black">
+      <div className="container mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Tarif <span className="text-primary">Simple & Transparent</span>
           </h2>
           <p className="text-gray-400 text-lg">
@@ -75,7 +75,7 @@ function Tarif() {
         </div>
 
         {/* Avantages */}
-        <div className="grid md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-16 max-w-4xl mx-auto">
           <div className="bg-secondary/30 border border-primary/20 rounded-xl p-6 text-center">
             <div className="text-4xl mb-3">💳</div>
             <h4 className="text-white font-bold mb-2">Paiement en ligne</h4>

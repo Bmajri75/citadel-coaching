@@ -11,8 +11,8 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-secondary via-primary/20 to-black -z-10"></div>
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-secondary via-secondary/80 to-transparent -z-10"></div>
 
-      <div className="container mx-auto px-6 py-28">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 py-16 md:py-24">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
           {/* Colonne gauche — Texte */}
           <div>
@@ -23,7 +23,7 @@ function Hero() {
               </p>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
               BECHIR MAJRI
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
@@ -33,7 +33,7 @@ function Hero() {
 
             <p className="text-xl text-gray-300 mb-3">MMA • Muay Thai • BJJ</p>
             <p className="text-gray-400 mb-8 leading-relaxed">
-              20 ans d'expérience au service de votre progression. Coaching personnalisé, tous niveaux, 7j/7 à Paris 17ème.
+              Coaching personnalisé, tous niveaux, 7j/7 à Paris 17ème.
             </p>
 
             {/* Prix */}
@@ -90,10 +90,6 @@ function Hero() {
               <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-secondary to-transparent"></div>
             </div>
 
-            {/* Badge flottant */}
-            <div className="absolute -bottom-4 -left-4 bg-primary text-white font-bold px-5 py-3 rounded-xl shadow-xl">
-              <p className="text-sm">20 ans d'expérience</p>
-            </div>
             <div className="absolute top-4 right-4 bg-black/70 border border-primary/40 text-white font-semibold px-4 py-2 rounded-lg text-sm backdrop-blur-sm">
               🥊 Combattant pro MMA
             </div>

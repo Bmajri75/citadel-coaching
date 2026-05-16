@@ -5,11 +5,11 @@ function APropos() {
   return (
     <section
       id="apropos"
-      className="py-20 bg-gradient-to-b from-secondary to-black"
+      className="py-12 md:py-20 bg-gradient-to-b from-secondary to-black"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
             {/* Colonne gauche — Photo réelle */}
             <div className="relative">
@@ -30,7 +30,7 @@ function APropos() {
 
             {/* Colonne droite — Contenu */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 Votre <span className="text-primary">Coach</span>
               </h2>
 
