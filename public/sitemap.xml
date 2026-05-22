@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://citadel-coaching.fr/</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/hero-entree.jpg</image:loc>
+      <image:title>Bechir Majri — Coach MMA Paris, entrée en compétition</image:title>
+      <image:caption>Bechir Majri, coach MMA certifié BPJEPS, ancien combattant professionnel MMA à Paris</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/coach-entree-bw.jpg</image:loc>
+      <image:title>Bechir Majri coach MMA Paris en noir et blanc</image:title>
+      <image:caption>Bechir Majri entouré de son équipe avant l'entrée en compétition MMA</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/champions-ufc.jpg</image:loc>
+      <image:title>Bechir Majri avec Chael Sonnen, Dan Henderson et Daniel Woirin</image:title>
+      <image:caption>Bechir Majri aux côtés de champions UFC — Chael Sonnen, Dan Henderson et Daniel Woirin — après une session de sparring</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/programmes</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/programmes/mma-les-bases</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/fight-mma.jpg</image:loc>
+      <image:title>Programme MMA les bases — Coaching privé MMA Paris</image:title>
+      <image:caption>Programme PDF MMA les bases — Citadel Coaching Paris</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/programmes/muay-thai-les-bases</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/fight-kick.jpg</image:loc>
+      <image:title>Programme Muay Thai les bases — Coach Muay Thai Paris</image:title>
+      <image:caption>Programme PDF Muay Thai les bases — Citadel Coaching Paris</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/programmes/bjj-les-bases</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/coach-gi.jpg</image:loc>
+      <image:title>Programme BJJ les bases — Coach BJJ Paris Gi et NoGi</image:title>
+      <image:caption>Programme PDF BJJ les bases Gi et NoGi — Citadel Coaching Paris</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/programmes/musculation-les-bases</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/programmes/body-combat</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/blog</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/blog/coaching-prive-mma-paris-pourquoi</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/coaching-avant-combat.jpg</image:loc>
+      <image:title>Bechir Majri coach MMA avant le combat — Paris</image:title>
+      <image:caption>Bechir Majri parle à son élève Abdul à l'oreille avant son combat de MMA</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/blog/debuter-mma-paris-guide</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/hero-entree.jpg</image:loc>
+      <image:title>Débuter le MMA à Paris avec Bechir Majri coach certifié</image:title>
+      <image:caption>Entrée de Bechir Majri en compétition MMA professionnelle — Paris</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://citadel-coaching.fr/blog/cours-muay-thai-paris-prive</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://citadel-coaching.fr/photos/fight-kick.jpg</image:loc>
+      <image:title>Cours de Muay Thai Paris — coaching privé Bechir Majri</image:title>
+      <image:caption>Séance de Muay Thai privée avec Bechir Majri coach certifié BPJEPS Paris</image:caption>
+    </image:image>
+  </url>
+</urlset>

@@ -1,0 +1,13 @@
+# Bloque l'accès direct aux fichiers sensibles
+<FilesMatch "^(config|load-config|stripe-helper)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Router les appels sans extension vers les fichiers PHP
+RewriteEngine On
+RewriteRule ^create-checkout-session$   create-checkout-session.php   [L]
+RewriteRule ^create-program-checkout$   create-program-checkout.php   [L]
+RewriteRule ^session-status$            session-status.php            [L]
+RewriteRule ^get-program-download$      get-program-download.php      [L]
+RewriteRule ^available-slots$           get-available-slots.php       [L]

@@ -1,0 +1,69 @@
+/* Tailwind injecte ici ses styles de base, ses composants et ses utilitaires */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Styles globaux ─────────────────────────────────────────────────────── */
+
+/* Fond sombre et police par défaut sur tout le site */
+body {
+  @apply bg-zinc-950 text-white font-body antialiased;
+}
+
+/* Tous les titres utilisent la police Oswald (style martial arts) */
+h1, h2, h3, h4 {
+  @apply font-heading;
+}
+
+/* ── Classes réutilisables (components Tailwind) ────────────────────────── */
+
+@layer components {
+  /* Bouton principal doré */
+  .btn-primary {
+    @apply inline-block bg-amber-500 hover:bg-amber-400 text-black font-heading font-semibold
+           uppercase tracking-wider px-6 py-3 transition-colors duration-200;
+  }
+
+  /* Bouton contour doré */
+  .btn-outline {
+    @apply inline-block border border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-black
+           font-heading font-semibold uppercase tracking-wider px-6 py-3 transition-colors duration-200;
+  }
+
+  /* Conteneur centré avec padding horizontal */
+  .container-site {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Titre de section standard */
+  .section-title {
+    @apply text-3xl sm:text-4xl font-heading font-bold uppercase tracking-wide text-white;
+  }
+
+  /* Trait doré sous les titres de section */
+  .section-divider {
+    @apply block w-16 h-1 bg-amber-500 mt-3 mb-6;
+  }
+
+  /* Carte sombre */
+  .card {
+    @apply bg-zinc-900 border border-zinc-800;
+  }
+
+  /* Contenu HTML des articles de blog (titres, listes, paragraphes) */
+  .prose-article {
+    @apply text-zinc-300 leading-relaxed;
+  }
+  .prose-article h2 {
+    @apply font-heading font-bold text-xl uppercase tracking-wide text-white mt-8 mb-3;
+  }
+  .prose-article p {
+    @apply mb-4;
+  }
+  .prose-article ul {
+    @apply list-disc list-inside mb-4 space-y-1.5 text-zinc-300;
+  }
+  .prose-article strong {
+    @apply text-white font-semibold;
+  }
+}

@@ -1,0 +1,3 @@
+# Bloque tout accès web au dossier data/
+Order allow,deny
+Deny from all

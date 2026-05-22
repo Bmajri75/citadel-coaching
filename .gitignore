@@ -1,0 +1,29 @@
+# Dépendances
+node_modules/
+
+# Build
+dist/
+
+# SÉCURITÉ — ne jamais committer
+api/config.php
+.env
+.env.local
+.env.production
+
+# Données clients — RGPD
+data/creneau-reserves.json
+
+# Fichiers de déploiement internes
+*.zip
+DEPLOYMENT.md
+DEPLOYMENT_SUMMARY.md
+DEPLOY_CHECKLIST.txt
+DEPLOY_SECURE.md
+IMPLEMENTATION.md
+PROMPT_IA_DEPLOY.md
+SECURITY.md
+README_GRATUIT.md
+
+# Système
+.DS_Store
+Thumbs.db
