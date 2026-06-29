@@ -67,8 +67,8 @@ export default function BlogPost() {
     new Date(iso).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
 
   const ctaTexts = {
-    fr: { question: 'Envie de progresser avec un coach certifié ?', cta: 'Réserver une séance — 90€', retour: '← Retour au blog' },
-    en: { question: 'Want to progress with a certified coach?',      cta: 'Book a session — €90',    retour: '← Back to blog' },
+    fr: { question: 'Envie de progresser avec un coach certifié ?', cta: 'Réserver une séance — 70€', retour: '← Retour au blog' },
+    en: { question: 'Want to progress with a certified coach?',      cta: 'Book a session — €70',    retour: '← Back to blog' },
   }
   const cta = ctaTexts[lang]
 

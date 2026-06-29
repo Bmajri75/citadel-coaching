@@ -104,7 +104,7 @@ export default function Succes() {
               )}
               <div className="flex justify-between px-4 py-3">
                 <span className="text-zinc-500 text-sm">{tx.montant}</span>
-                <span className="text-amber-400 font-bold">90 €</span>
+                <span className="text-amber-400 font-bold">70 €</span>
               </div>
             </div>
 

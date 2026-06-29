@@ -16,13 +16,13 @@ const STATS_TEXTS = {
     { valeur: '+10 ans', label: "d'expérience" },
     { valeur: '38',      label: 'avis 5 étoiles' },
     { valeur: '7j/7',    label: 'disponibilité' },
-    { valeur: '90€',     label: "la séance d'1h" },
+    { valeur: '70€',     label: "la séance d'1h" },
   ],
   en: [
     { valeur: '10+ yrs', label: 'of experience' },
     { valeur: '38',      label: '5-star reviews' },
     { valeur: '7d/wk',   label: 'availability' },
-    { valeur: '€90',     label: '1h session' },
+    { valeur: '€70',     label: '1h session' },
   ],
 }
 
@@ -56,7 +56,7 @@ export default function Home() {
 
   useSEO({
     title:       lang === 'fr' ? 'Coach MMA Paris — Coaching Privé MMA · Muay Thai · BJJ | Bechir Majri' : 'MMA Coach Paris — Private MMA · Muay Thai · BJJ Coaching | Bechir Majri',
-    description: lang === 'fr' ? 'Coach MMA certifié BPJEPS, Purple Belt Gracie Barra, ancien combattant professionnel. Coaching privé MMA, Muay Thai, BJJ sur Paris et IDF — 90€/h, 7j/7.' : 'BPJEPS certified MMA coach, Gracie Barra Purple Belt, former professional fighter. Private MMA, Muay Thai, BJJ coaching in Paris and Île-de-France — €90/h, 7 days/week.',
+    description: lang === 'fr' ? 'Coach MMA certifié BPJEPS, Purple Belt Gracie Barra, ancien combattant professionnel. Coaching privé MMA, Muay Thai, BJJ sur Paris et IDF — 70€/h, 7j/7.' : 'BPJEPS certified MMA coach, Gracie Barra Purple Belt, former professional fighter. Private MMA, Muay Thai, BJJ coaching in Paris and Île-de-France — €70/h, 7 days/week.',
     canonical:   'https://citadel-coaching.fr/',
   })
 

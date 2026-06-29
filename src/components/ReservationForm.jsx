@@ -10,7 +10,7 @@ const TEXTS = {
   fr: {
     surtitre:    'Paiement sécurisé via Stripe',
     titre:       'Réserver une Séance',
-    sous:        '90€ / 1h · 7j/7 · Paris & IDF',
+    sous:        '70€ / 1h · 7j/7 · Paris & IDF',
     disciplines: ['MMA', 'Muay Thai', 'BJJ Gi', 'BJJ NoGi', 'Grappling', 'Préparation Combat', 'Stage', 'Remise en forme'],
     labels: {
       nom:        'Nom complet *',
@@ -26,14 +26,14 @@ const TEXTS = {
       emailPh:    'jean@exemple.fr',
       telPh:      '06 12 34 56 78',
     },
-    btnPayant: 'Payer 90€ et confirmer la séance',
+    btnPayant: 'Payer 70€ et confirmer la séance',
     btnCharge: 'Redirection vers le paiement…',
     securite:  'Paiement 100% sécurisé · Visa, Mastercard, Amex · Powered by Stripe',
   },
   en: {
     surtitre:    'Secure payment via Stripe',
     titre:       'Book a Session',
-    sous:        '€90 / 1h · 7 days/week · Paris & IDF',
+    sous:        '€70 / 1h · 7 days/week · Paris & IDF',
     disciplines: ['MMA', 'Muay Thai', 'BJJ Gi', 'BJJ NoGi', 'Grappling', 'Fight Preparation', 'Training Camp', 'Fitness'],
     labels: {
       nom:        'Full name *',
@@ -49,7 +49,7 @@ const TEXTS = {
       emailPh:    'john@example.com',
       telPh:      '+44 7123 456789',
     },
-    btnPayant: 'Pay €90 and confirm',
+    btnPayant: 'Pay €70 and confirm',
     btnCharge: 'Redirecting to payment…',
     securite:  '100% secure payment · Visa, Mastercard, Amex · Powered by Stripe',
   },

@@ -9,7 +9,7 @@ const TEXTS = {
     titre:    'Zones & Tarifs',
     zone:     'Paris & Île-de-France',
     lignes: [
-      { service: 'Séance privée',       tarif: '90€ / heure',          detail: 'Sur rendez-vous, 7j/7' },
+      { service: 'Séance privée',       tarif: '70€ / heure',          detail: 'Sur rendez-vous, 7j/7' },
       { service: 'Déplacement',         tarif: 'Prix selon la distance', detail: 'Je viens chez vous ou en salle' },
       { service: 'Stage',               tarif: 'Sur devis',              detail: 'Groupes, clubs, entreprises' },
       { service: 'Coaching international', tarif: 'Sur demande',         detail: 'Déplacements possibles à l\'étranger' },
@@ -22,7 +22,7 @@ const TEXTS = {
     titre:    'Zones & Pricing',
     zone:     'Paris & Île-de-France',
     lignes: [
-      { service: 'Private session',     tarif: '€90 / hour',             detail: 'By appointment, 7 days/week' },
+      { service: 'Private session',     tarif: '€70 / hour',             detail: 'By appointment, 7 days/week' },
       { service: 'Travel to you',       tarif: 'Distance-based pricing', detail: 'I come to your location or gym' },
       { service: 'Training camp',       tarif: 'Custom quote',           detail: 'Groups, clubs, corporate events' },
       { service: 'International coaching', tarif: 'On request',          detail: 'Available for international travel' },
