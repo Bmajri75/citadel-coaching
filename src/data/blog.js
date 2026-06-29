@@ -223,108 +223,66 @@ export const ARTICLES = [
     date:          '2026-06-29',
     image:         '/photos/fight-mma.jpg',
     contenu: `
-      <h2>Les arts martiaux : chacun convaincu de détenir la vérité</h2>
-      <p>Pendant des décennies, le monde des arts martiaux a fonctionné en silos. Le karatéka pensait que sa discipline était la plus efficace au combat. Le judoka jurait par ses projections. Le pratiquant de kung fu défendait ses formes ancestrales. Le lutteur affirmait qu'au sol, tout se décide. Et le Muay Thai, de son côté, revendiquait le titre d'art de combat debout le plus complet qui soit.</p>
-      <p>Chaque discipline avait ses codes, ses traditions, ses maîtres — et surtout, sa certitude. Le combat était perçu comme une science exacte que chaque style avait résolue à sa façon. On s'entraînait entre soi. On pensait entre soi. Les échanges entre disciplines étaient rares, parfois même mal vus.</p>
-      <p>C'était avant le MMA.</p>
+      <h2>Les arts martiaux traditionnels et leurs certitudes</h2>
+      <p>Pendant des décennies, chaque art martial vivait dans son propre monde. Le karatéka était convaincu que son style était le plus efficace au combat. Le judoka jurait par ses projections. Le pratiquant de kung fu défendait ses formes ancestrales. Le lutteur pensait qu'au sol tout se décidait. Et le Muay Thai se considérait comme le summum du combat debout.</p>
+      <p>Chaque discipline avait ses codes, ses traditions, ses maîtres et surtout sa propre certitude. Le combat était perçu comme une vérité que chaque style avait trouvée à sa façon. On s'entraînait entre soi, on ne regardait pas chez le voisin. Les échanges entre disciplines étaient rares, parfois même mal vus.</p>
+      <p>Tout ça c'était avant le MMA.</p>
 
-      <h2>Avant l'UFC : le Vale Tudo, le laboratoire oublié</h2>
-      <p>Avant même que l'UFC n'existe, une forme de combat sans règles appelée <strong>Vale Tudo</strong> — expression portugaise signifiant littéralement "tout est permis" — s'était développée au Brésil dès les années 1920-30. C'est là que la famille Gracie a commencé à défier publiquement les représentants de toutes les disciplines : boxeurs, judokas, lutteurs, capoeiristes. Ces défis, appelés <em>desafios</em>, avaient un seul but : prouver l'efficacité du Jiu-Jitsu Brésilien en combat réel. Le Vale Tudo est donc le véritable ancêtre du MMA moderne — l'UFC n'a fait que l'exporter au monde entier.</p>
+      <h2>Le Vale Tudo, l'ancêtre que personne ne mentionne</h2>
+      <p>Avant même que l'UFC n'existe, le Brésil avait déjà trouvé sa réponse. Depuis les années 1920-30, une forme de combat sans règles appelée <strong>Vale Tudo</strong>, ce qui veut dire "tout est permis" en portugais, s'y était développée. C'est là que la famille Gracie a commencé à défier publiquement des boxeurs, des judokas, des lutteurs, des pratiquants de capoeira. Leur seul but était de prouver que le Jiu-Jitsu Brésilien fonctionnait en combat réel. Ces défis existaient bien avant l'UFC. L'UFC n'a fait que les présenter au reste du monde.</p>
 
-      <h2>L'arrivée du MMA : quand les certitudes s'effondrent</h2>
-      <p>Lorsque les premières compétitions de MMA ont vu le jour — notamment l'UFC en 1993 — l'idée était simple : faire s'affronter les meilleurs représentants de chaque discipline pour trouver le style ultime. Un karatéka contre un judoka. Un boxeur contre un lutteur. Un pratiquant de kung fu contre un spécialiste de Muay Thai.</p>
-      <p>Le résultat a surpris tout le monde, y compris les experts. Et l'image la plus marquante de cette révolution s'appelle <strong>Royce Gracie</strong>. Ce Brésilien, relativement fluet comparé à ses adversaires, a remporté l'UFC 1, l'UFC 2 et l'UFC 4 en soumettant des combattants issus de toutes les disciplines — boxeurs, lutteurs, kickboxeurs — grâce au seul Jiu-Jitsu Brésilien. En quelques soirées, il a démontré au monde entier qu'un combattant au sol bien formé pouvait dominer n'importe quel frappeur, quelle que soit la taille ou la puissance de l'adversaire.</p>
-      <p>Mais aucun style n'a dominé l'autre de façon systématique sur la durée. Un lutteur a neutralisé un frappeur redoutable. Un combattant de Muay Thai a arrêté net un spécialiste du grappling. La conclusion s'est imposée d'elle-même : <strong>le combat n'est pas une science exacte.</strong> Personne n'avait tort. Personne n'avait entièrement raison non plus.</p>
+      <h2>L'arrivée de l'UFC et la chute des certitudes</h2>
+      <p>En 1993 l'UFC a organisé ses premières compétitions avec une idée simple : faire combattre les meilleurs représentants de chaque discipline pour trouver le style ultime. Un karatéka contre un judoka, un boxeur contre un lutteur, un pratiquant de kung fu contre un spécialiste de Muay Thai.</p>
+      <p>Le résultat a surpris tout le monde. L'image qui a tout changé s'appelle <strong>Royce Gracie</strong>. Ce Brésilien, loin d'être le plus imposant physiquement, a remporté l'UFC 1, l'UFC 2 et l'UFC 4 en soumettant des boxeurs, des lutteurs et des kickboxeurs grâce au seul Jiu-Jitsu Brésilien. Il a prouvé qu'un combattant bien formé au sol pouvait battre n'importe qui debout quelle que soit sa taille ou sa puissance.</p>
+      <p>Mais sur la durée aucun style n'a dominé les autres de façon systématique. Un lutteur a neutralisé un grand frappeur. Un combattant de Muay Thai a stoppé un spécialiste du grappling. Et le constat s'est imposé tout seul : <strong>le combat n'est pas une science exacte.</strong> Personne n'avait complètement tort et personne n'avait entièrement raison.</p>
 
-      <h2>Le MMA n'était pas un sport : c'était une question</h2>
-      <p>À ses débuts, le MMA n'était pas une discipline à part entière. C'était une expérience. Un laboratoire. Chaque combattant entrait dans la cage avec son bagage : un peu de karaté, de la boxe anglaise, du judo, de la lutte, du kickboxing ou du Muay Thai selon les origines de chacun.</p>
-      <p>Ce mélange brutal et sans règle a mis en lumière des réalités que personne ne voulait admettre :</p>
-      <ul>
-        <li>Un frappeur redoutable devient vulnérable dès qu'on l'amène au sol</li>
-        <li>Un lutteur dominant peut être neutralisé par quelqu'un qui maîtrise la défense au sol</li>
-        <li>La garde debout, le clinch, la transition sol-debout — aucune discipline traditionnelle ne les travaillait ensemble</li>
-        <li>La morphologie, le mental, le cardio spécifique — des paramètres que les arts martiaux classiques négligeaient souvent</li>
-      </ul>
+      <h2>Au départ le MMA n'était pas un sport</h2>
+      <p>A ses débuts le MMA n'était pas vraiment une discipline en soi. Chaque combattant arrivait avec ce qu'il connaissait : un peu de karaté, de la boxe, du judo, de la lutte, du kickboxing ou du Muay Thai selon d'où il venait. C'était un mélange brut et sans règle qui a mis en lumière des vérités que personne ne voulait admettre.</p>
+      <p>Un frappeur redoutable devenait vulnérable dès qu'on l'amenait au sol. Un lutteur dominant pouvait se faire soumettre par quelqu'un qui maîtrisait le jeu de sol. La garde debout, le clinch, les transitions sol-debout, aucune discipline traditionnelle ne travaillait tout ça ensemble. Et des paramètres comme la morphologie, le mental ou le cardio spécifique au combat étaient souvent complètement négligés dans les arts martiaux classiques.</p>
 
-      <h2>La naissance d'un style : quand les athlètes cherchent le mouvement parfait</h2>
-      <p>C'est là que quelque chose d'extraordinaire s'est produit. Face à ces confrontations, les athlètes n'ont pas abandonné leur discipline d'origine — ils l'ont enrichie. Les judokas ont appris à frapper. Les boxeurs ont appris à tomber. Les lutteurs ont appris le jeu de sol. Et les pratiquants de BJJ ont révolutionné la façon dont le monde entier perçoit le combat au sol.</p>
-      <p>Progressivement, un style propre au MMA a émergé. Non pas par décision d'un maître ou d'une fédération, mais par la somme de milliers de combats, d'erreurs, de corrections, de recherches. Chaque athlète a cherché :</p>
-      <ul>
-        <li>Le déplacement qui correspond à sa morphologie</li>
-        <li>La garde qui optimise à la fois la frappe et la défense au sol</li>
-        <li>Les enchaînements les plus efficaces pour sa façon de combattre</li>
-        <li>La transition idéale entre les phases debout et au sol</li>
-      </ul>
-      <p>Ce travail de précision, mené par des milliers de combattants sur plusieurs décennies, a donné naissance au MMA tel qu'on le connaît aujourd'hui : une discipline exigeante, technique, stratégique — et en perpétuelle évolution.</p>
+      <h2>Comment un vrai style MMA a fini par naître</h2>
+      <p>Face à toutes ces confrontations les athlètes n'ont pas abandonné leur discipline de base. Ils l'ont complétée. Les judokas ont appris à frapper. Les boxeurs ont appris à tomber et à se relever. Les lutteurs ont travaillé le jeu de sol. Les pratiquants de BJJ ont apporté une vision du combat au sol que personne n'avait vue venir.</p>
+      <p>Petit à petit un style propre au MMA a émergé. Pas grâce à un maître ou à une fédération mais par l'accumulation de milliers de combats, d'erreurs et de corrections. Chaque athlète a cherché le déplacement qui correspond à sa morphologie, la garde qui protège et permet de frapper en même temps, les enchaînements qui fonctionnent dans son style. Ce travail collectif mené sur plusieurs décennies a donné naissance au MMA qu'on voit aujourd'hui, une discipline de plus en plus technique, de plus en plus stratégique et qui continue d'évoluer.</p>
 
-      <h2>Ce que le MMA a offert aux arts martiaux traditionnels</h2>
-      <p>L'effet le plus profond du MMA n'est peut-être pas dans les cages, mais dans les salles d'entraînement. Les arts martiaux traditionnels ont été obligés de se remettre en question — et beaucoup en sont sortis grandis.</p>
-      <ul>
-        <li><strong>Le judo</strong> a intégré davantage de travail au sol et de transitions, notamment sous l'influence du BJJ</li>
-        <li><strong>Le karaté</strong> a vu naître des fédérations et tournois qui autorisent le contact complet, plus proches du MMA</li>
-        <li><strong>Le Muay Thai</strong> est devenu la référence mondiale du combat debout, reconnu et intégré par tous les programmes MMA sérieux</li>
-        <li><strong>Le sambo</strong> soviétique a retrouvé une visibilité internationale grâce à des combattants comme Fedor Emelianenko</li>
-        <li><strong>La lutte</strong> est désormais considérée comme la base la plus solide pour un combattant MMA complet</li>
-        <li><strong>Le BJJ</strong> s'est répandu dans le monde entier, porté par le succès de la famille Gracie dans les premières éditions de l'UFC</li>
-      </ul>
-      <p>Sans le MMA, plusieurs de ces disciplines seraient restées confidentielles en dehors de leur pays ou région d'origine.</p>
+      <h2>Ce que le MMA a apporté à chaque discipline</h2>
+      <p>L'effet le plus profond du MMA ne s'est pas passé dans les cages mais dans les salles d'entraînement. Le judo a intégré plus de travail au sol notamment sous l'influence du BJJ. Le karaté a vu naître des compétitions en contact complet beaucoup plus proches de la réalité du combat. Le Muay Thai est devenu la référence mondiale du combat debout et aucun programme MMA sérieux ne peut s'en passer. Le sambo soviétique a retrouvé une visibilité internationale grâce à des combattants comme Fedor Emelianenko. La lutte est aujourd'hui considérée comme la base la plus solide pour un combattant MMA complet. Et le BJJ s'est répandu dans le monde entier grâce aux succès de la famille Gracie dans les premières éditions de l'UFC.</p>
+      <p>Sans le MMA beaucoup de ces disciplines seraient restées dans l'ombre en dehors de leur pays d'origine.</p>
 
-      <h2>La beauté d'un sport qui n'a pas fini d'évoluer</h2>
-      <p>Ce qui rend le MMA unique, c'est qu'il n'est pas figé. Aujourd'hui encore, le débat est ouvert. Quelle garde est la plus efficace ? Vaut-il mieux être un frappeur qui sait lutter, ou un lutteur qui sait frapper ? Le jeu de jambes du boxeur est-il compatible avec les exigences du clinch ? Quelle soumission intégrer en priorité dans son arsenal ?</p>
-      <p>Personne n'a la réponse définitive. Et c'est précisément ce qui fait la richesse de ce sport. Chaque combattant, chaque coach, chaque style apporte sa pierre à l'édifice. Le MMA est en train de devenir, combat après combat, la synthèse vivante de tout ce que l'humanité a inventé pour se battre — et la discipline qui a eu l'humilité de l'admettre.</p>
-      <p>En tant que coach MMA certifié, ancien combattant professionnel et Purple Belt Gracie Barra, cette vision est au cœur de ma méthode. Je ne vous apprends pas "mon" style — je vous aide à construire le vôtre, en puisant dans toutes les disciplines qui ont fait le MMA ce qu'il est.</p>
+      <h2>Un sport qui n'a pas fini d'évoluer</h2>
+      <p>Ce qui rend le MMA unique c'est qu'il n'est pas figé. Aujourd'hui les débats sont toujours ouverts. Quelle garde est la plus efficace ? Vaut-il mieux être un frappeur qui sait lutter ou un lutteur qui sait frapper ? Est-ce que le jeu de jambes du boxeur est compatible avec les exigences du clinch ? Quelle soumission intégrer en priorité dans son arsenal ?</p>
+      <p>Personne n'a la réponse définitive et c'est exactement ce qui fait la richesse de ce sport. Chaque combattant, chaque coach, chaque style continue d'apporter quelque chose de nouveau. Le MMA est devenu combat après combat la synthèse de tout ce que les arts martiaux ont produit de meilleur et c'est la première discipline qui a eu l'honnêteté de le reconnaître.</p>
+      <p>En tant que coach MMA certifié, ancien combattant professionnel et Purple Belt Gracie Barra, c'est cette vision qui guide mon travail. Je n'enseigne pas mon style. J'aide chaque élève à construire le sien en piochant dans toutes les disciplines qui ont fait le MMA ce qu'il est aujourd'hui.</p>
     `,
     contenuEn: `
-      <h2>Martial arts: everyone convinced they held the truth</h2>
-      <p>For decades, the martial arts world operated in silos. The karateka believed their discipline was the most effective in a fight. The judoka swore by their throws. The kung fu practitioner defended their ancestral forms. The wrestler insisted everything was decided on the ground. And Muay Thai, for its part, claimed the title of the most complete stand-up combat art in existence.</p>
-      <p>Each discipline had its codes, its traditions, its masters — and above all, its certainty. Combat was seen as an exact science that each style had solved in its own way. Training happened within the group. Thinking happened within the group. Exchanges between disciplines were rare, sometimes even frowned upon.</p>
-      <p>That was before MMA.</p>
+      <h2>Traditional martial arts and their certainties</h2>
+      <p>For decades every martial art lived in its own world. The karateka was convinced their style was the most effective in a fight. The judoka swore by their throws. The kung fu practitioner defended their ancestral forms. The wrestler believed everything was decided on the ground. And Muay Thai considered itself the pinnacle of stand-up combat.</p>
+      <p>Each discipline had its codes, its traditions, its masters and above all its own certainty. Combat was seen as a truth that each style had found in its own way. You trained within your group, you did not look at what others were doing. Exchanges between disciplines were rare and sometimes even frowned upon.</p>
+      <p>All of that was before MMA.</p>
 
-      <h2>Before the UFC: Vale Tudo, the forgotten laboratory</h2>
-      <p>Before the UFC even existed, a form of no-rules combat called <strong>Vale Tudo</strong> — Portuguese for "anything goes" — had been developing in Brazil since the 1920s and 30s. This is where the Gracie family began publicly challenging representatives of every discipline: boxers, judokas, wrestlers, capoeira practitioners. These challenges, known as <em>desafios</em>, had one goal: to prove the effectiveness of Brazilian Jiu-Jitsu in real combat. Vale Tudo is therefore the true ancestor of modern MMA — the UFC simply exported it to the rest of the world.</p>
+      <h2>Vale Tudo, the ancestor nobody talks about</h2>
+      <p>Before the UFC even existed, Brazil already had its answer. Since the 1920s and 30s a form of no-rules combat called <strong>Vale Tudo</strong>, which means "anything goes" in Portuguese, had been developing there. That is where the Gracie family began publicly challenging boxers, judokas, wrestlers and capoeira practitioners. Their only goal was to prove that Brazilian Jiu-Jitsu worked in real combat. These challenges existed long before the UFC. The UFC simply brought them to the rest of the world.</p>
 
-      <h2>The arrival of MMA: when certainties collapse</h2>
-      <p>When the first MMA competitions emerged — most notably the UFC in 1993 — the idea was simple: pit the best representatives of each discipline against each other to find the ultimate style. A karateka versus a judoka. A boxer versus a wrestler. A kung fu practitioner versus a Muay Thai specialist.</p>
-      <p>The results surprised everyone, including the experts. And the most iconic image of this revolution has a name: <strong>Royce Gracie</strong>. This Brazilian, relatively slight compared to his opponents, won UFC 1, UFC 2, and UFC 4 by submitting fighters from every discipline — boxers, wrestlers, kickboxers — using Brazilian Jiu-Jitsu alone. In just a few evenings, he demonstrated to the entire world that a well-trained ground fighter could dominate anyone, regardless of size or power.</p>
-      <p>But no single style dominated systematically over the long run. A wrestler could neutralise a fearsome striker. A Muay Thai fighter could stop a grappling specialist cold. The conclusion was unavoidable: <strong>combat is not an exact science.</strong> Nobody was wrong. Nobody was entirely right either.</p>
+      <h2>The UFC arrives and the certainties fall apart</h2>
+      <p>In 1993 the UFC organised its first competitions with a simple idea: have the best representatives of each discipline fight each other to find the ultimate style. A karateka against a judoka, a boxer against a wrestler, a kung fu practitioner against a Muay Thai specialist.</p>
+      <p>The results surprised everyone. The image that changed everything has a name: <strong>Royce Gracie</strong>. This Brazilian, far from being the most physically imposing fighter, won UFC 1, UFC 2 and UFC 4 by submitting boxers, wrestlers and kickboxers using Brazilian Jiu-Jitsu alone. He proved that a well-trained ground fighter could beat anyone standing regardless of size or power.</p>
+      <p>But over time no single style dominated the others consistently. A wrestler neutralised a big striker. A Muay Thai fighter stopped a grappling specialist. And the conclusion became obvious on its own: <strong>combat is not an exact science.</strong> Nobody was completely wrong and nobody was entirely right.</p>
 
-      <h2>MMA wasn't a sport: it was a question</h2>
-      <p>In its early days, MMA wasn't a discipline in its own right. It was an experiment. A laboratory. Each fighter entered the cage with their own background: some karate, English boxing, judo, wrestling, kickboxing or Muay Thai depending on their origins.</p>
-      <p>This brutal, ruleless mix brought to light realities that nobody wanted to admit:</p>
-      <ul>
-        <li>A fearsome striker becomes vulnerable the moment they hit the ground</li>
-        <li>A dominant wrestler can be neutralised by someone who masters ground defence</li>
-        <li>The stand-up guard, the clinch, the stand-up/ground transition — no traditional discipline trained all of these together</li>
-        <li>Morphology, mental strength, fight-specific cardio — parameters that classical martial arts often overlooked</li>
-      </ul>
+      <h2>At the start MMA was not a sport</h2>
+      <p>In its early days MMA was not really a discipline in its own right. Every fighter came in with what they knew: some karate, boxing, judo, wrestling, kickboxing or Muay Thai depending on where they came from. It was a raw and ruleless mix that exposed truths nobody wanted to admit.</p>
+      <p>A fearsome striker became vulnerable the moment he hit the ground. A dominant wrestler could be submitted by someone who knew ground game. The stand-up guard, the clinch, the transitions between standing and ground, no traditional discipline trained all of this together. And things like body type, mental strength or fight-specific cardio were often completely ignored in classical martial arts.</p>
 
-      <h2>The birth of a style: when athletes search for the perfect movement</h2>
-      <p>This is where something extraordinary happened. Faced with these confrontations, athletes didn't abandon their original discipline — they enriched it. Judokas learned to strike. Boxers learned to fall. Wrestlers learned ground game. And BJJ practitioners revolutionised the way the entire world perceived ground fighting.</p>
-      <p>Gradually, a style unique to MMA emerged. Not by the decision of a master or a federation, but through the sum of thousands of fights, mistakes, corrections and research. Each athlete searched for:</p>
-      <ul>
-        <li>The footwork that matches their body type</li>
-        <li>The guard that optimises both striking and ground defence</li>
-        <li>The most effective combinations for their fighting style</li>
-        <li>The ideal transition between standing and ground phases</li>
-      </ul>
-      <p>This precision work, carried out by thousands of fighters over several decades, gave birth to MMA as we know it today: a demanding, technical, strategic discipline — and one in perpetual evolution.</p>
+      <h2>How a real MMA style eventually emerged</h2>
+      <p>Faced with all these confrontations athletes did not abandon their base discipline. They completed it. Judokas learned to strike. Boxers learned to fall and get back up. Wrestlers worked on ground game. BJJ practitioners brought a vision of ground fighting that nobody had seen coming.</p>
+      <p>Gradually a style unique to MMA emerged. Not because of a master or a federation but through the accumulation of thousands of fights, mistakes and corrections. Every athlete looked for the footwork that matched their body type, the guard that protects and allows striking at the same time, the combinations that work in their style. This collective work carried out over several decades gave birth to the MMA we see today, a discipline that keeps growing more technical, more strategic and more complete.</p>
 
-      <h2>What MMA gave back to traditional martial arts</h2>
-      <p>The deepest effect of MMA may not be in the cages, but in the training rooms. Traditional martial arts were forced to question themselves — and many emerged stronger for it.</p>
-      <ul>
-        <li><strong>Judo</strong> integrated more ground work and transitions, largely under the influence of BJJ</li>
-        <li><strong>Karate</strong> saw the birth of federations and tournaments allowing full contact, closer to MMA</li>
-        <li><strong>Muay Thai</strong> became the world reference for stand-up combat, recognised and integrated by all serious MMA programmes</li>
-        <li><strong>Soviet Sambo</strong> regained international visibility through fighters like Fedor Emelianenko</li>
-        <li><strong>Wrestling</strong> is now considered the most solid foundation for a complete MMA fighter</li>
-        <li><strong>BJJ</strong> spread worldwide, carried by the success of the Gracie family in the early UFC events</li>
-      </ul>
-      <p>Without MMA, several of these disciplines would have remained niche outside their country or region of origin.</p>
+      <h2>What MMA brought back to each discipline</h2>
+      <p>The deepest effect of MMA did not happen inside the cages but inside the training rooms. Judo integrated more ground work largely under the influence of BJJ. Karate saw the birth of full contact competitions much closer to the reality of fighting. Muay Thai became the world reference for stand-up combat and no serious MMA programme can do without it. Soviet Sambo regained international visibility through fighters like Fedor Emelianenko. Wrestling is now considered the most solid foundation for a complete MMA fighter. And BJJ spread worldwide carried by the success of the Gracie family in the early UFC events.</p>
+      <p>Without MMA many of these disciplines would have stayed in the shadows outside their country of origin.</p>
 
-      <h2>The beauty of a sport that hasn't finished evolving</h2>
-      <p>What makes MMA unique is that it isn't fixed. Today, the debate is still open. Which guard is most effective? Is it better to be a striker who can wrestle, or a wrestler who can strike? Is the boxer's footwork compatible with the demands of the clinch? Which submission should you prioritise in your arsenal?</p>
-      <p>Nobody has the definitive answer. And that is precisely what makes this sport so rich. Every fighter, every coach, every style adds their piece to the puzzle. Fight by fight, MMA is becoming the living synthesis of everything humanity has ever invented to fight — and the discipline that had the humility to admit it.</p>
-      <p>As a certified MMA coach, former professional fighter and Gracie Barra Purple Belt, this vision is at the heart of my method. I don't teach you "my" style — I help you build your own, drawing from all the disciplines that made MMA what it is.</p>
+      <h2>A sport that has not finished evolving</h2>
+      <p>What makes MMA unique is that it is not fixed. The debates are still open today. Which guard is most effective? Is it better to be a striker who can wrestle or a wrestler who can strike? Is the boxer's footwork compatible with the demands of the clinch? Which submission should you build your arsenal around first?</p>
+      <p>Nobody has the definitive answer and that is exactly what makes this sport so rich. Every fighter, every coach, every style keeps bringing something new. Fight by fight MMA has become the synthesis of everything martial arts have produced at their best and it is the first discipline that had the honesty to admit it.</p>
+      <p>As a certified MMA coach, former professional fighter and Gracie Barra Purple Belt, that vision guides everything I do. I do not teach my style. I help each person build their own by drawing from all the disciplines that made MMA what it is today.</p>
     `,
   },
 ]
