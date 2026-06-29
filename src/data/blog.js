@@ -228,10 +228,13 @@ export const ARTICLES = [
       <p>Chaque discipline avait ses codes, ses traditions, ses maîtres — et surtout, sa certitude. Le combat était perçu comme une science exacte que chaque style avait résolue à sa façon. On s'entraînait entre soi. On pensait entre soi. Les échanges entre disciplines étaient rares, parfois même mal vus.</p>
       <p>C'était avant le MMA.</p>
 
+      <h2>Avant l'UFC : le Vale Tudo, le laboratoire oublié</h2>
+      <p>Avant même que l'UFC n'existe, une forme de combat sans règles appelée <strong>Vale Tudo</strong> — expression portugaise signifiant littéralement "tout est permis" — s'était développée au Brésil dès les années 1920-30. C'est là que la famille Gracie a commencé à défier publiquement les représentants de toutes les disciplines : boxeurs, judokas, lutteurs, capoeiristes. Ces défis, appelés <em>desafios</em>, avaient un seul but : prouver l'efficacité du Jiu-Jitsu Brésilien en combat réel. Le Vale Tudo est donc le véritable ancêtre du MMA moderne — l'UFC n'a fait que l'exporter au monde entier.</p>
+
       <h2>L'arrivée du MMA : quand les certitudes s'effondrent</h2>
       <p>Lorsque les premières compétitions de MMA ont vu le jour — notamment l'UFC en 1993 — l'idée était simple : faire s'affronter les meilleurs représentants de chaque discipline pour trouver le style ultime. Un karatéka contre un judoka. Un boxeur contre un lutteur. Un pratiquant de kung fu contre un spécialiste de Muay Thai.</p>
-      <p>Le résultat a surpris tout le monde, y compris les experts. Aucun style n'a dominé l'autre de façon systématique. Un judoka sorti de nulle part a pu soumettre un boxeur solide. Un lutteur a neutralisé un frappeur redoutable. Un combattant de Muay Thai a arrêté net un spécialiste du grappling.</p>
-      <p>La conclusion s'est imposée d'elle-même : <strong>le combat n'est pas une science exacte.</strong> Personne n'avait tort. Personne n'avait entièrement raison non plus.</p>
+      <p>Le résultat a surpris tout le monde, y compris les experts. Et l'image la plus marquante de cette révolution s'appelle <strong>Royce Gracie</strong>. Ce Brésilien, relativement fluet comparé à ses adversaires, a remporté l'UFC 1, l'UFC 2 et l'UFC 4 en soumettant des combattants issus de toutes les disciplines — boxeurs, lutteurs, kickboxeurs — grâce au seul Jiu-Jitsu Brésilien. En quelques soirées, il a démontré au monde entier qu'un combattant au sol bien formé pouvait dominer n'importe quel frappeur, quelle que soit la taille ou la puissance de l'adversaire.</p>
+      <p>Mais aucun style n'a dominé l'autre de façon systématique sur la durée. Un lutteur a neutralisé un frappeur redoutable. Un combattant de Muay Thai a arrêté net un spécialiste du grappling. La conclusion s'est imposée d'elle-même : <strong>le combat n'est pas une science exacte.</strong> Personne n'avait tort. Personne n'avait entièrement raison non plus.</p>
 
       <h2>Le MMA n'était pas un sport : c'était une question</h2>
       <p>À ses débuts, le MMA n'était pas une discipline à part entière. C'était une expérience. Un laboratoire. Chaque combattant entrait dans la cage avec son bagage : un peu de karaté, de la boxe anglaise, du judo, de la lutte, du kickboxing ou du Muay Thai selon les origines de chacun.</p>
@@ -277,10 +280,13 @@ export const ARTICLES = [
       <p>Each discipline had its codes, its traditions, its masters — and above all, its certainty. Combat was seen as an exact science that each style had solved in its own way. Training happened within the group. Thinking happened within the group. Exchanges between disciplines were rare, sometimes even frowned upon.</p>
       <p>That was before MMA.</p>
 
+      <h2>Before the UFC: Vale Tudo, the forgotten laboratory</h2>
+      <p>Before the UFC even existed, a form of no-rules combat called <strong>Vale Tudo</strong> — Portuguese for "anything goes" — had been developing in Brazil since the 1920s and 30s. This is where the Gracie family began publicly challenging representatives of every discipline: boxers, judokas, wrestlers, capoeira practitioners. These challenges, known as <em>desafios</em>, had one goal: to prove the effectiveness of Brazilian Jiu-Jitsu in real combat. Vale Tudo is therefore the true ancestor of modern MMA — the UFC simply exported it to the rest of the world.</p>
+
       <h2>The arrival of MMA: when certainties collapse</h2>
       <p>When the first MMA competitions emerged — most notably the UFC in 1993 — the idea was simple: pit the best representatives of each discipline against each other to find the ultimate style. A karateka versus a judoka. A boxer versus a wrestler. A kung fu practitioner versus a Muay Thai specialist.</p>
-      <p>The results surprised everyone, including the experts. No single style dominated systematically. An unknown judoka could submit a solid boxer. A wrestler could neutralise a fearsome striker. A Muay Thai fighter could stop a grappling specialist cold.</p>
-      <p>The conclusion was unavoidable: <strong>combat is not an exact science.</strong> Nobody was wrong. Nobody was entirely right either.</p>
+      <p>The results surprised everyone, including the experts. And the most iconic image of this revolution has a name: <strong>Royce Gracie</strong>. This Brazilian, relatively slight compared to his opponents, won UFC 1, UFC 2, and UFC 4 by submitting fighters from every discipline — boxers, wrestlers, kickboxers — using Brazilian Jiu-Jitsu alone. In just a few evenings, he demonstrated to the entire world that a well-trained ground fighter could dominate anyone, regardless of size or power.</p>
+      <p>But no single style dominated systematically over the long run. A wrestler could neutralise a fearsome striker. A Muay Thai fighter could stop a grappling specialist cold. The conclusion was unavoidable: <strong>combat is not an exact science.</strong> Nobody was wrong. Nobody was entirely right either.</p>
 
       <h2>MMA wasn't a sport: it was a question</h2>
       <p>In its early days, MMA wasn't a discipline in its own right. It was an experiment. A laboratory. Each fighter entered the cage with their own background: some karate, English boxing, judo, wrestling, kickboxing or Muay Thai depending on their origins.</p>
