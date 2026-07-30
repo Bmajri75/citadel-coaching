@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { useLang } from '../context/LangContext'
 
 const TEXTS = {
-  fr: { accueil: 'Accueil', programmes: 'Programmes', blog: 'Blog', reserver: 'Réserver' },
-  en: { accueil: 'Home',    programmes: 'Programs',   blog: 'Blog', reserver: 'Book'     },
+  fr: { accueil: 'Accueil', coachs: 'Nos Coachs', programmes: 'Programmes', blog: 'Blog', demande: 'Demande de séance' },
+  en: { accueil: 'Home',    coachs: 'Our Coaches', programmes: 'Programs',   blog: 'Blog', demande: 'Request a session' },
 }
 
 export default function Navbar() {
@@ -24,6 +24,7 @@ export default function Navbar() {
 
   const liens = [
     { label: tx.accueil,    to: '/'           },
+    { label: tx.coachs,     to: '/coachs'     },
     { label: tx.programmes, to: '/programmes' },
     { label: tx.blog,       to: '/blog'       },
   ]
@@ -46,7 +47,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a href="/#reservation" onClick={e => { const el = document.getElementById('reservation'); if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }) } }} className="btn-primary text-sm py-2 px-4">{tx.reserver}</a>
+          <Link to="/demande-coaching" className="btn-primary text-sm py-2 px-4">{tx.demande}</Link>
           <button
             onClick={() => setLang(lang === 'fr' ? 'en' : 'fr')}
             className="text-xs font-heading uppercase tracking-widest border border-zinc-700 hover:border-amber-500 text-zinc-400 hover:text-amber-400 px-3 py-1.5 transition-colors"
@@ -82,7 +83,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a href="/#reservation" onClick={e => { const el = document.getElementById('reservation'); if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }) } }} className="btn-primary text-center mt-2">{tx.reserver}</a>
+          <Link to="/demande-coaching" className="btn-primary text-center mt-2">{tx.demande}</Link>
         </div>
       )}
     </nav>
