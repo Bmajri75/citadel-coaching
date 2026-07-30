@@ -21,18 +21,30 @@ export default function CoachDashboard() {
 
   useEffect(() => {
     if (!user) return
-    Promise.all([
-      supabase.from('coaches').select('prenom, nom, statut_verification, is_published').eq('user_id', user.id).single(),
-      supabase.from('request_assignments')
-        .select('*, coaching_requests(*)')
-        .eq('coach_id', user.id)
-        .order('assigned_at', { ascending: false })
-        .limit(5),
-    ]).then(([{ data: p }, { data: d }]) => {
+    async function charger() {
+      // 1. Récupérer le profil coach + son coaches.id (≠ auth.uid())
+      const { data: p } = await supabase
+        .from('coaches')
+        .select('id, prenom, nom, statut_verification, is_published')
+        .eq('user_id', user.id)
+        .single()
+
       setProfil(p)
+
+      if (!p) { setLoading(false); return }
+
+      // 2. Filtrer les assignments par coaches.id (pas auth.uid())
+      const { data: d } = await supabase
+        .from('request_assignments')
+        .select('*, coaching_requests(*)')
+        .eq('coach_id', p.id)
+        .order('assigned_at', { ascending: false })
+        .limit(5)
+
       setDemandes(d ?? [])
       setLoading(false)
-    })
+    }
+    charger()
   }, [user])
 
   return (
@@ -51,7 +63,7 @@ export default function CoachDashboard() {
           }`}>
             {profil.statut_verification === 'verifie' && profil.is_published
               ? 'Votre profil est vérifié et publié. Vous pouvez recevoir des demandes.'
-              : 'Votre profil est en attente de validation par l\'administrateur.'}
+              : "Votre profil est en attente de validation par l'administrateur."}
           </div>
         )}
 

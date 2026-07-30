@@ -61,7 +61,7 @@ export default function CoachProfile() {
     const urlWithCache = `${publicUrl}?t=${Date.now()}`
 
     const { error: updateError } = await supabase.from('coaches')
-      .update({ photo_url: urlWithCache, updated_at: new Date().toISOString() })
+      .update({ photo_url: urlWithCache })
       .eq('user_id', user.id)
 
     if (!updateError) setProfil(p => ({ ...p, photo_url: urlWithCache }))

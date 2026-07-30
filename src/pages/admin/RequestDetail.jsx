@@ -73,12 +73,25 @@ export default function RequestDetail() {
 
   const statutsSuivants = STATUTS_SUIVANTS[demande.statut] ?? []
 
+  async function supprimerDemande() {
+    if (!window.confirm(`Supprimer définitivement la demande de ${demande.prenom} ${demande.nom} ?`)) return
+    const { error } = await supabase.from('coaching_requests').delete().eq('id', id)
+    if (error) { alert('Erreur suppression : ' + error.message); return }
+    navigate('/admin/demandes')
+  }
+
   return (
     <AdminLayout>
       <div className="p-8 max-w-3xl">
-        <button onClick={() => navigate('/admin/demandes')} className="text-zinc-500 hover:text-white text-sm mb-6 flex items-center gap-1">
-          ← Retour
-        </button>
+        <div className="flex items-center justify-between mb-6">
+          <button onClick={() => navigate('/admin/demandes')} className="text-zinc-500 hover:text-white text-sm flex items-center gap-1">
+            ← Retour
+          </button>
+          <button onClick={supprimerDemande}
+            className="text-xs text-red-400 hover:text-red-300 border border-red-900 hover:border-red-700 px-3 py-1.5 rounded transition-colors">
+            Supprimer la demande
+          </button>
+        </div>
 
         <h1 className="text-2xl font-heading font-bold mb-2">{demande.prenom} {demande.nom}</h1>
         <p className="text-zinc-500 text-sm mb-8">Demande reçue le {new Date(demande.created_at).toLocaleDateString('fr-FR')}</p>
@@ -134,7 +147,7 @@ export default function RequestDetail() {
                 <h2 className="text-xs font-heading uppercase tracking-wide text-zinc-500 mb-3">Attribuer à un coach</h2>
                 <div className="flex flex-col gap-2">
                   {coachs.map(c => (
-                    <button key={c.id} onClick={() => attribuerCoach(c.user_id)} disabled={saving}
+                    <button key={c.id} onClick={() => attribuerCoach(c.id)} disabled={saving}
                       className="text-left text-sm px-3 py-2 bg-zinc-800 hover:bg-zinc-700 rounded transition-colors disabled:opacity-50">
                       {c.prenom} {c.nom}
                     </button>

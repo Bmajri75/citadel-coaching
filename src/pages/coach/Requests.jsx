@@ -11,11 +11,22 @@ export default function CoachRequests() {
 
   async function charger() {
     if (!user) return
+
+    // Récupérer coaches.id (≠ auth.uid())
+    const { data: coachProfile } = await supabase
+      .from('coaches')
+      .select('id')
+      .eq('user_id', user.id)
+      .single()
+
+    if (!coachProfile) { setLoading(false); return }
+
     const { data } = await supabase
       .from('request_assignments')
       .select('*, coaching_requests(*)')
-      .eq('coach_id', user.id)
+      .eq('coach_id', coachProfile.id)
       .order('assigned_at', { ascending: false })
+
     setDemandes(data ?? [])
     setLoading(false)
   }
@@ -26,8 +37,8 @@ export default function CoachRequests() {
     setSaving(assignmentId)
     await supabase.from('request_assignments').update({
       coach_response: response,
-      coach_note: note,
-      responded_at: new Date().toISOString(),
+      coach_note:     note,
+      responded_at:   new Date().toISOString(),
     }).eq('id', assignmentId)
 
     await supabase.from('coaching_requests').update({

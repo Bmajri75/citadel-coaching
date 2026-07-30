@@ -38,14 +38,27 @@ export default function CoachDetail() {
 
   if (!coach) return <AdminLayout><p className="p-8 text-zinc-500">Coach introuvable.</p></AdminLayout>
 
+  async function supprimerCoach() {
+    if (!window.confirm(`Supprimer définitivement le compte de ${coach.prenom ?? ''} ${coach.nom ?? ''} ?`)) return
+    const { error } = await supabase.from('coaches').delete().eq('id', id)
+    if (error) { alert('Erreur suppression : ' + error.message); return }
+    navigate('/admin/coachs')
+  }
+
   return (
     <AdminLayout>
       <div className="p-8 max-w-2xl">
-        <button onClick={() => navigate('/admin/coachs')} className="text-zinc-500 hover:text-white text-sm mb-6 flex items-center gap-1">
-          ← Retour
-        </button>
+        <div className="flex items-center justify-between mb-6">
+          <button onClick={() => navigate('/admin/coachs')} className="text-zinc-500 hover:text-white text-sm flex items-center gap-1">
+            ← Retour
+          </button>
+          <button onClick={supprimerCoach}
+            className="text-xs text-red-400 hover:text-red-300 border border-red-900 hover:border-red-700 px-3 py-1.5 rounded transition-colors">
+            Supprimer le coach
+          </button>
+        </div>
 
-        <div className="flex items-center gap-5 mb-8">
+        <div className="flex items-center gap-5 mb-6">
           <div className="w-16 h-16 rounded-full overflow-hidden bg-zinc-800 border border-zinc-700 flex-shrink-0">
             {coach.photo_url
               ? <img src={coach.photo_url} alt="" className="w-full h-full object-cover" />
