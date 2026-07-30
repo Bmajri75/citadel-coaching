@@ -1,5 +1,3 @@
-// Page de confirmation après paiement d'une séance
-// Stripe redirige ici avec ?session_id=xxx — on vérifie + on affiche le récap complet
 import { useEffect, useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { useLang } from '../context/LangContext'
@@ -10,7 +8,7 @@ const TEXTS = {
     titre:        'Séance confirmée !',
     merci:        'Merci pour votre réservation.',
     emailEnvoye:  'Un email de confirmation a été envoyé à',
-    contact24h:   'Bechir vous contactera sous 24h pour confirmer le lieu de rendez-vous.',
+    contact24h:   'Votre coach Citadel vous contacte sous 24h pour confirmer le lieu de rendez-vous.',
     urgence:      "En cas d'urgence :",
     retour:       "Retour à l'accueil",
     discipline:   'Discipline',
@@ -26,7 +24,7 @@ const TEXTS = {
     titre:        'Session confirmed!',
     merci:        'Thank you for your booking.',
     emailEnvoye:  'A confirmation email has been sent to',
-    contact24h:   'Bechir will contact you within 24h to confirm the meeting location.',
+    contact24h:   'Your Citadel coach will contact you within 24h to confirm the meeting location.',
     urgence:      'In case of emergency:',
     retour:       'Back to home',
     discipline:   'Discipline',
@@ -40,11 +38,11 @@ const TEXTS = {
 }
 
 export default function Succes() {
-  const { lang }                    = useLang()
-  const tx                          = TEXTS[lang]
-  const [params]                    = useSearchParams()
-  const sessionId                   = params.get('session_id')
-  const [etat, setEtat]             = useState('chargement')
+  const { lang }                      = useLang()
+  const tx                            = TEXTS[lang]
+  const [params]                      = useSearchParams()
+  const sessionId                     = params.get('session_id')
+  const [etat, setEtat]               = useState('chargement')
   const [reservation, setReservation] = useState(null)
 
   useEffect(() => {
@@ -76,13 +74,14 @@ export default function Succes() {
         {etat === 'ok' && reservation && (
           <div className="card p-8 sm:p-10">
             <div className="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mx-auto mb-6">
-              <span className="text-3xl text-amber-400">✓</span>
+              <svg className="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
             </div>
 
             <h1 className="section-title text-2xl sm:text-3xl mb-2">{tx.titre}</h1>
             <p className="text-zinc-300 mb-6">{tx.merci}</p>
 
-            {/* Récapitulatif de la réservation */}
             <div className="border border-zinc-800 mb-6 text-left">
               {reservation.discipline && (
                 <div className="flex justify-between px-4 py-3 border-b border-zinc-800">
@@ -104,7 +103,7 @@ export default function Succes() {
               )}
               <div className="flex justify-between px-4 py-3">
                 <span className="text-zinc-500 text-sm">{tx.montant}</span>
-                <span className="text-amber-400 font-bold">70 €</span>
+                <span className="text-amber-400 font-bold">90 €</span>
               </div>
             </div>
 

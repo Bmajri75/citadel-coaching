@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import CoachLayout from '../../components/CoachLayout'
 import { supabase } from '../../lib/supabase'
 import { useAuth } from '../../context/AuthContext'
@@ -8,10 +8,12 @@ const DISCIPLINES_LABEL = { mma: 'MMA', muay_thai: 'Muay Thai', bjj: 'BJJ', musc
 
 export default function CoachProfile() {
   const { user } = useAuth()
-  const [profil,  setProfil]  = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [saving,  setSaving]  = useState(false)
-  const [msg,     setMsg]     = useState('')
+  const [profil,     setProfil]     = useState(null)
+  const [loading,    setLoading]    = useState(true)
+  const [saving,     setSaving]     = useState(false)
+  const [uploading,  setUploading]  = useState(false)
+  const [msg,        setMsg]        = useState('')
+  const fileRef = useRef(null)
 
   useEffect(() => {
     if (!user) return
@@ -34,6 +36,38 @@ export default function CoachProfile() {
           : [...current, disc],
       }
     })
+  }
+
+  async function uploadPhoto(e) {
+    const file = e.target.files?.[0]
+    if (!file || !user) return
+    setUploading(true)
+    setMsg('')
+
+    const ext  = file.name.split('.').pop().toLowerCase()
+    const path = `${user.id}/avatar.${ext}`
+
+    const { error: uploadError } = await supabase.storage
+      .from('coach-photos')
+      .upload(path, file, { upsert: true, contentType: file.type })
+
+    if (uploadError) {
+      setMsg('Erreur lors de l\'upload de la photo.')
+      setUploading(false)
+      return
+    }
+
+    const { data: { publicUrl } } = supabase.storage.from('coach-photos').getPublicUrl(path)
+    const urlWithCache = `${publicUrl}?t=${Date.now()}`
+
+    const { error: updateError } = await supabase.from('coaches')
+      .update({ photo_url: urlWithCache, updated_at: new Date().toISOString() })
+      .eq('user_id', user.id)
+
+    if (!updateError) setProfil(p => ({ ...p, photo_url: urlWithCache }))
+    else setMsg('Photo uploadée mais erreur lors de la sauvegarde.')
+
+    setUploading(false)
   }
 
   async function sauvegarder(e) {
@@ -73,6 +107,41 @@ export default function CoachProfile() {
         <p className="text-zinc-500 text-sm mb-8">Ces informations seront visibles publiquement après validation par l'admin.</p>
 
         <form onSubmit={sauvegarder} className="flex flex-col gap-6">
+
+          {/* Photo de profil */}
+          <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+            <h2 className="text-xs font-heading uppercase tracking-wide text-zinc-500 mb-4">Photo de profil</h2>
+            <div className="flex items-center gap-6">
+              <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 bg-zinc-800 border border-zinc-700">
+                {profil?.photo_url
+                  ? <img src={profil.photo_url} alt="Photo de profil" className="w-full h-full object-cover" />
+                  : <div className="w-full h-full flex items-center justify-center text-zinc-500 text-3xl font-bold">
+                      {profil?.prenom?.[0] ?? '?'}
+                    </div>
+                }
+              </div>
+              <div className="flex flex-col gap-2">
+                <button
+                  type="button"
+                  onClick={() => fileRef.current?.click()}
+                  disabled={uploading}
+                  className="btn-primary text-sm py-2 px-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {uploading ? 'Upload en cours…' : profil?.photo_url ? 'Changer la photo' : 'Ajouter une photo'}
+                </button>
+                <p className="text-zinc-600 text-xs">JPG ou PNG · Max 5 Mo · Format portrait recommandé</p>
+                <input
+                  ref={fileRef}
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  onChange={uploadPhoto}
+                  className="hidden"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Identité */}
           <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 flex flex-col gap-4">
             <h2 className="text-xs font-heading uppercase tracking-wide text-zinc-500 mb-1">Identité</h2>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -91,6 +160,7 @@ export default function CoachProfile() {
             </div>
           </div>
 
+          {/* Disciplines */}
           <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 flex flex-col gap-4">
             <h2 className="text-xs font-heading uppercase tracking-wide text-zinc-500 mb-1">Disciplines</h2>
             <div>
@@ -118,6 +188,7 @@ export default function CoachProfile() {
             </div>
           </div>
 
+          {/* Expérience & Zones */}
           <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 flex flex-col gap-4">
             <h2 className="text-xs font-heading uppercase tracking-wide text-zinc-500 mb-1">Expérience & Zones</h2>
             {[['Diplôme', 'diplome', 'Ex : BPJEPS Sports de Contact'], ['Expérience', 'experience', 'Ex : 10 ans en coaching MMA'], ['Zones (séparées par des virgules)', 'zones', 'Ex : Paris, Levallois, Neuilly']].map(([label, name, ph]) => (

@@ -45,7 +45,15 @@ export default function CoachDetail() {
           ← Retour
         </button>
 
-        <h1 className="text-2xl font-heading font-bold mb-8">{coach.prenom ?? '—'} {coach.nom ?? ''}</h1>
+        <div className="flex items-center gap-5 mb-8">
+          <div className="w-16 h-16 rounded-full overflow-hidden bg-zinc-800 border border-zinc-700 flex-shrink-0">
+            {coach.photo_url
+              ? <img src={coach.photo_url} alt="" className="w-full h-full object-cover" />
+              : <div className="w-full h-full flex items-center justify-center text-zinc-400 text-2xl font-bold">{coach.prenom?.[0] ?? '?'}</div>
+            }
+          </div>
+          <h1 className="text-2xl font-heading font-bold">{coach.prenom ?? '—'} {coach.nom ?? ''}</h1>
+        </div>
 
         <div className="flex flex-col gap-6">
           <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">

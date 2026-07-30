@@ -2,55 +2,55 @@ import { useLang } from '../context/LangContext'
 
 const TEXTS = {
   fr: {
-    surtitre:    'Ce que j\'enseigne',
+    surtitre:    'Ce qu\'on enseigne',
     titre:       'Les Disciplines',
     disciplines: [
       {
         nom:         'Muay Thai',
         image:       '/photos/fight-kick.jpg',
-        alt:         'Cours de Muay Thai Paris — coaching privé Bechir Majri',
+        alt:         'Cours de Muay Thai Paris — Citadel Coaching',
         description: "L'art des 8 membres — poings, pieds, genoux, coudes. Technique debout, gestion des distances et conditionnement physique poussé. Tous niveaux, de l'initiation à la préparation combat.",
         points: ['Garde et déplacements', 'Combinaisons et timing', 'Travail au sac et à la mitaine', 'Sparring encadré'],
       },
       {
         nom:         'BJJ / Grappling',
         image:       '/photos/coach-gi.jpg',
-        alt:         'Coaching privé BJJ Paris — Bechir Majri en kimono Gi',
+        alt:         'Coaching privé BJJ Paris — Citadel Coaching',
         description: 'Maîtrisez le combat au sol. Positions, renversements, soumissions — en Gi comme en NoGi. Méthode Gracie Barra adaptée à tous les gabarits et tous les niveaux.',
         points: ['Positions fondamentales', 'Takedowns et renversements', 'Soumissions Gi & NoGi', 'Préparation compétition'],
       },
       {
         nom:         'MMA',
         image:       '/photos/fight-mma.jpg',
-        alt:         'Coaching privé MMA Paris — séance avec Bechir Majri',
-        description: "L'art martial complet. On assemble ici le travail debout (Muay Thai), les transitions et le sol (BJJ/Grappling). Programme sur mesure : compétition, autodéfense ou remise en forme.",
+        alt:         'Coaching privé MMA Paris — Citadel Coaching',
+        description: "L'art martial complet. Le travail debout (Muay Thai), les transitions et le sol (BJJ/Grappling) assemblés dans un programme sur mesure : compétition, autodéfense ou remise en forme.",
         points: ['Transitions debout / sol', 'Stratégie de combat', 'Conditionnement MMA', 'Analyse vidéo sur demande'],
       },
     ],
   },
   en: {
-    surtitre:    'What I teach',
+    surtitre:    'What we teach',
     titre:       'Disciplines',
     disciplines: [
       {
         nom:         'Muay Thai',
         image:       '/photos/fight-kick.jpg',
-        alt:         'Private Muay Thai classes Paris — Coach Bechir Majri',
+        alt:         'Private Muay Thai classes Paris — Citadel Coaching',
         description: 'The art of 8 limbs — punches, kicks, knees, elbows. Stand-up technique, distance management and intensive conditioning. All levels, from beginner to fight preparation.',
         points: ['Guard & footwork', 'Combinations & timing', 'Pad and bag work', 'Supervised sparring'],
       },
       {
         nom:         'BJJ / Grappling',
         image:       '/photos/coach-gi.jpg',
-        alt:         'Private BJJ coaching Paris — Bechir Majri in Gi',
+        alt:         'Private BJJ coaching Paris — Citadel Coaching',
         description: 'Master ground fighting. Positions, takedowns, submissions — Gi and NoGi. Gracie Barra method adapted for all body types and skill levels.',
         points: ['Fundamental positions', 'Takedowns & sweeps', 'Gi & NoGi submissions', 'Competition prep'],
       },
       {
         nom:         'MMA',
         image:       '/photos/fight-mma.jpg',
-        alt:         'Private MMA coaching Paris — Bechir Majri session',
-        description: 'The complete martial art. We combine stand-up striking (Muay Thai), transitions and ground work (BJJ/Grappling). Custom program: competition, self-defense or fitness.',
+        alt:         'Private MMA coaching Paris — Citadel Coaching',
+        description: 'The complete martial art. Stand-up striking (Muay Thai), transitions and ground work (BJJ/Grappling) combined in a custom program: competition, self-defense or fitness.',
         points: ['Stand-up / ground transitions', 'Fight strategy', 'MMA conditioning', 'Video analysis on request'],
       },
     ],
@@ -58,11 +58,11 @@ const TEXTS = {
 }
 
 export default function Services() {
-  const { lang }    = useLang()
-  const tx          = TEXTS[lang]
+  const { lang } = useLang()
+  const tx       = TEXTS[lang]
 
   return (
-    <section id="disciplines" className="py-20 bg-zinc-900">
+    <section id="disciplines" className="py-20 bg-zinc-950">
       <div className="container-site">
 
         <div className="text-center mb-12">

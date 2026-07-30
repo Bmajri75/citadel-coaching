@@ -48,8 +48,8 @@ export default function AdminCoaches() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-zinc-800">
-                  {['Coach', 'Discipline', 'Carte pro', 'Vérification', 'Publié', ''].map(h => (
-                    <th key={h} className="text-left p-4 text-xs font-heading uppercase tracking-wide text-zinc-500">{h}</th>
+                  {['', 'Coach', 'Discipline', 'Carte pro', 'Vérification', 'Publié', ''].map((h, i) => (
+                    <th key={i} className="text-left p-4 text-xs font-heading uppercase tracking-wide text-zinc-500">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -58,6 +58,14 @@ export default function AdminCoaches() {
                   const jours = joursRestants(c.expiration_carte_pro)
                   return (
                     <tr key={c.id} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
+                      <td className="p-4 w-12">
+                        <div className="w-9 h-9 rounded-full overflow-hidden bg-zinc-800 border border-zinc-700 flex-shrink-0">
+                          {c.photo_url
+                            ? <img src={c.photo_url} alt="" className="w-full h-full object-cover" />
+                            : <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm font-bold">{c.prenom?.[0] ?? '?'}</div>
+                          }
+                        </div>
+                      </td>
                       <td className="p-4 font-medium">{c.prenom ?? '—'} {c.nom ?? ''}</td>
                       <td className="p-4 text-zinc-400">{c.discipline_principale ?? '—'}</td>
                       <td className="p-4">

@@ -1,0 +1,930 @@
+<title>Citadel Coaching — Plan Technique V1</title>
+<style>
+  :root {
+    --bg:        #0A0E14;
+    --surface:   #111827;
+    --border:    #1E2D3D;
+    --accent:    #F59E0B;
+    --accent-dim:#92610A;
+    --text:      #E2E8F0;
+    --muted:     #64748B;
+    --success:   #10B981;
+    --warning:   #F59E0B;
+    --danger:    #EF4444;
+    --info:      #3B82F6;
+    --code-bg:   #0D1520;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg:      #F8FAFC;
+      --surface: #FFFFFF;
+      --border:  #E2E8F0;
+      --text:    #0F172A;
+      --muted:   #64748B;
+      --code-bg: #0F172A;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg:      #F8FAFC;
+    --surface: #FFFFFF;
+    --border:  #E2E8F0;
+    --text:    #0F172A;
+    --muted:   #64748B;
+    --code-bg: #0F172A;
+  }
+  :root[data-theme="dark"] {
+    --bg:        #0A0E14;
+    --surface:   #111827;
+    --border:    #1E2D3D;
+    --text:      #E2E8F0;
+    --muted:     #64748B;
+    --code-bg:   #0D1520;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar */
+  nav {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid var(--border);
+    padding: 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .nav-brand {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .nav-brand::before {
+    content: '';
+    display: block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.15s, background 0.15s;
+  }
+  nav a:hover { color: var(--text); background: var(--border); }
+  nav .nav-section {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 1rem 0.75rem 0.25rem;
+    opacity: 0.6;
+  }
+
+  /* Main content */
+  main {
+    padding: 2.5rem 3rem;
+    max-width: 820px;
+  }
+
+  /* Header */
+  .doc-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+  .doc-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .doc-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    text-wrap: balance;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+  .doc-sub {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 560px;
+  }
+  .doc-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .meta-chip {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .meta-chip.accent { border-color: var(--accent-dim); color: var(--accent); }
+
+  /* Sections */
+  .section { margin-bottom: 3.5rem; }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    scroll-margin-top: 2rem;
+  }
+  h2 .h2-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    font-variant-numeric: tabular-nums;
+  }
+  h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 1.5rem 0 0.75rem;
+    letter-spacing: 0.01em;
+  }
+  p { margin-bottom: 0.85rem; color: var(--text); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Alert boxes */
+  .alert {
+    border-radius: 6px;
+    padding: 0.9rem 1.1rem;
+    font-size: 13.5px;
+    margin-bottom: 1rem;
+    border-left: 3px solid;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .alert-icon { flex-shrink: 0; font-size: 15px; margin-top: 1px; }
+  .alert.success { background: color-mix(in srgb, var(--success) 8%, transparent); border-color: var(--success); }
+  .alert.warning { background: color-mix(in srgb, var(--warning) 8%, transparent); border-color: var(--warning); }
+  .alert.danger  { background: color-mix(in srgb, var(--danger) 8%, transparent); border-color: var(--danger); }
+  .alert.info    { background: color-mix(in srgb, var(--info) 8%, transparent); border-color: var(--info); }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin-bottom: 1.25rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  thead th {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.85rem;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+  }
+  tbody td {
+    border: 1px solid var(--border);
+    padding: 0.6rem 0.85rem;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface) 60%, transparent); }
+  td code { background: var(--code-bg); color: var(--accent); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 12px; }
+
+  /* Code blocks */
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.1rem 1.25rem;
+    overflow-x: auto;
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    color: #94D8AC;
+  }
+  code { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; }
+  pre .kw  { color: #93C5FD; }
+  pre .str { color: #86EFAC; }
+  pre .cmt { color: #4B5563; font-style: italic; }
+  pre .acc { color: var(--accent); }
+
+  /* Status badges */
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+  }
+  .badge-green  { background: color-mix(in srgb, #10B981 15%, transparent); color: #10B981; }
+  .badge-amber  { background: color-mix(in srgb, #F59E0B 15%, transparent); color: #F59E0B; }
+  .badge-red    { background: color-mix(in srgb, #EF4444 15%, transparent); color: #EF4444; }
+  .badge-blue   { background: color-mix(in srgb, #3B82F6 15%, transparent); color: #3B82F6; }
+  .badge-grey   { background: color-mix(in srgb, #6B7280 15%, transparent); color: #94A3B8; }
+
+  /* User story cards */
+  .story-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
+  .story {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 13.5px;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .story-role {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    margin-top: 1px;
+  }
+  .role-client { background: color-mix(in srgb, #3B82F6 15%, transparent); color: #60A5FA; }
+  .role-coach  { background: color-mix(in srgb, #10B981 15%, transparent); color: #34D399; }
+  .role-admin  { background: color-mix(in srgb, #F59E0B 15%, transparent); color: #F59E0B; }
+
+  /* Architecture diagram */
+  .arch-diagram {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #94D8AC;
+    margin-bottom: 1.25rem;
+    overflow-x: auto;
+  }
+
+  /* Phase timeline */
+  .phases { display: flex; flex-direction: column; gap: 0; margin-bottom: 1.5rem; }
+  .phase {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .phase:last-child { border-bottom: none; }
+  .phase-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    padding-top: 2px;
+  }
+  .phase-label strong { display: block; color: var(--accent); font-size: 13px; margin-bottom: 0.2rem; }
+  .phase-items { font-size: 13.5px; }
+  .phase-items li { margin-bottom: 0.3rem; padding-left: 1rem; position: relative; }
+  .phase-items li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* Divider */
+  .divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
+
+  ul.plain { list-style: none; padding: 0; }
+  ul.plain li { padding: 0.3rem 0; padding-left: 1rem; position: relative; font-size: 13.5px; }
+  ul.plain li::before { content: '–'; position: absolute; left: 0; color: var(--muted); }
+
+  @media (max-width: 768px) {
+    .layout { grid-template-columns: 1fr; }
+    nav { display: none; }
+    main { padding: 1.5rem; }
+  }
+</style>
+
+<div class="layout">
+  <nav>
+    <div class="nav-brand">Citadel SaaS</div>
+    <span class="nav-section">Plan</span>
+    <a href="#stories">User Stories</a>
+    <a href="#perimetre">Périmètre V1</a>
+    <a href="#stack">Stack technique</a>
+    <a href="#schema">Base de données</a>
+    <a href="#arbo">Arborescence</a>
+    <span class="nav-section">Build</span>
+    <a href="#phases">Phases de build</a>
+    <a href="#backend">Backend</a>
+    <a href="#frontend">Frontend</a>
+    <a href="#securite">Sécurité</a>
+    <a href="#deploiement">Déploiement</a>
+  </nav>
+
+  <main>
+    <div class="doc-header">
+      <div class="doc-eyebrow">Citadel Coaching — Plan Technique</div>
+      <h1 class="doc-title">Architecture SaaS V1</h1>
+      <p class="doc-sub">Collectif privé de coachs validés. 3 coachs max, flux de validation admin, paiement centralisé à 90 €/séance.</p>
+      <div class="doc-meta">
+        <span class="meta-chip accent">V1</span>
+        <span class="meta-chip">3 coachs max</span>
+        <span class="meta-chip">90 €/séance</span>
+        <span class="meta-chip">Commission 20 €</span>
+      </div>
+    </div>
+
+    <!-- USER STORIES -->
+    <div class="section" id="stories">
+      <h2><span class="h2-num">01</span> User Stories V1</h2>
+
+      <h3>Client (visiteur)</h3>
+      <div class="story-list">
+        <div class="story"><span class="story-role role-client">Client</span> Je veux voir les coachs disponibles et leurs disciplines pour choisir celui qui me correspond.</div>
+        <div class="story"><span class="story-role role-client">Client</span> Je veux remplir un formulaire de demande sans créer de compte.</div>
+        <div class="story"><span class="story-role role-client">Client</span> Je veux recevoir un email de confirmation quand ma séance est validée.</div>
+        <div class="story"><span class="story-role role-client">Client</span> Je veux savoir que les coachs sont diplômés d'État et vérifiés.</div>
+      </div>
+
+      <h3>Coach</h3>
+      <div class="story-list">
+        <div class="story"><span class="story-role role-coach">Coach</span> Je veux recevoir une invitation par email pour activer mon compte.</div>
+        <div class="story"><span class="story-role role-coach">Coach</span> Je veux compléter mon profil (bio, photo, disciplines, zones) après activation.</div>
+        <div class="story"><span class="story-role role-coach">Coach</span> Je veux voir les demandes que l'admin m'attribue.</div>
+        <div class="story"><span class="story-role role-coach">Coach</span> Je veux accepter ou refuser une demande avec un commentaire optionnel.</div>
+        <div class="story"><span class="story-role role-coach">Coach</span> Je ne veux pas voir les demandes des autres coachs.</div>
+      </div>
+
+      <h3>Admin (toi)</h3>
+      <div class="story-list">
+        <div class="story"><span class="story-role role-admin">Admin</span> Je veux créer une invitation privée pour un nouveau coach.</div>
+        <div class="story"><span class="story-role role-admin">Admin</span> Je veux valider le profil et la carte professionnelle d'un coach avant publication.</div>
+        <div class="story"><span class="story-role role-admin">Admin</span> Je veux voir toutes les demandes clients et leur statut.</div>
+        <div class="story"><span class="story-role role-admin">Admin</span> Je veux attribuer une demande à un coach spécifique.</div>
+        <div class="story"><span class="story-role role-admin">Admin</span> Je veux valider définitivement une demande acceptée par le coach.</div>
+        <div class="story"><span class="story-role role-admin">Admin</span> Je veux suspendre ou désactiver un coach à tout moment.</div>
+        <div class="story"><span class="story-role role-admin">Admin</span> Je veux un tableau de bord avec les KPI clés (demandes, coachs actifs, cartes pro à expirer).</div>
+      </div>
+    </div>
+
+    <!-- PÉRIMÈTRE -->
+    <div class="section" id="perimetre">
+      <h2><span class="h2-num">02</span> Périmètre V1 vs V2</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Fonctionnalité</th><th>V1</th><th>V2</th></tr></thead>
+          <tbody>
+            <tr><td>Page publique coachs + formulaire client</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Espace coach (login, profil, demandes)</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Espace admin (dashboard, coachs, demandes)</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Invitation coach par token unique</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Flux de validation admin → coach → admin</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Notifications email (demande reçue, validation)</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Suivi validité carte professionnelle</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Historique des statuts par demande</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Paiement Stripe (manual, hors plateforme)</td><td><span class="badge badge-green">V1</span></td><td></td></tr>
+            <tr><td>Messagerie interne temps réel</td><td></td><td><span class="badge badge-blue">V2</span></td></tr>
+            <tr><td>Split paiement automatique Stripe Connect</td><td></td><td><span class="badge badge-blue">V2</span></td></tr>
+            <tr><td>Espace client avec historique</td><td></td><td><span class="badge badge-blue">V2</span></td></tr>
+            <tr><td>Avis et notation publique des coachs</td><td></td><td><span class="badge badge-blue">V2</span></td></tr>
+            <tr><td>Application mobile</td><td></td><td><span class="badge badge-blue">V2</span></td></tr>
+            <tr><td>Inscription coach publique</td><td></td><td><span class="badge badge-red">Jamais (fermé)</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ</span>
+        <div>Le paiement en V1 reste manuel : le client paie Citadel par virement ou Stripe classique, Citadel reverse le coach après la séance. Stripe Connect (split automatique) arrive en V2.</div>
+      </div>
+    </div>
+
+    <!-- STACK -->
+    <div class="section" id="stack">
+      <h2><span class="h2-num">03</span> Stack technique recommandée</h2>
+
+      <div class="alert warning">
+        <span class="alert-icon">⚠</span>
+        <div><strong>Pourquoi pas PHP seul ?</strong> Construire un système d'auth sécurisé (tokens d'invitation, sessions, rôles, hash mots de passe) en PHP from scratch prend beaucoup de temps et laisse place aux erreurs. On utilise des outils modernes qui font ça en 5 minutes.</div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Couche</th><th>Outil choisi</th><th>Pourquoi</th><th>Coût</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Base de données + Auth</strong></td><td><strong>Supabase</strong></td><td>PostgreSQL + auth + tokens + RLS intégrés. Dashboard visuel pour gérer les données sans code.</td><td><span class="badge badge-green">Gratuit</span></td></tr>
+            <tr><td><strong>Frontend public</strong></td><td><strong>React (existant)</strong></td><td>Site actuel conservé sur o2switch</td><td><span class="badge badge-green">Déjà payé</span></td></tr>
+            <tr><td><strong>Espace admin + coach</strong></td><td><strong>React + Vite</strong></td><td>Même stack que le site actuel. Une seule app ou deux selon la séparation souhaitée.</td><td><span class="badge badge-green">Gratuit</span></td></tr>
+            <tr><td><strong>Hébergement frontend SaaS</strong></td><td><strong>Vercel</strong></td><td>Déploiement automatique depuis GitHub. Zero config.</td><td><span class="badge badge-green">Gratuit</span></td></tr>
+            <tr><td><strong>Emails transactionnels</strong></td><td><strong>Resend</strong></td><td>3 000 emails/mois gratuits. API simple. Invitations, confirmations.</td><td><span class="badge badge-green">Gratuit</span></td></tr>
+            <tr><td><strong>Paiement</strong></td><td><strong>Stripe (existant)</strong></td><td>Checkout existant conservé pour les séances Bechir. Agrandi aux autres coachs en V2.</td><td>% par transaction</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="arch-diagram">
+┌─────────────────────────────────────────────────────────────┐
+│                    CITADEL COACHING V1                       │
+└─────────────────────────────────────────────────────────────┘
+
+  citadel-coaching.fr          app.citadel-coaching.fr
+  (o2switch — existant)        (Vercel — nouveau)
+  ┌───────────────────┐        ┌──────────────────────────┐
+  │  Site public      │        │  Espace admin + coach    │
+  │  React + Vite     │        │  React + Vite            │
+  │  • Page Coachs    │        │  • Login                 │
+  │  • Formulaire     │        │  • Dashboard admin       │
+  │  • Blog / tarifs  │        │  • Profil coach          │
+  └────────┬──────────┘        └──────────┬───────────────┘
+           │                              │
+           └──────────────┬───────────────┘
+                          │ API calls
+                          ▼
+              ┌───────────────────────┐
+              │      SUPABASE         │
+              │  • PostgreSQL DB      │
+              │  • Auth (JWT)         │
+              │  • Row Level Security │
+              │  • Storage (photos)   │
+              └───────────┬───────────┘
+                          │
+              ┌───────────┴───────────┐
+              │       RESEND          │
+              │  • Invitations coach  │
+              │  • Confirmations      │
+              └───────────────────────┘
+      </div>
+    </div>
+
+    <!-- SCHEMA BDD -->
+    <div class="section" id="schema">
+      <h2><span class="h2-num">04</span> Schéma de base de données</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Table</th><th>Colonnes principales</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><code>auth.users</code></td>
+              <td>id, email, created_at</td>
+              <td>Gérée automatiquement par Supabase Auth. Contient les comptes admin et coach.</td>
+            </tr>
+            <tr>
+              <td><code>profiles</code></td>
+              <td>id (= auth.users.id), role, is_active</td>
+              <td>Étend auth.users. Rôle : <code>admin</code> ou <code>coach</code>.</td>
+            </tr>
+            <tr>
+              <td><code>coaches</code></td>
+              <td>user_id, prenom, nom, bio, photo_url, discipline_principale, disciplines_secondaires[], zones[], experience, diplome, num_carte_pro, expiration_carte_pro, statut_verification, is_published</td>
+              <td>Profil métier complet du coach. Lié à auth.users.</td>
+            </tr>
+            <tr>
+              <td><code>coach_invitations</code></td>
+              <td>id, token (unique), email, created_by (admin), expires_at, used_at, is_used</td>
+              <td>Invitations privées. Token expire après 48h et devient inutilisable après activation.</td>
+            </tr>
+            <tr>
+              <td><code>coaching_requests</code></td>
+              <td>id, prenom, nom, email, telephone, discipline, ville, objectif, niveau, disponibilites, coach_preference, commentaire, statut, created_at</td>
+              <td>Demandes soumises via le formulaire public. Pas de compte client.</td>
+            </tr>
+            <tr>
+              <td><code>request_assignments</code></td>
+              <td>id, request_id, coach_id, assigned_by (admin), assigned_at, coach_response (<code>accepted</code>/<code>refused</code>), coach_note, responded_at</td>
+              <td>Liaison demande ↔ coach. Une demande peut être réassignée si refus.</td>
+            </tr>
+            <tr>
+              <td><code>request_status_history</code></td>
+              <td>id, request_id, old_status, new_status, changed_by, note, created_at</td>
+              <td>Historique complet de chaque changement de statut.</td>
+            </tr>
+            <tr>
+              <td><code>admin_notes</code></td>
+              <td>id, request_id, admin_id, note, created_at</td>
+              <td>Notes internes admin, non visibles par le coach ni le client.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Statuts d'une demande</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Statut</th><th>Déclenché par</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge badge-blue">nouvelle_demande</span></td><td>Formulaire client soumis</td></tr>
+            <tr><td><span class="badge badge-amber">envoyee_coach</span></td><td>Admin attribue à un coach</td></tr>
+            <tr><td><span class="badge badge-red">refusee_coach</span></td><td>Coach refuse</td></tr>
+            <tr><td><span class="badge badge-amber">acceptee_coach</span></td><td>Coach accepte → attend validation admin</td></tr>
+            <tr><td><span class="badge badge-red">refusee_admin</span></td><td>Admin refuse après analyse</td></tr>
+            <tr><td><span class="badge badge-green">confirmee</span></td><td>Admin valide → email client envoyé</td></tr>
+            <tr><td><span class="badge badge-grey">realisee</span></td><td>Admin marque la séance comme effectuée</td></tr>
+            <tr><td><span class="badge badge-red">annulee</span></td><td>Admin, coach ou client annule</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Statuts d'un coach</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Statut vérification</th><th>Signification</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge badge-amber">en_attente</span></td><td>Profil soumis, carte pro non encore vérifiée par admin</td></tr>
+            <tr><td><span class="badge badge-green">verifie</span></td><td>Carte pro valide, profil publié</td></tr>
+            <tr><td><span class="badge badge-red">expire</span></td><td>Carte pro expirée — profil dépublié automatiquement</td></tr>
+            <tr><td><span class="badge badge-red">suspendu</span></td><td>Suspendu manuellement par l'admin</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ARBORESCENCE -->
+    <div class="section" id="arbo">
+      <h2><span class="h2-num">05</span> Arborescence des fichiers</h2>
+
+      <p>Deux projets séparés : le site public actuel (conservé) et la nouvelle app SaaS.</p>
+
+      <pre><code><span class="cmt"># Projet 1 — Site public (existant, o2switch)</span>
+citadel-coaching-site/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   │   └── <span class="acc">Coaches.jsx</span>          <span class="cmt"># NOUVEAU — liste des coachs</span>
+│   ├── data/
+│   │   └── <span class="acc">coaches.js</span>           <span class="cmt"># NOUVEAU — données coachs publics</span>
+│   └── ...
+└── api/                          <span class="cmt"># PHP existant</span>
+
+<span class="cmt"># Projet 2 — App SaaS (nouveau, Vercel)</span>
+citadel-app/
+├── src/
+│   ├── <span class="kw">lib/</span>
+│   │   ├── supabase.js           <span class="cmt"># Client Supabase</span>
+│   │   └── resend.js             <span class="cmt"># Client email</span>
+│   ├── <span class="kw">context/</span>
+│   │   └── AuthContext.jsx       <span class="cmt"># Session utilisateur + rôle</span>
+│   ├── <span class="kw">pages/</span>
+│   │   ├── Login.jsx             <span class="cmt"># Connexion admin et coach</span>
+│   │   ├── Activate.jsx          <span class="cmt"># Activation compte via token</span>
+│   │   ├── <span class="kw">admin/</span>
+│   │   │   ├── Dashboard.jsx     <span class="cmt"># KPI + vue globale</span>
+│   │   │   ├── Coaches.jsx       <span class="cmt"># Liste coachs + statuts</span>
+│   │   │   ├── CoachDetail.jsx   <span class="cmt"># Détail + validation profil</span>
+│   │   │   ├── Invitations.jsx   <span class="cmt"># Créer / gérer invitations</span>
+│   │   │   ├── Requests.jsx      <span class="cmt"># Liste toutes les demandes</span>
+│   │   │   └── RequestDetail.jsx <span class="cmt"># Détail + attribution + validation</span>
+│   │   └── <span class="kw">coach/</span>
+│   │       ├── Dashboard.jsx     <span class="cmt"># Vue coach</span>
+│   │       ├── Profile.jsx       <span class="cmt"># Édition profil</span>
+│   │       └── Requests.jsx      <span class="cmt"># Mes demandes</span>
+│   ├── <span class="kw">components/</span>
+│   │   ├── ProtectedRoute.jsx    <span class="cmt"># Garde les routes par rôle</span>
+│   │   ├── StatusBadge.jsx
+│   │   └── CoachCard.jsx
+│   └── App.jsx
+├── .env.local                    <span class="cmt"># Clés Supabase — jamais sur git</span>
+└── package.json</code></pre>
+    </div>
+
+    <!-- PHASES -->
+    <div class="section" id="phases">
+      <h2><span class="h2-num">06</span> Phases de build</h2>
+
+      <div class="phases">
+        <div class="phase">
+          <div class="phase-label"><strong>Phase 1</strong>Supabase setup<br><span style="color:var(--muted);font-size:11px">~2h</span></div>
+          <ul class="phase-items plain">
+            <li>Créer un projet Supabase gratuit</li>
+            <li>Créer les tables (SQL fourni ci-dessous)</li>
+            <li>Configurer les rôles et Row Level Security</li>
+            <li>Créer le compte admin manuellement</li>
+            <li>Configurer les emails Resend dans Supabase</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-label"><strong>Phase 2</strong>App React SaaS<br><span style="color:var(--muted);font-size:11px">~1 jour</span></div>
+          <ul class="phase-items plain">
+            <li>Créer le projet Vite + React</li>
+            <li>Installer @supabase/supabase-js</li>
+            <li>Login + AuthContext + ProtectedRoute</li>
+            <li>Espace admin : dashboard, coachs, demandes</li>
+            <li>Espace coach : profil, mes demandes</li>
+            <li>Système d'invitation par token</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-label"><strong>Phase 3</strong>Site public<br><span style="color:var(--muted);font-size:11px">~3h</span></div>
+          <ul class="phase-items plain">
+            <li>Ajouter la page Coachs au site existant</li>
+            <li>Formulaire de demande → Supabase</li>
+            <li>Notification email admin à chaque demande</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-label"><strong>Phase 4</strong>Déploiement<br><span style="color:var(--muted);font-size:11px">~1h</span></div>
+          <ul class="phase-items plain">
+            <li>Push app SaaS sur GitHub</li>
+            <li>Connecter Vercel au repo</li>
+            <li>Configurer le domaine app.citadel-coaching.fr</li>
+            <li>Tests end-to-end du parcours complet</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACKEND -->
+    <div class="section" id="backend">
+      <h2><span class="h2-num">07</span> Backend — SQL de création des tables</h2>
+
+      <p>À exécuter dans l'éditeur SQL de Supabase (Table Editor → SQL Editor).</p>
+
+      <pre><code><span class="cmt">-- Profils utilisateurs (admin ou coach)</span>
+<span class="kw">CREATE TABLE</span> profiles (
+  id          uuid <span class="kw">REFERENCES</span> auth.users(id) <span class="kw">ON DELETE CASCADE PRIMARY KEY</span>,
+  role        text <span class="kw">NOT NULL CHECK</span> (role <span class="kw">IN</span> (<span class="str">'admin'</span>, <span class="str">'coach'</span>)),
+  is_active   boolean <span class="kw">DEFAULT</span> <span class="acc">true</span>,
+  created_at  timestamptz <span class="kw">DEFAULT</span> now()
+);
+
+<span class="cmt">-- Profils métier des coachs</span>
+<span class="kw">CREATE TABLE</span> coaches (
+  id                    uuid <span class="kw">DEFAULT</span> gen_random_uuid() <span class="kw">PRIMARY KEY</span>,
+  user_id               uuid <span class="kw">REFERENCES</span> auth.users(id) <span class="kw">ON DELETE CASCADE UNIQUE</span>,
+  prenom                text, nom text,
+  bio                   text,
+  photo_url             text,
+  discipline_principale text,
+  disciplines_sec       text[],
+  zones                 text[],
+  experience            text,
+  diplome               text,
+  num_carte_pro         text,
+  expiration_carte_pro  date,
+  statut_verification   text <span class="kw">DEFAULT</span> <span class="str">'en_attente'</span>
+                        <span class="kw">CHECK</span> (statut_verification <span class="kw">IN</span> (<span class="str">'en_attente'</span>,<span class="str">'verifie'</span>,<span class="str">'expire'</span>,<span class="str">'suspendu'</span>)),
+  is_published          boolean <span class="kw">DEFAULT</span> <span class="acc">false</span>,
+  created_at            timestamptz <span class="kw">DEFAULT</span> now(),
+  updated_at            timestamptz <span class="kw">DEFAULT</span> now()
+);
+
+<span class="cmt">-- Invitations privées</span>
+<span class="kw">CREATE TABLE</span> coach_invitations (
+  id          uuid <span class="kw">DEFAULT</span> gen_random_uuid() <span class="kw">PRIMARY KEY</span>,
+  token       text <span class="kw">UNIQUE NOT NULL DEFAULT</span> encode(gen_random_bytes(32), <span class="str">'hex'</span>),
+  email       text <span class="kw">NOT NULL</span>,
+  created_by  uuid <span class="kw">REFERENCES</span> auth.users(id),
+  expires_at  timestamptz <span class="kw">DEFAULT</span> (now() + interval <span class="str">'48 hours'</span>),
+  used_at     timestamptz,
+  is_used     boolean <span class="kw">DEFAULT</span> <span class="acc">false</span>,
+  created_at  timestamptz <span class="kw">DEFAULT</span> now()
+);
+
+<span class="cmt">-- Demandes clients</span>
+<span class="kw">CREATE TABLE</span> coaching_requests (
+  id                uuid <span class="kw">DEFAULT</span> gen_random_uuid() <span class="kw">PRIMARY KEY</span>,
+  prenom            text <span class="kw">NOT NULL</span>, nom text <span class="kw">NOT NULL</span>,
+  email             text <span class="kw">NOT NULL</span>, telephone text,
+  discipline        text, ville text, objectif text,
+  niveau            text, disponibilites text,
+  coach_preference  text, commentaire text,
+  statut            text <span class="kw">DEFAULT</span> <span class="str">'nouvelle_demande'</span>,
+  consentement      boolean <span class="kw">DEFAULT</span> <span class="acc">false</span>,
+  created_at        timestamptz <span class="kw">DEFAULT</span> now()
+);
+
+<span class="cmt">-- Attributions demande → coach</span>
+<span class="kw">CREATE TABLE</span> request_assignments (
+  id              uuid <span class="kw">DEFAULT</span> gen_random_uuid() <span class="kw">PRIMARY KEY</span>,
+  request_id      uuid <span class="kw">REFERENCES</span> coaching_requests(id),
+  coach_id        uuid <span class="kw">REFERENCES</span> auth.users(id),
+  assigned_by     uuid <span class="kw">REFERENCES</span> auth.users(id),
+  assigned_at     timestamptz <span class="kw">DEFAULT</span> now(),
+  coach_response  text <span class="kw">CHECK</span> (coach_response <span class="kw">IN</span> (<span class="str">'accepted'</span>, <span class="str">'refused'</span>)),
+  coach_note      text,
+  responded_at    timestamptz
+);
+
+<span class="cmt">-- Historique des statuts</span>
+<span class="kw">CREATE TABLE</span> request_status_history (
+  id          uuid <span class="kw">DEFAULT</span> gen_random_uuid() <span class="kw">PRIMARY KEY</span>,
+  request_id  uuid <span class="kw">REFERENCES</span> coaching_requests(id),
+  old_status  text, new_status text,
+  changed_by  uuid <span class="kw">REFERENCES</span> auth.users(id),
+  note        text,
+  created_at  timestamptz <span class="kw">DEFAULT</span> now()
+);</code></pre>
+
+      <h3>Row Level Security (qui voit quoi)</h3>
+      <pre><code><span class="cmt">-- Activer RLS sur toutes les tables</span>
+<span class="kw">ALTER TABLE</span> coaches <span class="kw">ENABLE ROW LEVEL SECURITY</span>;
+<span class="kw">ALTER TABLE</span> coaching_requests <span class="kw">ENABLE ROW LEVEL SECURITY</span>;
+<span class="kw">ALTER TABLE</span> request_assignments <span class="kw">ENABLE ROW LEVEL SECURITY</span>;
+
+<span class="cmt">-- Admin voit tout</span>
+<span class="kw">CREATE POLICY</span> <span class="str">"admin_all"</span> <span class="kw">ON</span> coaching_requests
+  <span class="kw">FOR ALL USING</span> (
+    <span class="kw">EXISTS</span> (<span class="kw">SELECT</span> 1 <span class="kw">FROM</span> profiles <span class="kw">WHERE</span> id = auth.uid() <span class="kw">AND</span> role = <span class="str">'admin'</span>)
+  );
+
+<span class="cmt">-- Coach voit uniquement ses demandes attribuées</span>
+<span class="kw">CREATE POLICY</span> <span class="str">"coach_own_requests"</span> <span class="kw">ON</span> request_assignments
+  <span class="kw">FOR SELECT USING</span> (coach_id = auth.uid());
+
+<span class="cmt">-- Public peut insérer une demande, pas les lire</span>
+<span class="kw">CREATE POLICY</span> <span class="str">"public_insert"</span> <span class="kw">ON</span> coaching_requests
+  <span class="kw">FOR INSERT WITH CHECK</span> (<span class="acc">true</span>);
+
+<span class="cmt">-- Public voit uniquement les coachs publiés et vérifiés</span>
+<span class="kw">CREATE POLICY</span> <span class="str">"public_coaches"</span> <span class="kw">ON</span> coaches
+  <span class="kw">FOR SELECT USING</span> (is_published = <span class="acc">true</span> <span class="kw">AND</span> statut_verification = <span class="str">'verifie'</span>);</code></pre>
+    </div>
+
+    <!-- FRONTEND -->
+    <div class="section" id="frontend">
+      <h2><span class="h2-num">08</span> Frontend — Code clé</h2>
+
+      <h3>Initialisation Supabase</h3>
+      <pre><code><span class="cmt">// src/lib/supabase.js</span>
+<span class="kw">import</span> { createClient } <span class="kw">from</span> <span class="str">'@supabase/supabase-js'</span>
+
+<span class="kw">export const</span> supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+)</code></pre>
+
+      <h3>Contexte d'authentification</h3>
+      <pre><code><span class="cmt">// src/context/AuthContext.jsx</span>
+<span class="kw">import</span> { createContext, useContext, useEffect, useState } <span class="kw">from</span> <span class="str">'react'</span>
+<span class="kw">import</span> { supabase } <span class="kw">from</span> <span class="str">'../lib/supabase'</span>
+
+<span class="kw">const</span> AuthContext = createContext({})
+
+<span class="kw">export function</span> AuthProvider({ children }) {
+  <span class="kw">const</span> [user, setUser]   = useState(<span class="acc">null</span>)
+  <span class="kw">const</span> [role, setRole]   = useState(<span class="acc">null</span>)
+  <span class="kw">const</span> [loading, setLoading] = useState(<span class="acc">true</span>)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(<span class="kw">async</span> ({ data }) => {
+      setUser(data.session?.user ?? <span class="acc">null</span>)
+      <span class="kw">if</span> (data.session?.user) <span class="kw">await</span> fetchRole(data.session.user.id)
+      setLoading(<span class="acc">false</span>)
+    })
+    supabase.auth.onAuthStateChange(<span class="kw">async</span> (_, session) => {
+      setUser(session?.user ?? <span class="acc">null</span>)
+      <span class="kw">if</span> (session?.user) <span class="kw">await</span> fetchRole(session.user.id)
+      <span class="kw">else</span> setRole(<span class="acc">null</span>)
+    })
+  }, [])
+
+  <span class="kw">async function</span> fetchRole(uid) {
+    <span class="kw">const</span> { data } = <span class="kw">await</span> supabase
+      .from(<span class="str">'profiles'</span>).select(<span class="str">'role'</span>).eq(<span class="str">'id'</span>, uid).single()
+    setRole(data?.role)
+  }
+
+  <span class="kw">return</span> &lt;AuthContext.Provider value={{ user, role, loading }}&gt;{children}&lt;/AuthContext.Provider&gt;
+}
+
+<span class="kw">export const</span> useAuth = () => useContext(AuthContext)</code></pre>
+
+      <h3>Protection des routes par rôle</h3>
+      <pre><code><span class="cmt">// src/components/ProtectedRoute.jsx</span>
+<span class="kw">import</span> { Navigate } <span class="kw">from</span> <span class="str">'react-router-dom'</span>
+<span class="kw">import</span> { useAuth } <span class="kw">from</span> <span class="str">'../context/AuthContext'</span>
+
+<span class="kw">export function</span> ProtectedRoute({ children, requiredRole }) {
+  <span class="kw">const</span> { user, role, loading } = useAuth()
+  <span class="kw">if</span> (loading) <span class="kw">return</span> &lt;div&gt;Chargement...&lt;/div&gt;
+  <span class="kw">if</span> (!user) <span class="kw">return</span> &lt;Navigate to=<span class="str">"/login"</span> /&gt;
+  <span class="kw">if</span> (requiredRole &amp;&amp; role !== requiredRole) <span class="kw">return</span> &lt;Navigate to=<span class="str">"/login"</span> /&gt;
+  <span class="kw">return</span> children
+}</code></pre>
+    </div>
+
+    <!-- SÉCURITÉ -->
+    <div class="section" id="securite">
+      <h2><span class="h2-num">09</span> Points de sécurité critiques</h2>
+
+      <div class="alert danger">
+        <span class="alert-icon">🔴</span>
+        <div><strong>Ne jamais mettre VITE_SUPABASE_SERVICE_KEY dans le frontend.</strong> La clé anon est publique par design (protégée par RLS). La clé service contourne tout — elle ne sort jamais du serveur.</div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Point</th><th>Mesure</th></tr></thead>
+          <tbody>
+            <tr><td>Token invitation</td><td>64 caractères hex aléatoires, expire 48h, inutilisable après usage</td></tr>
+            <tr><td>Mots de passe</td><td>Hashage automatique par Supabase Auth (bcrypt)</td></tr>
+            <tr><td>Accès données</td><td>Row Level Security — le coach ne voit que ses propres demandes</td></tr>
+            <tr><td>Sessions</td><td>JWT signé par Supabase, HttpOnly cookie si configuré</td></tr>
+            <tr><td>Données publiques</td><td>Seuls les coachs <code>is_published=true</code> et <code>statut=verifie</code> sont exposés</td></tr>
+            <tr><td>Carte professionnelle</td><td>Numéro stocké en DB, jamais affiché publiquement</td></tr>
+            <tr><td>Formulaire public</td><td>Validation côté client ET vérification Supabase. Insert only, pas de lecture.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- DÉPLOIEMENT -->
+    <div class="section" id="deploiement">
+      <h2><span class="h2-num">10</span> Déploiement étape par étape</h2>
+
+      <div class="phases">
+        <div class="phase">
+          <div class="phase-label"><strong>Étape 1</strong>Supabase</div>
+          <ul class="phase-items plain">
+            <li>Créer un compte sur supabase.com (gratuit)</li>
+            <li>New Project → "citadel-coaching"</li>
+            <li>SQL Editor → coller le SQL des tables</li>
+            <li>Authentication → Email → désactiver "Confirm email" pour l'instant</li>
+            <li>Copier les clés : URL et anon key</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-label"><strong>Étape 2</strong>Resend</div>
+          <ul class="phase-items plain">
+            <li>Compte sur resend.com (gratuit)</li>
+            <li>Ajouter le domaine citadel-coaching.fr</li>
+            <li>Créer une API key</li>
+            <li>Connecter à Supabase : Settings → Auth → SMTP</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-label"><strong>Étape 3</strong>App React</div>
+          <ul class="phase-items plain">
+            <li>npm create vite@latest citadel-app -- --template react</li>
+            <li>npm install @supabase/supabase-js react-router-dom</li>
+            <li>Créer .env.local avec les clés Supabase</li>
+            <li>Coder les pages (code fourni phase par phase)</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-label"><strong>Étape 4</strong>Vercel</div>
+          <ul class="phase-items plain">
+            <li>Push le projet sur GitHub</li>
+            <li>vercel.com → Import Repository</li>
+            <li>Ajouter les variables d'environnement dans Vercel</li>
+            <li>Domaine custom : app.citadel-coaching.fr</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-label"><strong>Étape 5</strong>Compte admin</div>
+          <ul class="phase-items plain">
+            <li>Supabase → Authentication → Users → Invite user (ton email)</li>
+            <li>SQL : INSERT INTO profiles (id, role) VALUES (ton_uuid, 'admin')</li>
+            <li>Tester le login sur app.citadel-coaching.fr</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert success">
+        <span class="alert-icon">✓</span>
+        <div><strong>Estimation totale :</strong> 2 à 3 jours de développement pour une V1 fonctionnelle complète. La partie la plus longue est l'interface admin et coach — le backend Supabase est opérationnel en moins d'une heure.</div>
+      </div>
+    </div>
+
+  </main>
+</div>
