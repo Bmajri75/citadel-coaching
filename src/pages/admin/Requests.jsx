@@ -29,8 +29,8 @@ export default function AdminRequests() {
 
   return (
     <AdminLayout>
-      <div className="p-8">
-        <div className="flex items-center justify-between mb-8">
+      <div className="p-4 md:p-8">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <h1 className="text-2xl font-heading font-bold">Demandes clients</h1>
           <select value={filtre} onChange={e => setFiltre(e.target.value)}
             className="bg-zinc-900 border border-zinc-700 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
@@ -48,7 +48,8 @@ export default function AdminRequests() {
             {demandes.length === 0 ? (
               <p className="text-zinc-500 text-sm p-6">Aucune demande{filtre ? ' pour ce statut' : ''}.</p>
             ) : (
-              <table className="w-full text-sm">
+              <div className="overflow-x-auto">
+              <table className="w-full text-sm min-w-[600px]">
                 <thead>
                   <tr className="border-b border-zinc-800">
                     {['Client', 'Email', 'Discipline', 'Ville', 'Statut', 'Date', ''].map(h => (
@@ -77,6 +78,7 @@ export default function AdminRequests() {
                   ))}
                 </tbody>
               </table>
+              </div>
             )}
           </div>
         )}

@@ -43,7 +43,7 @@ export default function AdminInvitations() {
 
   return (
     <AdminLayout>
-      <div className="p-8 max-w-2xl">
+      <div className="p-4 md:p-8 max-w-2xl">
         <h1 className="text-2xl font-heading font-bold mb-8">Invitations coachs</h1>
 
         <form onSubmit={creerInvitation} className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-8">

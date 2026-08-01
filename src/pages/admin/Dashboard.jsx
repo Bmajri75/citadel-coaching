@@ -57,7 +57,7 @@ export default function AdminDashboard() {
 
   return (
     <AdminLayout>
-      <div className="p-8">
+      <div className="p-4 md:p-8">
         <h1 className="text-2xl font-heading font-bold mb-8">Dashboard</h1>
 
         {loading ? (
@@ -80,7 +80,8 @@ export default function AdminDashboard() {
               {demandes.length === 0 ? (
                 <p className="text-zinc-500 text-sm p-6">Aucune demande pour le moment.</p>
               ) : (
-                <table className="w-full text-sm">
+                <div className="overflow-x-auto">
+                <table className="w-full text-sm min-w-[500px]">
                   <thead>
                     <tr className="border-b border-zinc-800">
                       <th className="text-left p-4 text-xs font-heading uppercase tracking-wide text-zinc-500">Client</th>
@@ -104,6 +105,7 @@ export default function AdminDashboard() {
                     ))}
                   </tbody>
                 </table>
+                </div>
               )}
             </div>
           </>

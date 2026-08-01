@@ -51,7 +51,7 @@ export default function CoachRequests() {
 
   return (
     <CoachLayout>
-      <div className="p-8">
+      <div className="p-4 md:p-8">
         <h1 className="text-2xl font-heading font-bold mb-8">Mes demandes</h1>
 
         {loading ? (

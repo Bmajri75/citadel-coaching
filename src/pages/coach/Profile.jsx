@@ -102,7 +102,7 @@ export default function CoachProfile() {
 
   return (
     <CoachLayout>
-      <div className="p-8 max-w-2xl">
+      <div className="p-4 md:p-8 max-w-2xl">
         <h1 className="text-2xl font-heading font-bold mb-2">Mon profil</h1>
         <p className="text-zinc-500 text-sm mb-8">Ces informations seront visibles publiquement après validation par l'admin.</p>
 

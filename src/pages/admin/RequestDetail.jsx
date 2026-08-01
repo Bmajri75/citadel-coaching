@@ -69,7 +69,7 @@ export default function RequestDetail() {
     </AdminLayout>
   )
 
-  if (!demande) return <AdminLayout><p className="p-8 text-zinc-500">Demande introuvable.</p></AdminLayout>
+  if (!demande) return <AdminLayout><p className="p-4 md:p-8 text-zinc-500">Demande introuvable.</p></AdminLayout>
 
   const statutsSuivants = STATUTS_SUIVANTS[demande.statut] ?? []
 
@@ -82,7 +82,7 @@ export default function RequestDetail() {
 
   return (
     <AdminLayout>
-      <div className="p-8 max-w-3xl">
+      <div className="p-4 md:p-8 max-w-3xl">
         <div className="flex items-center justify-between mb-6">
           <button onClick={() => navigate('/admin/demandes')} className="text-zinc-500 hover:text-white text-sm flex items-center gap-1">
             ← Retour
@@ -96,7 +96,7 @@ export default function RequestDetail() {
         <h1 className="text-2xl font-heading font-bold mb-2">{demande.prenom} {demande.nom}</h1>
         <p className="text-zinc-500 text-sm mb-8">Demande reçue le {new Date(demande.created_at).toLocaleDateString('fr-FR')}</p>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-8">
           <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5">
             <h2 className="text-xs font-heading uppercase tracking-wide text-zinc-500 mb-4">Informations client</h2>
             {[

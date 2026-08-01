@@ -36,7 +36,7 @@ export default function CoachDetail() {
     </AdminLayout>
   )
 
-  if (!coach) return <AdminLayout><p className="p-8 text-zinc-500">Coach introuvable.</p></AdminLayout>
+  if (!coach) return <AdminLayout><p className="p-4 md:p-8 text-zinc-500">Coach introuvable.</p></AdminLayout>
 
   async function supprimerCoach() {
     if (!window.confirm(`Supprimer définitivement le compte de ${coach.prenom ?? ''} ${coach.nom ?? ''} ?`)) return
@@ -47,7 +47,7 @@ export default function CoachDetail() {
 
   return (
     <AdminLayout>
-      <div className="p-8 max-w-2xl">
+      <div className="p-4 md:p-8 max-w-2xl">
         <div className="flex items-center justify-between mb-6">
           <button onClick={() => navigate('/admin/coachs')} className="text-zinc-500 hover:text-white text-sm flex items-center gap-1">
             ← Retour

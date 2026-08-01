@@ -49,7 +49,7 @@ export default function CoachDashboard() {
 
   return (
     <CoachLayout>
-      <div className="p-8">
+      <div className="p-4 md:p-8">
         <h1 className="text-2xl font-heading font-bold mb-2">
           Bonjour {profil?.prenom ?? ''} 👋
         </h1>

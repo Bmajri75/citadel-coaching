@@ -28,8 +28,8 @@ export default function AdminCoaches() {
 
   return (
     <AdminLayout>
-      <div className="p-8">
-        <div className="flex items-center justify-between mb-8">
+      <div className="p-4 md:p-8">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <h1 className="text-2xl font-heading font-bold">Coachs</h1>
           <button onClick={() => navigate('/admin/invitations')}
             className="btn-primary text-sm py-2 px-4">
@@ -45,7 +45,8 @@ export default function AdminCoaches() {
           <p className="text-zinc-500 text-sm">Aucun coach enregistré.</p>
         ) : (
           <div className="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
-            <table className="w-full text-sm">
+            <div className="overflow-x-auto">
+            <table className="w-full text-sm min-w-[640px]">
               <thead>
                 <tr className="border-b border-zinc-800">
                   {['', 'Coach', 'Discipline', 'Carte pro', 'Vérification', 'Publié', ''].map((h, i) => (
@@ -95,6 +96,7 @@ export default function AdminCoaches() {
                 })}
               </tbody>
             </table>
+            </div>
           </div>
         )}
       </div>
