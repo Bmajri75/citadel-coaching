@@ -1,40 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { useLang } from '../context/LangContext'
 import { useSEO } from '../hooks/useSEO'
 
 const DISCIPLINES = ['MMA', 'Muay Thai', 'BJJ Gi', 'BJJ NoGi', 'Grappling', 'Musculation', 'Préparation Combat', 'Remise en forme']
 const NIVEAUX     = ['Débutant', 'Intermédiaire', 'Avancé', 'Compétiteur']
-const DISC_LABEL  = { mma: 'MMA', muay_thai: 'Muay Thai', bjj: 'BJJ', musculation: 'Musculation' }
 
 export default function DemandeCoaching() {
   const { lang } = useLang()
 
   useSEO({
-    title: 'Demande de Coaching — Citadel Coaching Paris',
-    description: 'Faites votre demande de coaching MMA, Muay Thai ou BJJ à Paris. Choisissez votre coach certifié et payez en ligne.',
+    title: 'Réserver une séance — Citadel Coaching Paris',
+    description: 'Réservez votre séance de coaching privé MMA, Muay Thai ou BJJ à Paris avec Bechir. Paiement en ligne sécurisé — 90€.',
     canonical: 'https://citadel-coaching.fr/demande-coaching',
   })
 
-  const [coachs, setCoachs] = useState([])
   const [form, setForm] = useState({
     prenom: '', nom: '', email: '', telephone: '',
     discipline: '', ville: '', objectif: '',
     niveau: '', disponibilites: '', commentaire: '',
     consentement: false,
-    preferred_coach_id: null,
   })
   const [statut,    setStatut]    = useState('idle') // idle | loading | error
   const [erreurMsg, setErreurMsg] = useState('')
-
-  useEffect(() => {
-    supabase
-      .from('coaches')
-      .select('id, prenom, nom, photo_url, discipline_principale, zones')
-      .eq('is_published', true)
-      .eq('statut_verification', 'verifie')
-      .then(({ data }) => setCoachs(data ?? []))
-  }, [])
 
   function change(e) {
     const { name, value, type, checked } = e.target
@@ -68,7 +56,7 @@ export default function DemandeCoaching() {
           disponibilites:     form.disponibilites,
           commentaire:        form.commentaire,
           consentement:       form.consentement,
-          preferred_coach_id: form.preferred_coach_id ?? null,
+          preferred_coach_id: null,
         }])
       dbError = result.error
     } catch (netErr) {
@@ -93,12 +81,11 @@ export default function DemandeCoaching() {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({
-          nom:                `${form.prenom} ${form.nom}`,
-          email:              form.email,
-          tel:                form.telephone,
-          discipline:         form.discipline,
-          ville:              form.ville,
-          preferred_coach_id: form.preferred_coach_id ?? '',
+          nom:        `${form.prenom} ${form.nom}`,
+          email:      form.email,
+          tel:        form.telephone,
+          discipline: form.discipline,
+          ville:      form.ville,
         }),
       })
       const text = await res.text()
@@ -117,10 +104,10 @@ export default function DemandeCoaching() {
       <div className="container-site max-w-2xl">
 
         <div className="text-center mb-12">
-          <p className="text-amber-400 font-heading uppercase tracking-widest text-sm mb-3">Collectif Citadel</p>
+          <p className="text-amber-400 font-heading uppercase tracking-widest text-sm mb-3">Citadel Coaching</p>
           <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">Réserver une séance</h1>
           <span className="section-divider mx-auto mb-4" />
-          <p className="text-zinc-400 text-sm">Remplissez ce formulaire et payez en ligne — votre coach vous contacte sous 24h.</p>
+          <p className="text-zinc-400 text-sm">Remplissez ce formulaire et payez en ligne — Bechir vous contacte sous 24h.</p>
         </div>
 
         <form onSubmit={submit} className="flex flex-col gap-6">
@@ -199,60 +186,6 @@ export default function DemandeCoaching() {
             </div>
           </div>
 
-          {/* Choix du coach */}
-          {coachs.length > 0 && (
-            <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-              <h2 className="text-xs font-heading uppercase tracking-wide text-zinc-500 mb-1">Choisir un coach</h2>
-              <p className="text-zinc-500 text-xs mb-5">Optionnel — vous pouvez exprimer une préférence. L'attribution finale reste à la discrétion de Citadel Coaching.</p>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {coachs.map(coach => {
-                  const selected = form.preferred_coach_id === coach.id
-                  return (
-                    <button
-                      key={coach.id}
-                      type="button"
-                      onClick={() => selectCoach(coach.id)}
-                      className={`flex items-center gap-3 p-3 rounded-lg border text-left transition-colors ${
-                        selected
-                          ? 'bg-amber-500/10 border-amber-500/50'
-                          : 'bg-zinc-800 border-zinc-700 hover:border-zinc-500'
-                      }`}
-                    >
-                      <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-zinc-700">
-                        {coach.photo_url
-                          ? <img src={coach.photo_url} alt="" className="w-full h-full object-cover" />
-                          : <div className="w-full h-full flex items-center justify-center text-zinc-400 text-lg font-bold">{coach.prenom?.[0]}</div>
-                        }
-                      </div>
-                      <div className="min-w-0">
-                        <p className={`font-heading font-semibold text-sm truncate ${selected ? 'text-amber-400' : 'text-white'}`}>
-                          {coach.prenom} {coach.nom}
-                        </p>
-                        {coach.discipline_principale && (
-                          <p className="text-zinc-500 text-xs truncate">{DISC_LABEL[coach.discipline_principale] ?? coach.discipline_principale}</p>
-                        )}
-                        {coach.zones?.length > 0 && (
-                          <p className="text-zinc-600 text-xs truncate">{coach.zones.slice(0, 2).join(', ')}</p>
-                        )}
-                      </div>
-                      {selected && (
-                        <svg className="w-4 h-4 text-amber-400 flex-shrink-0 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                        </svg>
-                      )}
-                    </button>
-                  )
-                })}
-              </div>
-              {form.preferred_coach_id && (
-                <button type="button" onClick={() => setForm(f => ({ ...f, preferred_coach_id: null }))}
-                  className="text-xs text-zinc-500 hover:text-zinc-300 mt-3 underline">
-                  Retirer ma préférence
-                </button>
-              )}
-            </div>
-          )}
-
           {/* Paiement */}
           <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 flex flex-col gap-5">
             <div className="flex items-center gap-3 p-4 bg-amber-500/5 border border-amber-500/20 rounded-lg">
@@ -284,7 +217,7 @@ export default function DemandeCoaching() {
               {statut === 'loading' ? 'Enregistrement…' : 'Réserver et payer — 90€'}
             </button>
 
-            <p className="text-zinc-600 text-xs text-center">Votre coach vous contacte sous 24h · Paris & IDF</p>
+            <p className="text-zinc-600 text-xs text-center">Bechir vous contacte sous 24h · Paris & IDF</p>
           </div>
 
         </form>

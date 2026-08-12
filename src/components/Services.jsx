@@ -2,7 +2,7 @@ import { useLang } from '../context/LangContext'
 
 const TEXTS = {
   fr: {
-    surtitre:    'Ce qu\'on enseigne',
+    surtitre:    'Ce que j\'enseigne',
     titre:       'Les Disciplines',
     disciplines: [
       {

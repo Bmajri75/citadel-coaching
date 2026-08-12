@@ -45,11 +45,11 @@ export default function Home() {
 
   useSEO({
     title:       lang === 'fr'
-      ? 'Citadel Coaching — Coachs MMA certifiés Paris / IDF · Muay Thai · BJJ'
-      : 'Citadel Coaching — Certified MMA Coaches Paris / IDF · Muay Thai · BJJ',
+      ? 'Citadel Coaching — Coach MMA certifié BPJEPS Paris / IDF · Muay Thai · BJJ'
+      : 'Citadel Coaching — BPJEPS Certified MMA Coach Paris / IDF · Muay Thai · BJJ',
     description: lang === 'fr'
-      ? 'Collectif de coachs MMA certifiés BPJEPS sur Paris et Île-de-France. Choisissez votre coach, réservez en ligne — MMA, Muay Thai, BJJ, Musculation. 90€/h, 7j/7.'
-      : 'Collective of BPJEPS certified MMA coaches in Paris and Île-de-France. Choose your coach, book online — MMA, Muay Thai, BJJ, Strength. €90/h, 7 days/week.',
+      ? 'Coach MMA certifié BPJEPS sur Paris et Île-de-France. Séances privées sur-mesure — MMA, Muay Thai, BJJ, Musculation. 90€/h, réservez en ligne, 7j/7.'
+      : 'BPJEPS certified MMA coach in Paris and Île-de-France. Tailored private sessions — MMA, Muay Thai, BJJ, Strength training. €90/h, book online, 7 days/week.',
     canonical:   'https://citadel-coaching.fr/',
   })
 

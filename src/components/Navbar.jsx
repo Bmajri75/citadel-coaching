@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { useLang } from '../context/LangContext'
 
 const TEXTS = {
-  fr: { accueil: 'Accueil', coachs: 'Nos Coachs', programmes: 'Programmes', blog: 'Blog', demande: 'Demande de séance' },
-  en: { accueil: 'Home',    coachs: 'Our Coaches', programmes: 'Programs',   blog: 'Blog', demande: 'Request a session' },
+  fr: { accueil: 'Accueil', programmes: 'Programmes', blog: 'Blog', demande: 'Réserver ma séance' },
+  en: { accueil: 'Home',    programmes: 'Programs',   blog: 'Blog', demande: 'Book my session'    },
 }
 
 export default function Navbar() {
@@ -24,7 +24,6 @@ export default function Navbar() {
 
   const liens = [
     { label: tx.accueil,    to: '/'           },
-    { label: tx.coachs,     to: '/coachs'     },
     { label: tx.programmes, to: '/programmes' },
     { label: tx.blog,       to: '/blog'       },
   ]

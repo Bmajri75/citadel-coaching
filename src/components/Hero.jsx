@@ -3,21 +3,21 @@ import { useLang } from '../context/LangContext'
 
 const TEXTS = {
   fr: {
-    badge:    'Collectif certifié — Paris / Île-de-France',
-    titre1:   'Votre coach MMA',
-    titre2:   'à Paris, enfin',
+    badge:    'Coach certifié BPJEPS — Paris / Île-de-France',
+    titre1:   'Coaching MMA privé',
+    titre2:   'à Paris',
     sous:     'MMA · Muay Thai · BJJ · Grappling · Musculation',
-    accroche: 'Des coachs diplômés d\'État, vérifiés et sélectionnés personnellement.\nChoisissez votre profil, réservez en ligne, commencez cette semaine.',
-    cta1:     'Choisir mon coach',
+    accroche: 'Coach diplômé d\'État. Séances sur-mesure à Paris et en Île-de-France.\nRéservez en ligne — commencez cette semaine.',
+    cta1:     'Réserver ma séance',
     cta2:     'Voir les programmes',
   },
   en: {
-    badge:    'Certified collective — Paris / Île-de-France',
-    titre1:   'Your MMA coach',
-    titre2:   'in Paris, finally',
+    badge:    'BPJEPS Certified Coach — Paris / Île-de-France',
+    titre1:   'Private MMA coaching',
+    titre2:   'in Paris',
     sous:     'MMA · Muay Thai · BJJ · Grappling · Strength',
-    accroche: 'State-certified coaches, verified and personally selected.\nChoose your profile, book online, start this week.',
-    cta1:     'Choose my coach',
+    accroche: 'State-certified BPJEPS coach. Tailored sessions in Paris and Île-de-France.\nBook online — start this week.',
+    cta1:     'Book my session',
     cta2:     'View programs',
   },
 }
@@ -55,7 +55,7 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/coachs" className="btn-primary text-base py-3.5 px-10">{tx.cta1}</Link>
+          <Link to="/demande-coaching" className="btn-primary text-base py-3.5 px-10">{tx.cta1}</Link>
           <Link to="/programmes" className="btn-outline text-base py-3.5 px-10">{tx.cta2}</Link>
         </div>
       </div>

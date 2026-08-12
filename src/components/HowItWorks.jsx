@@ -6,23 +6,21 @@ const TEXTS = {
     surtitre: 'Simple et rapide',
     titre:    'Comment ça marche',
     etapes: [
-      { num: '01', titre: 'Vous choisissez votre coach', desc: 'Parcourez les profils certifiés du collectif. Chaque coach est diplômé d\'État et vérifié par Citadel Coaching.' },
-      { num: '02', titre: 'Vous remplissez votre demande', desc: 'Discipline, objectif, disponibilités — quelques lignes suffisent. Indiquez vos préférences, on s\'adapte.' },
-      { num: '03', titre: 'Vous payez en ligne (90€)', desc: 'Paiement sécurisé via Stripe. Visa, Mastercard, Amex. Votre séance est confirmée instantanément.' },
-      { num: '04', titre: 'Votre coach vous contacte', desc: 'Sous 24h maximum, votre coach confirme le lieu de rendez-vous et se prépare pour vous.' },
+      { num: '01', titre: 'Remplissez votre demande', desc: 'Discipline, objectif, disponibilités — quelques lignes suffisent. Je m\'adapte à votre niveau et vos contraintes.' },
+      { num: '02', titre: 'Payez en ligne (90€)', desc: 'Paiement sécurisé via Stripe. Visa, Mastercard, Amex. Votre séance est enregistrée instantanément.' },
+      { num: '03', titre: 'Je vous contacte sous 24h', desc: 'Je vous appelle ou vous écris pour confirmer le lieu de rendez-vous et préparer votre première séance.' },
     ],
-    cta: 'Commencer maintenant',
+    cta: 'Réserver ma séance',
   },
   en: {
     surtitre: 'Simple and fast',
     titre:    'How it works',
     etapes: [
-      { num: '01', titre: 'Choose your coach', desc: 'Browse certified profiles from our collective. Every coach holds a state diploma and has been verified by Citadel Coaching.' },
-      { num: '02', titre: 'Fill in your request', desc: 'Discipline, goal, availability — a few lines is all it takes. Tell us your preferences, we adapt.' },
-      { num: '03', titre: 'Pay online (€90)', desc: 'Secure payment via Stripe. Visa, Mastercard, Amex. Your session is confirmed instantly.' },
-      { num: '04', titre: 'Your coach contacts you', desc: 'Within 24 hours maximum, your coach confirms the meeting location and prepares for you.' },
+      { num: '01', titre: 'Fill in your request', desc: 'Discipline, goal, availability — a few lines is all it takes. I adapt to your level and schedule.' },
+      { num: '02', titre: 'Pay online (€90)', desc: 'Secure payment via Stripe. Visa, Mastercard, Amex. Your session is registered instantly.' },
+      { num: '03', titre: 'I contact you within 24h', desc: 'I call or message you to confirm the meeting location and prepare for your first session.' },
     ],
-    cta: 'Get started',
+    cta: 'Book my session',
   },
 }
 
