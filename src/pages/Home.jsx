@@ -27,12 +27,12 @@ function Stats() {
   const { lang } = useLang()
   const chiffres = STATS_TEXTS[lang]
   return (
-    <div className="bg-amber-500 py-8">
-      <div className="container-site grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div className="bg-amber-500 py-5 md:py-8">
+      <div className="container-site grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
         {chiffres.map(c => (
           <div key={c.label}>
-            <p className="font-heading font-bold text-2xl sm:text-3xl text-black">{c.valeur}</p>
-            <p className="text-black/70 text-sm font-body uppercase tracking-wide">{c.label}</p>
+            <p className="font-heading font-bold text-xl sm:text-2xl md:text-3xl text-black">{c.valeur}</p>
+            <p className="text-black/70 text-xs sm:text-sm font-body uppercase tracking-wide">{c.label}</p>
           </div>
         ))}
       </div>

@@ -62,19 +62,19 @@ export default function Services() {
   const tx       = TEXTS[lang]
 
   return (
-    <section id="disciplines" className="py-20 bg-zinc-950">
+    <section id="disciplines" className="py-12 md:py-20 bg-zinc-950">
       <div className="container-site">
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <p className="text-amber-400 font-heading uppercase tracking-widest text-sm mb-2">{tx.surtitre}</p>
           <h2 className="section-title">{tx.titre}</h2>
           <span className="section-divider mx-auto" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {tx.disciplines.map(d => (
             <div key={d.nom} className="card group overflow-hidden flex flex-col">
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden">
                 <img
                   src={d.image}
                   alt={d.alt}

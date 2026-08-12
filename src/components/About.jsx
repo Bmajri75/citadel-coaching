@@ -47,9 +47,9 @@ export default function About() {
   const tx       = TEXTS[lang]
 
   return (
-    <section id="coach" className="py-20 bg-zinc-950">
+    <section id="coach" className="py-12 md:py-20 bg-zinc-950">
       <div className="container-site">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
 
           {/* Photo */}
           <div className="relative">
@@ -84,7 +84,7 @@ export default function About() {
         </div>
 
         {/* Photo avec champions UFC — crédibilité */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-zinc-800 p-6">
+        <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center border border-zinc-800 p-4 md:p-6">
           <img
             src="/photos/champions-ufc.jpg"
             alt="Bechir Majri avec Chael Sonnen, Dan Henderson et Daniel Woirin"
@@ -100,7 +100,7 @@ export default function About() {
         </div>
 
         {/* Highlight vidéo YouTube */}
-        <div className="mt-16">
+        <div className="mt-10 md:mt-16">
           <p className="text-amber-400 font-heading uppercase tracking-widest text-xs mb-4 text-center">
             {tx.videoLabel}
           </p>

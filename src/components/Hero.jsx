@@ -43,20 +43,20 @@ export default function Hero() {
           {tx.badge}
         </p>
 
-        <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-5">
+        <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-7xl leading-[1.05] mb-4">
           {tx.titre1}<br />
           <span className="text-amber-400">{tx.titre2}</span>
         </h1>
 
-        <p className="text-zinc-300 text-base sm:text-lg mb-3 font-body tracking-wide">{tx.sous}</p>
+        <p className="text-zinc-300 text-sm sm:text-lg mb-2 font-body tracking-wide">{tx.sous}</p>
 
-        <p className="text-zinc-400 max-w-xl mx-auto mb-10 text-sm sm:text-base whitespace-pre-line leading-relaxed">
+        <p className="text-zinc-400 max-w-xl mx-auto mb-8 text-sm sm:text-base whitespace-pre-line leading-relaxed">
           {tx.accroche}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/demande-coaching" className="btn-primary text-base py-3.5 px-10">{tx.cta1}</Link>
-          <Link to="/programmes" className="btn-outline text-base py-3.5 px-10">{tx.cta2}</Link>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link to="/demande-coaching" className="btn-primary text-sm sm:text-base py-3 px-8 sm:py-3.5 sm:px-10">{tx.cta1}</Link>
+          <Link to="/programmes" className="btn-outline text-sm sm:text-base py-3 px-8 sm:py-3.5 sm:px-10">{tx.cta2}</Link>
         </div>
       </div>
 

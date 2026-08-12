@@ -35,10 +35,10 @@ export default function Tarifs() {
   const tx       = TEXTS[lang]
 
   return (
-    <section id="tarifs" className="py-20 bg-zinc-950">
+    <section id="tarifs" className="py-12 md:py-20 bg-zinc-950">
       <div className="container-site max-w-3xl">
 
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 md:mb-10">
           <p className="text-amber-400 font-heading uppercase tracking-widest text-sm mb-2">{tx.surtitre}</p>
           <h2 className="section-title">{tx.titre}</h2>
           <span className="section-divider mx-auto" />
@@ -53,7 +53,7 @@ export default function Tarifs() {
             {tx.lignes.map((l, i) => (
               <div
                 key={l.service}
-                className={`grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 p-5 sm:p-6 items-center ${
+                className={`grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-0 p-4 sm:p-6 items-center ${
                   i < tx.lignes.length - 1 ? 'border-b border-zinc-800' : ''
                 } ${i === 0 ? 'bg-amber-500/5' : ''}`}
               >
@@ -71,7 +71,7 @@ export default function Tarifs() {
 
         <p className="text-zinc-600 text-xs text-center mt-4">{tx.note}</p>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 md:mt-8">
           <Link to="/demande-coaching" className="btn-primary">{tx.cta}</Link>
         </div>
       </div>

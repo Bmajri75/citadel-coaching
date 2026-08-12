@@ -70,17 +70,17 @@ export default function Testimonials() {
   const etoiles = (n) => '★'.repeat(n) + '☆'.repeat(5 - n)
 
   return (
-    <section id="avis" className="py-20 bg-zinc-900">
+    <section id="avis" className="py-12 md:py-20 bg-zinc-900">
       <div className="container-site">
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <p className="text-amber-400 font-heading uppercase tracking-widest text-sm mb-2">{tx.surtitre}</p>
           <h2 className="section-title">{tx.titre}</h2>
           <span className="section-divider mx-auto" />
           <p className="text-zinc-500 text-sm mt-2">{tx.note}</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {AVIS.map(a => (
             <div key={a.nom} className="card p-6 flex flex-col gap-3">
 

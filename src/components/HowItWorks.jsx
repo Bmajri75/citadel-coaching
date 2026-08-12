@@ -29,15 +29,15 @@ export default function HowItWorks() {
   const tx = TEXTS[lang]
 
   return (
-    <section className="py-20 bg-zinc-900">
+    <section className="py-12 md:py-20 bg-zinc-900">
       <div className="container-site">
-        <div className="text-center mb-14">
+        <div className="text-center mb-8 md:mb-14">
           <p className="text-amber-400 font-heading uppercase tracking-widest text-sm mb-2">{tx.surtitre}</p>
           <h2 className="section-title">{tx.titre}</h2>
           <span className="section-divider mx-auto" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8 md:mb-12">
           {tx.etapes.map((e, i) => (
             <div key={e.num} className="relative">
               {i < tx.etapes.length - 1 && (

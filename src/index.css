@@ -37,7 +37,7 @@ h1, h2, h3, h4 {
 
   /* Titre de section standard */
   .section-title {
-    @apply text-3xl sm:text-4xl font-heading font-bold uppercase tracking-wide text-white;
+    @apply text-2xl sm:text-3xl md:text-4xl font-heading font-bold uppercase tracking-wide text-white;
   }
 
   /* Trait doré sous les titres de section */

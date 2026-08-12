@@ -100,12 +100,12 @@ export default function DemandeCoaching() {
   }
 
   return (
-    <main className="pt-28 pb-20 bg-zinc-950 min-h-screen">
+    <main className="pt-24 pb-14 bg-zinc-950 min-h-screen">
       <div className="container-site max-w-2xl">
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <p className="text-amber-400 font-heading uppercase tracking-widest text-sm mb-3">Citadel Coaching</p>
-          <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">Réserver une séance</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-4">Réserver une séance</h1>
           <span className="section-divider mx-auto mb-4" />
           <p className="text-zinc-400 text-sm">Remplissez ce formulaire et payez en ligne — Bechir vous contacte sous 24h.</p>
         </div>

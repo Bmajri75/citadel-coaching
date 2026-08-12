@@ -26,17 +26,17 @@ export default function Gallery() {
   const next   = () => setLightbox(i => (i + 1) % PHOTOS.length)
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-12 md:py-20 bg-black">
       <div className="container-site">
 
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 md:mb-10">
           <p className="text-amber-400 font-heading uppercase tracking-widest text-sm mb-2">{tx.surtitre}</p>
           <h2 className="section-title">{tx.titre}</h2>
           <span className="section-divider mx-auto" />
         </div>
 
         {/* Grille masonry 3 colonnes */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-1.5 md:gap-3">
           {PHOTOS.map((p, i) => (
             <button
               key={p.src}
@@ -46,7 +46,7 @@ export default function Gallery() {
               <img
                 src={p.src}
                 alt={p.alt}
-                className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110"
+                className="w-full h-32 sm:h-44 md:h-52 object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110"
                 loading="lazy"
               />
             </button>

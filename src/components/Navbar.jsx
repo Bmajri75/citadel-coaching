@@ -76,13 +76,13 @@ export default function Navbar() {
       </div>
 
       {menuOuvert && (
-        <div className="md:hidden bg-zinc-950 border-t border-zinc-800 px-4 py-6 flex flex-col gap-4">
+        <div className="md:hidden bg-zinc-950 border-t border-zinc-800 px-4 py-4 flex flex-col gap-1">
           {liens.map(l => (
-            <Link key={l.to} to={l.to} className="font-heading uppercase tracking-wide text-zinc-300 hover:text-white">
+            <Link key={l.to} to={l.to} className="font-heading uppercase tracking-wide text-zinc-300 hover:text-white py-3 border-b border-zinc-900">
               {l.label}
             </Link>
           ))}
-          <Link to="/demande-coaching" className="btn-primary text-center mt-2">{tx.demande}</Link>
+          <Link to="/demande-coaching" className="btn-primary text-center mt-4 py-4">{tx.demande}</Link>
         </div>
       )}
     </nav>
