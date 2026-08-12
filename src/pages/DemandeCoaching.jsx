@@ -52,25 +52,37 @@ export default function DemandeCoaching() {
     setErreurMsg('')
 
     // 1. Enregistrement dans Supabase (INSERT only — pas de SELECT, RLS anonyme)
-    const { error: dbError } = await supabase
-      .from('coaching_requests')
-      .insert([{
-        prenom:             form.prenom,
-        nom:                form.nom,
-        email:              form.email,
-        telephone:          form.telephone,
-        discipline:         form.discipline,
-        ville:              form.ville,
-        objectif:           form.objectif,
-        niveau:             form.niveau,
-        disponibilites:     form.disponibilites,
-        commentaire:        form.commentaire,
-        consentement:       form.consentement,
-        preferred_coach_id: form.preferred_coach_id ?? null,
-      }])
+    let dbError
+    try {
+      const result = await supabase
+        .from('coaching_requests')
+        .insert([{
+          prenom:             form.prenom,
+          nom:                form.nom,
+          email:              form.email,
+          telephone:          form.telephone,
+          discipline:         form.discipline,
+          ville:              form.ville,
+          objectif:           form.objectif,
+          niveau:             form.niveau,
+          disponibilites:     form.disponibilites,
+          commentaire:        form.commentaire,
+          consentement:       form.consentement,
+          preferred_coach_id: form.preferred_coach_id ?? null,
+        }])
+      dbError = result.error
+    } catch (netErr) {
+      setErreurMsg('Erreur réseau : impossible de joindre la base de données. Vérifiez votre connexion et réessayez.')
+      setStatut('error')
+      return
+    }
 
     if (dbError) {
-      setErreurMsg(`Erreur (base de données) : ${dbError.message}`)
+      const isNetwork = dbError.message?.toLowerCase().includes('fetch') || dbError.message?.toLowerCase().includes('network')
+      const msg = isNetwork
+        ? 'Erreur réseau : le serveur est temporairement inaccessible. Réessayez dans quelques minutes.'
+        : `Erreur (base de données) : ${dbError.message}`
+      setErreurMsg(msg)
       setStatut('error')
       return
     }

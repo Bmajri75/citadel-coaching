@@ -67,8 +67,8 @@ export default function BlogPost() {
     new Date(iso).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
 
   const ctaTexts = {
-    fr: { question: 'Envie de progresser avec un coach certifié ?', cta: 'Réserver une séance — 70€', retour: '← Retour au blog' },
-    en: { question: 'Want to progress with a certified coach?',      cta: 'Book a session — €70',    retour: '← Back to blog' },
+    fr: { question: 'Envie de progresser avec un coach certifié ?', cta: 'Réserver une séance — 90€', retour: '← Retour au blog' },
+    en: { question: 'Want to progress with a certified coach?',      cta: 'Book a session — €90',    retour: '← Back to blog' },
   }
   const cta = ctaTexts[lang]
 
@@ -94,7 +94,7 @@ export default function BlogPost() {
         {/* CTA */}
         <div className="mt-12 p-6 border border-amber-500/30 bg-amber-500/5 text-center">
           <p className="font-heading uppercase tracking-wide text-white mb-3">{cta.question}</p>
-          <Link to="/#reservation" className="btn-primary">{cta.cta}</Link>
+          <Link to="/demande-coaching" className="btn-primary">{cta.cta}</Link>
         </div>
       </div>
     </main>
